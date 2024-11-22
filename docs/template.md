@@ -9,6 +9,7 @@
 *Italic text*
 ~~Striked out text~~
 ==Highlighted text==
+<u>test</u>
 **Bold text and _nested italic_ text**
 ***Bold and italic text***
 
