@@ -35,6 +35,8 @@ les films les mieux notés et les caractéristiques qu’ils partagent.”
 
 ## 3.1. Liste des bases de données :
 
+Schématisation des tables IMDB
+https://www.canva.com/design/DAGXx1BW4sc/E2SsEAMBRieuko4w6WEEUQ/view?utm_content=DAGXx1BW4sc&utm_campaign=designshare&utm_medium=link&utm_source=editor
 ### 1 - title.akas - Titres de films - dans différentes langues
 Nom du fichier : title.akas.tsv.gz
 Utilité : avoir les titres en français et titre original
