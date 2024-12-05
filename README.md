@@ -171,8 +171,8 @@ Infos Complémetaires à trier==
 | Colonne                      | Type | Description                                                                                                    | Conservation (O/N)                   |
 | ------------------------------ | ------ | ---------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | adult                        |      | Un champ indiquant si le film est destiné à un public adulte, avec les valeurs “true” ou “false”.        | Filtre et drop                       |
-| backdrop_path                |      | Le chemin d’accès à l’image de fond associée au film, utilisée à des fins de marketing et de promotion. |                                      |
-| budget                       |      | Le budget du film, généralement en dollars ou dans la devise de référence.                                 | ML                                   |
+| backdrop_path                |      | Le chemin d’accès à l’image de fond associée au film, utilisée à des fins de marketing et de promotion. | drop                                 |
+| budget                       |      | Le budget du film, généralement en dollars ou dans la devise de référence.                                 | drop                                 |
 | genres                       |      | Les genres du film, tels que “Action,” “Comedy,” “Science Fiction,” etc.                                 | ML / Info                            |
 | homepage                     |      | L’URL de la page d’accueil officielle du film.                                                               | Info                                 |
 | id                           |      | L’ID du film dans la base de données TMDB, utilisé pour identifier de manière unique chaque film.          | drop                                 |
@@ -184,7 +184,7 @@ Infos Complémetaires à trier==
 | poster_path                  |      | Le chemin d’accès à l’affiche du film, utilisée à des fins de marketing.                                 | Info                                 |
 | production_countries         |      | Les pays de production du film, avec la possibilité d’avoir plusieurs pays listés.                          | ML / Info                            |
 | release_date                 |      | La date de sortie du film.                                                                                     | ML / Info                            |
-| revenue                      |      | Le chiffre d’affaires généré par le film, généralement en dollars ou dans la devise de référence.      | ML                                   |
+| revenue                      |      | Le chiffre d’affaires généré par le film, généralement en dollars ou dans la devise de référence.      | drop                                 |
 | runtime                      |      | La durée en minutes du film.                                                                                  | ML / Info                            |
 | spoken_languages             |      | Les langues parlées dans le film.                                                                             | drop                                 |
 | status                       |      | Le statut du film, par exemple, “Released” ou “In Production”.                                             | filtre et drop                       |
@@ -198,13 +198,10 @@ Infos Complémetaires à trier==
 
 ### 9. data_bechdel.csv
 
-
-
 * year : drop
 * title : drop
 * imdbid : ML (merge)
 * rating : ML / Info
-
 
 ##
 
