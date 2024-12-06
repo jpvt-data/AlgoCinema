@@ -159,6 +159,7 @@ Nom du fichier : name.basics.tsv.gz
 | primaryProfession | array of strings | the top-3 professions of the person               | Info acteurs              |
 | knownForTitles    | array of tconsts | titles the person is known for                    | Info acteurs              |
 
+
 ### 8 - tmdb_full - Base de données complémentaires complètes
 
 Nom du fichier : tmdb_full.csv
