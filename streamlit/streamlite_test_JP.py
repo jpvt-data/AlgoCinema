@@ -1,5 +1,5 @@
 import streamlit as st
-
+# streamlit run streamlite_test_JP.py
 # Configuration de la page
 st.set_page_config(page_title="Le 23ème Écran", page_icon="🎥", layout="wide")
 
