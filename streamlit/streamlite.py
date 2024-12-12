@@ -33,7 +33,7 @@ from streamlit_option_menu import option_menu
 # Bar de menu : (JP) 
 page = option_menu(
             menu_title=None,
-            options = ["Accueil", "A propos","Actualité","Programmation","Connexion"]
+            options = ["Accueil", "A propos","Actualité","Programmation"]
         )
 
 # En fonction de l'option sélectionnée afficher le contenu correspondant dans votre application
@@ -41,13 +41,12 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
     st.write("Bienvenue sur la page d'accueil !")
     # "Recherchez un film de votre choix pour découvrir X propisitions de films proches" à retravailler
 
-    # Barre de recherche (sur toutes les pages) : 
-
+    # Barre de recherche (sur toutes les pages) : (Alice)
     # Texte affiché par défaut 'Titre du film'
     # Affiche X options avec titres proches, sous la barre quand l'utilisateur écrit
     # Sélection déclenche la recherche de similarité (model ML)
 
-    # Bloc d'affichage des films :
+    # Bloc d'affichage des films : (JP)
     # Nom du film + Lien cliquabe vers page du film
     # Image de l'affiche + Lien cliquabe vers page du film
     # Note (mettre des étoiles en option)
