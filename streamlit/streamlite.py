@@ -30,7 +30,7 @@ from streamlit_option_menu import option_menu
 
 
 
-# Bar de menu : (JP) 
+# Barre de menu : (JP) 
 page = option_menu(
             menu_title=None,
             options = ["Accueil", "A propos","Actualité","Programmation"]
@@ -47,12 +47,63 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
     # Sélection déclenche la recherche de similarité (model ML)
 
     # Bloc d'affichage des films : (JP)
-    # Nom du film + Lien cliquabe vers page du film
-    # Image de l'affiche + Lien cliquabe vers page du film
-    # Note (mettre des étoiles en option)
-    # Année
-    # Genres
-    # Durée 
+        # Nom du film + Lien cliquabe vers page du film
+        # Image de l'affiche + Lien cliquabe vers page du film
+        # Note (mettre des étoiles en option)
+        # Année
+        # Genres
+        # Durée
+
+    # Base de données fictive avec 5 films similaires
+    data = {
+            "Titre": ["Inception", "Interstellar", "The Prestige", "Memento", "Tenet"],
+            "Affiche": [
+                        "https://via.placeholder.com/150/0000FF/808080?text=Inception",
+                        "https://via.placeholder.com/150/0000FF/808080?text=Interstellar",
+                        "https://via.placeholder.com/150/0000FF/808080?text=The+Prestige",
+                        "https://via.placeholder.com/150/0000FF/808080?text=Memento",
+                        "https://via.placeholder.com/150/0000FF/808080?text=Tenet"
+                        ],
+            "Note": [10, 8.6, 4, 8.4, 7.8],
+            "Annee_de_Sortie": [2010, 2014, 2006, 2000, 2020],
+            "Genres": [
+                "Science-fiction, Thriller",
+                "Science-fiction, Drame",
+                "Drame, Mystère, Science-fiction",
+                "Mystère, Thriller",
+                "Science-fiction, Action, Thriller"
+            ],
+            "Duree": [148, 169, 130, 113, 150]  # Durée en minutes
+    }
+    # Convertir en DataFrame
+    df = pd.DataFrame(data)
+
+    # Disposition en 5 colonnes fixes
+    col1, col2, col3, col4, col5 = st.columns(5)
+    cols = [col1, col2, col3, col4, col5]
+
+    # Remplir chaque colonne avec les infos d'un film
+    for col, (_, row) in zip(cols, df.iterrows()):
+        with col:
+            # Affiche l'image
+            st.image(row["Affiche"], use_container_width=True)  # Affiche
+
+            # Titre avec moins d'espace
+            st.markdown(f"<h3 style='margin-bottom: 5px;'>{row['Titre']}</h3>", unsafe_allow_html=True)
+
+            # Calcul des étoiles
+            étoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note sur 5)
+            étoile_n = 5 - étoile_j  # Nombre d'étoiles vides pour compléter
+            étoiles = "⭐" * étoile_j + "⚫" * étoile_n  # Étoiles jaunes + vides
+
+            # Affichage des autres informations avec moins d'espace
+            st.markdown(f"<p style='margin: 0;'>{row['Annee_de_Sortie']} - {row['Duree']} min.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='margin: 0;'>{row['Note']} / 10  - {étoiles}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
+    # afficher le df pour vérification
+    print(df)
+
+
 
     # df = le résultat de la recherche de similarité
     # st.table(df)
