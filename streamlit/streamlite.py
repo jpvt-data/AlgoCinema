@@ -33,7 +33,6 @@ st.title("Le 23ème Écran vous fait découvrir le cinéma")
 
 # trouver le code pour
 
-
 # Bloc d'affichage des films : 
 
 # df = le résultat de la recherche de similarité
