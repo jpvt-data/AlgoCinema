@@ -47,8 +47,6 @@ Le 23ème Ecran a pour ambition de :
    - Démarche suivie, outils utilisés et défis rencontrés
    - Pistes d'amélioration et retours d'expérience
 
----
-
 ## Installation et Utilisation
 
 ### Prérequis
@@ -64,8 +62,6 @@ cd 23eme_ecran
 ### Exécuter les Notebooks
 - Importez les notebooks dans un environnement compatible (Jupyter, Colab, etc.).
 - Assurez-vous d'avoir téléchargé les datasets IMDb et TMDB ou utilisez les liens fournis dans les notebooks.
-
----
 
 ## Contributions et Contacts
 Ce projet a été réalisé par une équipe d'étudiants en Data Science dans le cadre d'une mission de formation. Pour toute question ou suggestion, vous pouvez contacter les membres de l'équipe :
