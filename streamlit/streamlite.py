@@ -94,10 +94,7 @@ else:
 
 
 # Barre de menu : (JP) 
-<<<<<<< HEAD
-=======
 
->>>>>>> e01d197846c2c31cc98d373809a3fa3e25d4d8d5
 page = option_menu(
             menu_title=None,
             options = ["Accueil", "A propos","Actualité","Programmation"],
