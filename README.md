@@ -11,8 +11,6 @@ Le 23ème Ecran a pour ambition de :
 3. Développer un système de recommandation basé sur le machine learning pour suggérer des films aux utilisateurs en ligne.
 4. Proposer un outil interactif combinant des visualisations et des recommandations pour enrichir l'expérience utilisateur.
 
----
-
 ## Sommaire
 
 #### 1. [Introduction et Contexte]()
