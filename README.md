@@ -13,37 +13,37 @@ Le 23ème Ecran a pour ambition de :
 
 ## Sommaire
 
-#### 1. [Introduction et Contexte]()
+#### 1. 🎬 [Introduction et Contexte]()
    - Présentation du projet et des enjeux
    - Description des bases de données utilisées
 
-#### 2. [Étude de Marché et Fiche d'identité]()
+#### 2. 🧳 [Étude de Marché et Fiche d'identité]()
    - Analyse des habitudes de consommation de cinéma dans la région
    - Sources utilisées : CNC, INSEE
-   - Le 23ème Écran : Description du cinéma imaginé suite à l'étude de marché.
+   - Le 23ème Écran : fiche d'identité du cinéma choisi.
 
-#### 3. [Exploration et Nettoyage des Données]()
+#### 3. 🔍 [Exploration et Nettoyage des Données]()
    - Appropriation des datasets IMDb et TMDB.
    - Processus de nettoyage et réduction de la volumétrie.
    - Visualisations initiales des tendances.
 
-#### 4. [Analyse Statistique et KPI]()
+#### 4. 📈 [Analyse Statistique et KPI]()
    - Extraction et visualisation des indicateurs clés
    - Insights pour la programmation du cinéma
 
-#### 5. [Système de Recommandation]()
+#### 5. 🤖 [Système de Recommandation]()
    - Implémentation d'algorithmes de machine learning
    - Démonstration de recommandations basées sur des films appréciés
 
-#### 6. [Dashboard et Interface Utilisateur]()
+#### 6. 📊 [Dashboard et Interface Utilisateur]()
    - Présentation des KPI et visualisations
    - Intégration des recommandations dans un outil interactif
 
-#### 7. [Interface Streamlit]()
+#### 7. 🖥️ [Interface Streamlit]()
    - Développement de l'application Streamlit
    - Démonstration des fonctionnalités interactives
 
-#### 8. [Présentation et Livrables]()
+#### 8. 📑 [Présentation et Livrables]()
    - Démarche suivie, outils utilisés et défis rencontrés
    - Pistes d'amélioration et retours d'expérience
 
