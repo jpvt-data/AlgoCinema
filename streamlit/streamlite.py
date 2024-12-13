@@ -16,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import time
 
 # Configuration de la page : 
-# st.set_page_config(page_title="Le 23ème Écran", layout="wide")
+st.set_page_config(page_title="Le 23ème Écran", layout="wide")
 
 
 
@@ -93,10 +93,14 @@ else:
 
 
 
-# Bar de menu : (JP)
+# Barre de menu : (JP) 
+
 page = option_menu(
             menu_title=None,
-            options = ["Accueil", "A propos","Actualité","Programmation"]
+            options = ["Accueil", "A propos","Actualité","Programmation"],
+            menu_icon="cast",  # Icône du menu principal
+            default_index=0,  # Option par défaut
+            orientation="horizontal"
         )
 
 # En fonction de l'option sélectionnée afficher le contenu correspondant dans votre application
@@ -107,13 +111,134 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
 
 
 
-    # Bloc d'affichage des films : (JP)
-    # Nom du film + Lien cliquabe vers page du film
-    # Image de l'affiche + Lien cliquabe vers page du film
-    # Note (mettre des étoiles en option)
-    # Année
-    # Genres
-    # Durée 
+##############################  Bloc d'affichage des films : (JP) ###############################
+        # Nom du film + Lien cliquabe vers page du film
+        # Image de l'affiche + Lien cliquabe vers page du film
+        # Note (mettre des étoiles en option)
+        # Année
+        # Genres
+        # Durée
+
+    # Base de données fictive avec 5 films similaires
+    data = {
+            "Titre": ["Inception", "Interstellar", "The Prestige", "Memento", "Tenet"],
+            "Affiche": [
+                        "https://image.tmdb.org/t/p/w400/fKwCdrjp1afjgZvHoPR3IUeA8HR.jpg",
+                        "https://image.tmdb.org/t/p/w400/AbafEN6mBCxolihpPiSOmvlCIen.jpg",
+                        "https://image.tmdb.org/t/p/w400/vOdA1SuDkjxvRr3xBZVCJJyTNlz.jpg",
+                        "https://image.tmdb.org/t/p/w400/ijayvLrCAwOVizi9OY8LZWq5SRW.jpg",
+                        "https://image.tmdb.org/t/p/w400/qgyp48naq0W7j4NbOttFi91DlYW.jpg"
+                        ],
+            "Note": [10, 8.6, 4, 8.4, 7.8],
+            "Annee_de_Sortie": [2010, 2014, 2006, 2000, 2020],
+            "Genres": [
+                "Science-fiction, Thriller",
+                "Science-fiction, Drame",
+                "Drame, Mystère, Science-fiction",
+                "Mystère, Thriller",
+                "Science-fiction, Action, Thriller"
+            ],
+            "Duree": [148, 169, 130, 113, 150]  # Durée en minutes
+    }
+    # Convertir en DataFrame
+    df = pd.DataFrame(data)
+
+
+                                    # Affichage de base qui fonctionne >>> on garde de côté
+                                    # afficher le df en position centrée
+                                    #   st.write(df)
+                                    #
+                                    #    # Disposition en 5 colonnes fixes
+                                    #   col1, col2, col3, col4, col5 = st.columns(5)
+                                    #    cols = [col1, col2, col3, col4, col5]
+                                    #
+                                    #    # Remplir chaque colonne avec les infos d'un film
+                                    #    for col, (_, row) in zip(cols, df.iterrows()):
+                                    #        with col:
+                                    #            # Affiche l'image
+                                    #            st.image(row["Affiche"], width=100,  use_container_width=True)  # Affiche
+                                    #
+                                    #            # Titre avec moins d'espace
+                                    #            st.markdown(f"<h3 style='margin-bottom: 5px;'>{row['Titre']}</h3>", unsafe_allow_html=True)
+                                    #
+                                    #            # Calcul des étoiles
+                                    #            étoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note/5)
+                                    #            étoile_n = 5 - étoile_j  # Nombre d'étoiles vides pour compléter
+                                    #            étoiles = "⭐" * étoile_j + "⚫" * étoile_n  # Étoiles jaunes + vides
+                                    #
+                                    #            # Affichage des autres informations avec moins d'espace
+                                    #            st.markdown(f"<p style='margin: 0;'>{row['Annee_de_Sortie']} - {row['Duree']} min.</p>", unsafe_allow_html=True)
+                                    #            st.markdown(f"<p style='margin: 0;'>{row['Note']} / 10  - {étoiles}</p>", unsafe_allow_html=True)
+                                    #            st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
+
+    # Fonction pour afficher la page d'accueil
+    def afficher_accueil():
+        st.title("Bienvenue à l'accueil des films")
+        
+        col1, col2, col3, col4, col5 = st.columns(5)
+        cols = [col1, col2, col3, col4, col5]
+
+        # Remplir chaque colonne avec les infos d'un film
+        for col, (_, row) in zip(cols, df.iterrows()):
+            with col:
+                # Crée un lien cliquable sur l'image
+                image_lien = f'''
+                <a href="javascript:void(0)" 
+                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);">
+                <img src="{row["Affiche"]}" width="400">
+                </a>'''
+                st.markdown(image_lien, unsafe_allow_html=True)
+
+                # Crée un lien cliquable sur le titre avec du style
+                titre_lien = f'''
+                <a href="javascript:void(0)" 
+                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);" 
+                style="font-size: 1.5em; color: white; text-decoration: none; font-weight: bold;">
+                {row["Titre"]}
+                </a>'''
+                st.markdown(titre_lien, unsafe_allow_html=True)
+
+                # Calcul des étoiles
+                étoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note/5)
+                étoile_n = 5 - étoile_j  # Nombre d'étoiles vides pour compléter
+                étoiles = "⭐" * étoile_j + "⚫" * étoile_n  # Étoiles jaunes + vides
+
+                # Affichage des autres informations avec moins d'espace
+                st.markdown(f"<p style='margin: 0;'>{row['Annee_de_Sortie']} - {row['Duree']} min.</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='margin: 0;'>{row['Note']} / 10  - {étoiles}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
+
+    # Fonction pour afficher les détails du film sélectionné
+    def afficher_details_film():
+        movie_title = st.session_state.selected_movie
+        # Recherche du film dans la base de données
+        movie_data = df[df['Titre'] == movie_title].iloc[0]
+
+        # Affichage des informations détaillées du film
+        st.title(movie_data['Titre'])
+        st.image(movie_data['Affiche'], width=300)
+        st.markdown(f"**Année de sortie :** {movie_data['Annee_de_Sortie']}")
+        st.markdown(f"**Durée :** {movie_data['Duree']} min")
+        st.markdown(f"**Genres :** {movie_data['Genres']}")
+        st.markdown(f"**Note :** {movie_data['Note']}/10")
+
+        # Bouton pour revenir à la liste des films
+        if st.button("Retour à la liste des films"):
+            del st.session_state.selected_movie
+            st.rerun()
+
+    # Si un film est sélectionné, on affiche la page de détails
+    if 'selected_movie' in st.session_state:
+        afficher_details_film()
+    else:
+        afficher_accueil()
+
+
+
+
+
+
+##############################  Fin Bloc d'affichage des films : (JP) ###############################
 
     # df = le résultat de la recherche de similarité
     # st.table(df)
