@@ -1,5 +1,4 @@
 # Le 23ème Ecran - Moteur de Recommandation de Films
----
 
 Bienvenue sur le dépôt GitHub **Le 23ème Ecran**, un projet **Data Analyst** visant à revitaliser un cinéma dans la Creuse en perte de vitesse en développant un **moteur de recommandation de films** et des outils analytiques basés sur des données de la plateforme IMDb et TMDB.
 
@@ -12,45 +11,41 @@ Le 23ème Ecran a pour ambition de :
 3. Développer un système de recommandation basé sur le machine learning pour suggérer des films aux utilisateurs en ligne.
 4. Proposer un outil interactif combinant des visualisations et des recommandations pour enrichir l'expérience utilisateur.
 
----
-
 ## Sommaire
 
-#### 1. [Introduction et Contexte]()
+#### 1. 🎬 [Introduction et Contexte]()
    - Présentation du projet et des enjeux
    - Description des bases de données utilisées
 
-#### 2. [Étude de Marché et Fiche d'identité]()
+#### 2. 🧳 [Étude de Marché et Fiche d'identité]()
    - Analyse des habitudes de consommation de cinéma dans la région
    - Sources utilisées : CNC, INSEE
-   - Le 23ème Écran : Description du cinéma imaginé suite à l'étude de marché.
+   - Le 23ème Écran : fiche d'identité du cinéma choisi.
 
-#### 3. [Exploration et Nettoyage des Données]()
+#### 3. 🔍 [Exploration et Nettoyage des Données]()
    - Appropriation des datasets IMDb et TMDB.
    - Processus de nettoyage et réduction de la volumétrie.
    - Visualisations initiales des tendances.
 
-#### 4. [Analyse Statistique et KPI]()
+#### 4. 📈 [Analyse Statistique et KPI]()
    - Extraction et visualisation des indicateurs clés
    - Insights pour la programmation du cinéma
 
-#### 5. [Système de Recommandation]()
+#### 5. 🤖 [Système de Recommandation]()
    - Implémentation d'algorithmes de machine learning
    - Démonstration de recommandations basées sur des films appréciés
 
-#### 6. [Dashboard et Interface Utilisateur]()
+#### 6. 📊 [Dashboard et Interface Utilisateur]()
    - Présentation des KPI et visualisations
    - Intégration des recommandations dans un outil interactif
 
-#### 7. [Interface Streamlit]()
+#### 7. 🖥️ [Interface Streamlit]()
    - Développement de l'application Streamlit
    - Démonstration des fonctionnalités interactives
 
-#### 8. [Présentation et Livrables]()
+#### 8. 📑 [Présentation et Livrables]()
    - Démarche suivie, outils utilisés et défis rencontrés
    - Pistes d'amélioration et retours d'expérience
-
----
 
 ## Installation et Utilisation
 
@@ -67,8 +62,6 @@ cd 23eme_ecran
 ### Exécuter les Notebooks
 - Importez les notebooks dans un environnement compatible (Jupyter, Colab, etc.).
 - Assurez-vous d'avoir téléchargé les datasets IMDb et TMDB ou utilisez les liens fournis dans les notebooks.
-
----
 
 ## Contributions et Contacts
 Ce projet a été réalisé par une équipe d'étudiants en Data Science dans le cadre d'une mission de formation. Pour toute question ou suggestion, vous pouvez contacter les membres de l'équipe :
