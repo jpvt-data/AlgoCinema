@@ -64,7 +64,7 @@ cd 23eme_ecran
 - Assurez-vous d'avoir téléchargé les datasets IMDb et TMDB ou utilisez les liens fournis dans les notebooks.
 
 ## Contributions et Contacts
-Ce projet a été réalisé par une équipe d'étudiants en Data Science dans le cadre d'une mission de formation. Pour toute question ou suggestion, vous pouvez contacter les membres de l'équipe :
+Ce projet a été réalisé par une équipe d'étudiants en Data Analyse dans le cadre de notre formation à la **[Wide Code School](https://www.wildcodeschool.com/)**. Pour toute question ou suggestion, vous pouvez contacter les membres de l'équipe :
 
 - **[Alice Gontier](https://github.com/aliceaupaysdesdata)**
 - **[Pierre Quemener](https://github.com/Pierre-Q)** 
