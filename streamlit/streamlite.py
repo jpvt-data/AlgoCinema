@@ -16,7 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 import time
 
 # Configuration de la page : 
-st.set_page_config(page_title="Le 23ème Écran", layout="wide")
+# st.set_page_config(page_title="Le 23ème Écran", layout="wide")
 
 
 
@@ -94,6 +94,10 @@ else:
 
 
 # Barre de menu : (JP) 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e01d197846c2c31cc98d373809a3fa3e25d4d8d5
 page = option_menu(
             menu_title=None,
             options = ["Accueil", "A propos","Actualité","Programmation"],
@@ -107,8 +111,10 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
     st.write("Bienvenue sur la page d'accueil !")
     # "Recherchez un film de votre choix pour découvrir X propisitions de films proches" à retravailler
 
-
-
+    # Barre de recherche (sur toutes les pages) : (Alice)
+    # Texte affiché par défaut 'Titre du film'
+    # Affiche X options avec titres proches, sous la barre quand l'utilisateur écrit
+    # Sélection déclenche la recherche de similarité (model ML)
 
 ##############################  Bloc d'affichage des films : (JP) ###############################
         # Nom du film + Lien cliquabe vers page du film
