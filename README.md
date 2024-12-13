@@ -2,6 +2,8 @@
 
 Bienvenue sur le dépôt GitHub **Le 23ème Ecran**, un projet **Data Analyst** visant à revitaliser un cinéma dans la Creuse en perte de vitesse en développant un **moteur de recommandation de films** et des outils analytiques basés sur des données de la plateforme IMDb et TMDB.
 
+Accédez directement à l'interface interactive Streamlit du **23ème Écran** ici : [Le 23ème Écran - Streamlit]()
+
 ## Objectifs du Projet
 
 Le 23ème Ecran a pour ambition de :
@@ -46,22 +48,6 @@ Le 23ème Ecran a pour ambition de :
 #### 8. 📑 [Présentation et Livrables]()
    - Démarche suivie, outils utilisés et défis rencontrés
    - Pistes d'amélioration et retours d'expérience
-
-## Installation et Utilisation
-
-### Prérequis
-- Langage : **Python 3.8+**
-- Librairies : `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `streamlit`
-- Outil de visualisation : **Power BI**
-
-### Cloner le Dépôt
-```bash
-git clone https://github.com/votre-profil/23eme_ecran.git
-cd 23eme_ecran
-```
-### Exécuter les Notebooks
-- Importez les notebooks dans un environnement compatible (Jupyter, Colab, etc.).
-- Assurez-vous d'avoir téléchargé les datasets IMDb et TMDB ou utilisez les liens fournis dans les notebooks.
 
 ## Contributions et Contacts
 Ce projet a été réalisé par une équipe d'étudiants en Data Analyse dans le cadre de notre formation à la **[Wide Code School](https://www.wildcodeschool.com/)**. Pour toute question ou suggestion, vous pouvez contacter les membres de l'équipe :
