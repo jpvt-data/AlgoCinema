@@ -288,7 +288,7 @@ Importance des films français et indépendants pour les seniors
 **Implications pour un cinéma en Creuse** :
 
 <p align="center">
-  <img src="../images/IMG_0257.jpg" alt="Logo Cinéma" width="300">
+  <img src="[../images/IMG_0257.jpg](https://github.com/aliceaupaysdesdata/Movie-recommendation-project/blob/JPVT/donnees/images/IMG_0257.JPG?raw=true)" alt="Logo Cinéma" width="300">
 </p>
 
 - *Cible principale : les seniors et les retraités*
@@ -309,7 +309,7 @@ Importance des films français et indépendants pour les seniors
 ## Le Cinéma dans la Creuse : Une Répartition Culturelle
 
 <p align="center">
-  <img src="../images/IMG_0258.jpg" alt="Logo Cinéma" width="300">
+  <img src="[../images/IMG_0258.jpg](https://github.com/aliceaupaysdesdata/Movie-recommendation-project/blob/JPVT/donnees/images/IMG_0257.JPG?raw=true)" alt="Logo Cinéma" width="300">
 </p>
 
 Dans le département de la Creuse, l’offre cinématographique est répartie sur **sept cinémas**, chacun implanté dans des communes à taille humaine, avec une diversité de profils et de services.
