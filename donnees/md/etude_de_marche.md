@@ -288,7 +288,7 @@ Importance des films français et indépendants pour les seniors
 **Implications pour un cinéma en Creuse** :
 
 <p align="center">
-  <img src="https://github.com/aliceaupaysdesdata/Movie-recommendation-project/blob/JPVT/donnees/images/IMG_0257.JPG?raw=true" alt="Logo Cinéma" width="300">
+  <img src="/donnees/images/IMG_0257.JPG?raw=true" alt="Logo Cinéma" width="300">
 </p>
 
 - *Cible principale : les seniors et les retraités*
