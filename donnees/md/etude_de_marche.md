@@ -363,7 +363,7 @@ Ce manque de présence numérique souligne **une possible opportunité de modern
 ### Tableau SWOT
 
 <p align="center">
-  <img src="https://github.com/aliceaupaysdesdata/Movie-recommendation-project/blob/JPVT/donnees/images/etude_de_marche/28_swot.PNG" alt="swot" width="600">
+  <img src="/donnees/images/etude_de_marche/28_swot.PNG" alt="swot" width="600">
 <p>
 
 ### Forces
