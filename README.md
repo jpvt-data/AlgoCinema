@@ -50,7 +50,7 @@ Le 23ème Ecran a pour ambition de :
 ## Contributions et Contacts
 
 <p align="center">
-  <img src="/donnees/images/IMG_0256.jpg" alt="Logo Cinéma" width="300">
+  <img src="./donnees/images/IMG_0256.jpg" alt="Logo Cinéma" width="300">
 </p>
 
 Ce projet a été réalisé par une équipe d'étudiants en Data Analyse dans le cadre de notre formation à la **[Wide Code School](https://www.wildcodeschool.com/)**. Pour toute question ou suggestion, vous pouvez contacter les membres de l'équipe :
