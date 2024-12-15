@@ -1,7 +1,7 @@
 # Le 23ème Ecran - Moteur de Recommandation de Films
 
 <p align="center">
-  <img src="[\donnees\images\IMG_0259.jpg](https://github.com/aliceaupaysdesdata/Movie-recommendation-project/blob/JPVT/donnees/images/IMG_0259.JPG)" alt="Logo Cinéma" width="300">
+  <img src="https://github.com/aliceaupaysdesdata/Movie-recommendation-project/blob/JPVT/donnees/images/IMG_0259.JPG" alt="Logo Cinéma" width="300">
 </p>
 
 Bienvenue sur le dépôt GitHub **Le 23ème Ecran**, un projet **Data Analyst** visant à revitaliser un cinéma dans la Creuse en perte de vitesse en développant un **moteur de recommandation de films** et des outils analytiques basés sur des données de la plateforme IMDb et TMDB.
