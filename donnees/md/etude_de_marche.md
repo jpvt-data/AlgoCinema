@@ -363,7 +363,7 @@ Ce manque de présence numérique souligne **une possible opportunité de modern
 ### Tableau SWOT
 
 <p align="center">
-  <img src="../images/etude_de_marche/28_swot.png" alt="swot" width="600">
+  <img src="../images/etude_de_marche/28_swot.png?raw=true" alt="swot" width="600">
 <p>
 
 ### Forces
