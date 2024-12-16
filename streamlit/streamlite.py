@@ -7,16 +7,34 @@
 # Importer les bibliothèques nécessaires
 
 import streamlit as st
-from streamlit_authenticator import Authenticate
+import streamlit_authenticator as stauth
 import pandas as pd
 from streamlit_option_menu import option_menu
 from fuzzywuzzy import process
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import time
+import os # lire la feuille de style (chemin absolu)
 
 # Configuration de la page : 
 st.set_page_config(page_title="Le 23ème Écran", layout="wide")
+# FEUILLE DE STYLE CSS #
+
+# Charger le CSS style
+
+
+def load_css(file_name):
+    file_path = os.path.join(os.path.dirname(__file__), file_name)
+    with open(file_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+load_css("style.css")
+
+#########################
+
+
+
 
 
 
@@ -45,39 +63,6 @@ def compute_similarity(selected_item, data):
     # Lancer la recherche de similarité
     return similar_items[['Title', 'Description']]
 
-# Initialiser la session_state pour la recherche
-if "search_query" not in st.session_state:
-    st.session_state["search_query"] = ""
-
-# Barre de recherche
-search_query = st.text_input(
-    "Recherchez un film :", 
-    placeholder="Tapez un titre de film...",
-    key="search_query"
-)
-
-# Résultats dynamiques
-if search_query:
-    results = search(search_query, df_films['Title'].tolist())
-    if results:
-        selected_title = st.selectbox("Le film recherché est-il disponible dans la liste :", results)
-        st.write(f"Vous avez sélectionné : {selected_title}")
-        if selected_title:
-            st.write(f"Vous avez sélectionné : {selected_title}")
-            st.write("Calcul des films similaires...")
-            
-            # Appeler la fonction de similarité
-            similar_films = compute_similarity(selected_title, df_films)
-            
-            # Afficher les résultats de similarité
-            st.write("Films similaires :")
-            st.write(similar_films)
-    else:
-        st.write("Aucun résultat trouvé.")
-else:
-    st.write("Commencez à taper pour voir les suggestions.")
-
-
 
 # Style CSS pour personnaliser le design : (phase 2)
 
@@ -103,13 +88,49 @@ page = option_menu(
             orientation="horizontal"
         )
 
+####################### BARRE DE RECHERCHE ET FONCTIONNALITES ASSOCIEES ##################
+
+# Initialiser la session_state pour la recherche
+if "search_query" not in st.session_state:
+    st.session_state["search_query"] = ""
+
+# Barre de recherche
+search_query = st.text_input(
+    "Recherchez un film :", 
+    placeholder="Tapez un titre de film...",
+    key="search_query"
+)
+
+# Résultats dynamiques
+if search_query:
+    results = search(search_query, df_films['Title'].tolist())
+    if results:
+        selected_title = st.selectbox("Le film recherché est-il disponible dans la liste :", results)
+        st.write(f"Vous avez sélectionné : {selected_title}")
+        if selected_title:
+            st.write(f"Vous avez sélectionné : {selected_title}")
+            
+            # Appeler la fonction de similarité
+            similar_films = compute_similarity(selected_title, df_films)
+            
+            # Afficher les résultats de similarité
+            st.write("Films similaires :")
+            st.write(similar_films)
+    else:
+        st.write("Aucun résultat trouvé.")
+else:
+    st.write("Commencez à taper pour voir les suggestions.")
+
+
 # En fonction de l'option sélectionnée afficher le contenu correspondant dans votre application
 if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simplifier 
     st.write("Bienvenue sur la page d'accueil !")
     # "Recherchez un film de votre choix pour découvrir X propisitions de films proches" à retravailler
 
-
-
+    # Barre de recherche (sur toutes les pages) : (Alice)
+    # Texte affiché par défaut 'Titre du film'
+    # Affiche X options avec titres proches, sous la barre quand l'utilisateur écrit
+    # Sélection déclenche la recherche de similarité (model ML)
 
 ##############################  Bloc d'affichage des films : (JP) ###############################
         # Nom du film + Lien cliquabe vers page du film
@@ -172,7 +193,8 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
                                     #            st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
 
     # Fonction pour afficher la page d'accueil
-    def afficher_accueil():
+    def afficher_accueil(): # QUESTION ALICE A JP : cette partie, c'est la page d'acceuil MAIS qu'une fois qu'on a les resultats de recherche de similarité ? 
+        # Si Oui, il faut réfléchir à comment la faire cohabiter avec la page d'accueil classique.
         st.title("Bienvenue à l'accueil des films")
         
         col1, col2, col3, col4, col5 = st.columns(5)
@@ -181,22 +203,11 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
         # Remplir chaque colonne avec les infos d'un film
         for col, (_, row) in zip(cols, df.iterrows()):
             with col:
-                # Crée un lien cliquable sur l'image
-                image_lien = f'''
-                <a href="javascript:void(0)" 
-                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);">
-                <img src="{row["Affiche"]}" width="400">
-                </a>'''
-                st.markdown(image_lien, unsafe_allow_html=True)
+                # Affichage de l'image
+                st.image(row['Affiche'], width=500)
 
-                # Crée un lien cliquable sur le titre avec du style
-                titre_lien = f'''
-                <a href="javascript:void(0)" 
-                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);" 
-                style="font-size: 1.5em; color: white; text-decoration: none; font-weight: bold;">
-                {row["Titre"]}
-                </a>'''
-                st.markdown(titre_lien, unsafe_allow_html=True)
+                # Affichage du titre
+                st.markdown(f"## {row['Titre']}")
 
                 # Calcul des étoiles
                 étoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note/5)
@@ -207,6 +218,11 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
                 st.markdown(f"<p style='margin: 0;'>{row['Annee_de_Sortie']} - {row['Duree']} min.</p>", unsafe_allow_html=True)
                 st.markdown(f"<p style='margin: 0;'>{row['Note']} / 10  - {étoiles}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
+                
+                # Crée un bouton avec l'affiche qui met à jour la session avec le film sélectionné
+                if st.button("Détails", key=row['Titre']):
+                    st.session_state.selected_movie = row['Titre']
+                    st.rerun()
 
     # Fonction pour afficher les détails du film sélectionné
     def afficher_details_film():

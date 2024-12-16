@@ -1,0 +1,18 @@
+/* Applique un fond noir à l'application */
+body {
+    background-color: black;
+    color: white; /* Change aussi la couleur du texte pour qu'il soit lisible */
+    font-family: Arial, sans-serif;
+}
+
+/* Ajuste la largeur de la page pour qu'elle occupe tout l'écran */
+[data-testid="stAppViewContainer"] {
+    max-width: 100%;
+    padding: 0;
+}
+
+/* Personnalise les entrées de texte (comme les barres de recherche) */
+.stTextInput>div>div>input {
+    width: 50%;  /* Ajuste la largeur de la barre de recherche */
+    height: 30px; /* Ajuste la hauteur */
+}
