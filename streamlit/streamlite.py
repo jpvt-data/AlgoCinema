@@ -14,9 +14,27 @@ from fuzzywuzzy import process
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import time
+import os # lire la feuille de style (chemin absolu)
 
 # Configuration de la page : 
-# st.set_page_config(page_title="Le 23ème Écran", layout="wide")
+st.set_page_config(page_title="Le 23ème Écran", layout="wide")
+# FEUILLE DE STYLE CSS #
+
+# Charger le CSS style
+
+
+def load_css(file_name):
+    file_path = os.path.join(os.path.dirname(__file__), file_name)
+    with open(file_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
+load_css("style.css")
+
+#########################
+
+
+
 
 
 
@@ -104,7 +122,6 @@ else:
     st.write("Commencez à taper pour voir les suggestions.")
 
 
-
 # En fonction de l'option sélectionnée afficher le contenu correspondant dans votre application
 if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simplifier 
     st.write("Bienvenue sur la page d'accueil !")
@@ -186,22 +203,11 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
         # Remplir chaque colonne avec les infos d'un film
         for col, (_, row) in zip(cols, df.iterrows()):
             with col:
-                # Crée un lien cliquable sur l'image
-                image_lien = f'''
-                <a href="javascript:void(0)" 
-                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);">
-                <img src="{row["Affiche"]}" width="400">
-                </a>'''
-                st.markdown(image_lien, unsafe_allow_html=True)
+                # Affichage de l'image
+                st.image(row['Affiche'], width=500)
 
-                # Crée un lien cliquable sur le titre avec du style
-                titre_lien = f'''
-                <a href="javascript:void(0)" 
-                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);" 
-                style="font-size: 1.5em; color: white; text-decoration: none; font-weight: bold;">
-                {row["Titre"]}
-                </a>'''
-                st.markdown(titre_lien, unsafe_allow_html=True)
+                # Affichage du titre
+                st.markdown(f"## {row['Titre']}")
 
                 # Calcul des étoiles
                 étoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note/5)
@@ -212,6 +218,11 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
                 st.markdown(f"<p style='margin: 0;'>{row['Annee_de_Sortie']} - {row['Duree']} min.</p>", unsafe_allow_html=True)
                 st.markdown(f"<p style='margin: 0;'>{row['Note']} / 10  - {étoiles}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
+                
+                # Crée un bouton avec l'affiche qui met à jour la session avec le film sélectionné
+                if st.button("Détails", key=row['Titre']):
+                    st.session_state.selected_movie = row['Titre']
+                    st.rerun()
 
     # Fonction pour afficher les détails du film sélectionné
     def afficher_details_film():
