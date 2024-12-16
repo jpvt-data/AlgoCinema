@@ -16,7 +16,9 @@ Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dan
 </div>
 
 <img src="../../donnees/images/23_2.jpg" alt="Facade du Cinéma" width="300">
+
 [Présentation du projet et des enjeux](../images/23_2.jpg)
+[Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md)
 
 
 
