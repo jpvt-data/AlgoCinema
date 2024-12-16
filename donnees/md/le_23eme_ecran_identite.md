@@ -8,12 +8,13 @@ Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dan
 
 <div style="text-align: center;">
   <div style="display: inline-block; margin: 0 10px;">
-    <img src="../images/23_2.jpg" alt="Façade du Cinéma" width="300">
+    <img src="./donnees/images/23_2.jpg" alt="Façade du Cinéma" width="300">
   </div>
   <div style="display: inline-block; margin: 0 10px;">
     <img src="../donnees/images/23_3.jpg" alt="Façade du Cinéma" width="300">
   </div>
 </div>
+
 
 À travers cette identité de marque, nous avons donc imaginé un cinéma ancré dans la région de la Creuse, combinant proximité, accessibilité et innovation technologique, tout en valorisant la culture locale.
 
