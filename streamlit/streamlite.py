@@ -7,7 +7,7 @@
 # Importer les bibliothèques nécessaires
 
 import streamlit as st
-from streamlit_authenticator import Authenticate
+import streamlit_authenticator as stauth
 import pandas as pd
 from streamlit_option_menu import option_menu
 from fuzzywuzzy import process
@@ -17,8 +17,7 @@ import time
 import os # lire la feuille de style (chemin absolu)
 
 # Configuration de la page : 
-st.set_page_config(layout="wide")
-
+st.set_page_config(page_title="Le 23ème Écran", layout="wide")
 # FEUILLE DE STYLE CSS #
 
 # Charger le CSS style
@@ -33,6 +32,7 @@ def load_css(file_name):
 load_css("style.css")
 
 #########################
+
 
 
 
@@ -63,6 +63,33 @@ def compute_similarity(selected_item, data):
     # Lancer la recherche de similarité
     return similar_items[['Title', 'Description']]
 
+
+# Style CSS pour personnaliser le design : (phase 2)
+
+# st.markdown("""
+#    <style>
+#        /* Fond général */
+#            """)
+
+
+# BDD gestion de l'authentification des utilisateurs (à mettre avant la page connexion)
+# Nos données utilisateurs doivent respecter ce format (cf. quête streamlit 3)
+# Chercher comment faire le lien avec la BDD données personnelles 
+
+
+
+# Barre de menu : (JP) 
+
+page = option_menu(
+            menu_title=None,
+            options = ["Accueil", "A propos","Actualité","Programmation"],
+            menu_icon="cast",  # Icône du menu principal
+            default_index=0,  # Option par défaut
+            orientation="horizontal"
+        )
+
+####################### BARRE DE RECHERCHE ET FONCTIONNALITES ASSOCIEES ##################
+
 # Initialiser la session_state pour la recherche
 if "search_query" not in st.session_state:
     st.session_state["search_query"] = ""
@@ -82,7 +109,6 @@ if search_query:
         st.write(f"Vous avez sélectionné : {selected_title}")
         if selected_title:
             st.write(f"Vous avez sélectionné : {selected_title}")
-            st.write("Calcul des films similaires...")
             
             # Appeler la fonction de similarité
             similar_films = compute_similarity(selected_title, df_films)
@@ -96,32 +122,15 @@ else:
     st.write("Commencez à taper pour voir les suggestions.")
 
 
-
-
-
-# BDD gestion de l'authentification des utilisateurs (à mettre avant la page connexion)
-# Nos données utilisateurs doivent respecter ce format (cf. quête streamlit 3)
-# Chercher comment faire le lien avec la BDD données personnelles 
-
-
-
-# Barre de menu : (JP) 
-
-page = option_menu(
-            menu_title=None,
-            options = ["Accueil", "A propos","Actualité","Programmation"],
-            menu_icon="cast",  # Icône du menu principal
-            default_index=0,  # Option par défaut
-            orientation="horizontal"
-        )
-
 # En fonction de l'option sélectionnée afficher le contenu correspondant dans votre application
 if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simplifier 
     st.write("Bienvenue sur la page d'accueil !")
     # "Recherchez un film de votre choix pour découvrir X propisitions de films proches" à retravailler
 
-
-
+    # Barre de recherche (sur toutes les pages) : (Alice)
+    # Texte affiché par défaut 'Titre du film'
+    # Affiche X options avec titres proches, sous la barre quand l'utilisateur écrit
+    # Sélection déclenche la recherche de similarité (model ML)
 
 ##############################  Bloc d'affichage des films : (JP) ###############################
         # Nom du film + Lien cliquabe vers page du film
@@ -184,7 +193,8 @@ if page == "Accueil": # IDEE : mettre ça dans une fonction appelée pour simpli
                                     #            st.markdown(f"<p style='margin: 0;'>{row['Genres']}</p>", unsafe_allow_html=True)
 
     # Fonction pour afficher la page d'accueil
-    def afficher_accueil():
+    def afficher_accueil(): # QUESTION ALICE A JP : cette partie, c'est la page d'acceuil MAIS qu'une fois qu'on a les resultats de recherche de similarité ? 
+        # Si Oui, il faut réfléchir à comment la faire cohabiter avec la page d'accueil classique.
         st.title("Bienvenue à l'accueil des films")
         
         col1, col2, col3, col4, col5 = st.columns(5)
