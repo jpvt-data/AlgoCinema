@@ -30,7 +30,7 @@ Le 23ème Ecran a pour ambition de :
 
 #### 3. 🔍 Exploration et Nettoyage des Données
    - [Exploration des bases de données](./donnees/md/intro_bdd.md)
-   - [Création d'un DataFrame `Informations`]()
+   - [Création d'un DataFrame "Informations"]()
 
 #### 4. 📈 Analyse Statistique et KPI
    - Extraction et visualisation des indicateurs clés
