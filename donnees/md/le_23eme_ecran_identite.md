@@ -19,6 +19,8 @@ Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dan
 
 [Présentation du projet et des enjeux](../images/23_2.jpg)
 
+![Description de l'image](../images/23_2.jpg)
+
 [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md)
 
 
