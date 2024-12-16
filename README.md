@@ -29,7 +29,8 @@ Le 23ème Ecran a pour ambition de :
    - [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md) : Création du cinéma fictif.
 
 #### 3. 🔍 Exploration et Nettoyage des Données
-   - [Accès aux détails des bases de données](./donnees/md/intro_bdd.md)
+   - [Exploration des bases de données](./donnees/md/intro_bdd.md)
+   - [Création d'un DataFrame "Informations"]()
 
 #### 4. 📈 Analyse Statistique et KPI
    - Extraction et visualisation des indicateurs clés
