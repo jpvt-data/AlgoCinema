@@ -10,21 +10,11 @@ Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dan
   <div style="display: inline-block; margin: 0 10px;">
     <img src="../images/23_2.jpg" alt="Façade du Cinéma" width="300">
   </div>
+  
   <div style="display: inline-block; margin: 0 10px;">
     <img src="../images/23_3.jpg" alt="Façade du Cinéma" width="300">
   </div>
 </div>
-
-<img src="../../donnees/images/23_2.jpg" alt="Facade du Cinéma" width="300">
-
-[Présentation du projet et des enjeux](../images/23_2.jpg)
-
-![Description de l'image](../images/23_2.jpg)
-
-[Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md)
-
-
-
 
 À travers cette identité de marque, nous avons donc imaginé un cinéma ancré dans la région de la Creuse, combinant proximité, accessibilité et innovation technologique, tout en valorisant la culture locale.
 
