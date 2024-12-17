@@ -1,18 +1,134 @@
-/* Applique un fond noir à l'application */
+/* Style général pour le site */
 body {
-    background-color: black;
-    color: white; /* Change aussi la couleur du texte pour qu'il soit lisible */
-    font-family: Arial, sans-serif;
-}
-
-/* Ajuste la largeur de la page pour qu'elle occupe tout l'écran */
-[data-testid="stAppViewContainer"] {
-    max-width: 100%;
+    background-color: #141414;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
     padding: 0;
 }
 
-/* Personnalise les entrées de texte (comme les barres de recherche) */
-.stTextInput>div>div>input {
-    width: 50%;  /* Ajuste la largeur de la barre de recherche */
-    height: 30px; /* Ajuste la hauteur */
+/* En-tête du site */
+header {
+    background-color: #181818;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    color: #e50914;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* Section de recherche */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.search-container button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e50914;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #f40612;
+}
+
+/* Liste des films */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.movie-item {
+    background-color: #181818;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-item .movie-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px;
+    color: #ffffff;
+}
+
+.movie-item .movie-description {
+    font-size: 0.9em;
+    padding: 0 10px 10px 10px;
+    color: #b3b3b3;
+}
+
+/* Boutons de navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #444;
+}
+
+nav button.active {
+    background-color: #e50914;
+}
+
+/* Pied de page */
+footer {
+    background-color: #181818;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #333;
+}
+
+footer p {
+    color: #b3b3b3;
+    font-size: 0.9em;
+    margin: 0;
 }
