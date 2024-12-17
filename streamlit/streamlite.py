@@ -20,7 +20,6 @@ import time
 import os # lire la feuille de style (chemin absolu)
 
 
-
 # ------- Configuration globale -------
 
 st.set_page_config(page_title="Le 23ème Écran", layout="wide")
@@ -37,8 +36,7 @@ def load_css(file_name):
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     except FileNotFoundError:
         st.error("Erreur : Le fichier CSS n'a pas été trouvé. Vérifiez le chemin.")
-
-
+        
 
 # ------- DONNEES -------
 
@@ -208,7 +206,7 @@ if search_query:
 else:
     st.write("Commencez à taper pour voir les suggestions.")
 
-
+    
 
 # ------- Interface Utilisateur (UI) -------
 
@@ -235,12 +233,12 @@ elif page == "Programmation":
 
 # ------ Bloc d'affichage des films ------
 
-    
+  
 
-    # Fonction pour afficher la page d'accueil
-    def afficher_accueil(): # QUESTION ALICE A JP : cette partie, c'est la page d'acceuil MAIS qu'une fois qu'on a les resultats de recherche de similarité ? 
-        # Si Oui, il faut réfléchir à comment la faire cohabiter avec la page d'accueil classique.
-        st.title("Bienvenue à l'accueil des films")
+# Fonction pour afficher la page d'accueil
+def afficher_accueil(): # QUESTION ALICE A JP : cette partie, c'est la page d'acceuil MAIS qu'une fois qu'on a les resultats de recherche de similarité ? 
+  # Si Oui, il faut réfléchir à comment la faire cohabiter avec la page d'accueil classique.
+  st.title("Bienvenue à l'accueil des films")
         
 
     # Si un film est sélectionné, on affiche la page de détails
