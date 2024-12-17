@@ -1,0 +1,6 @@
+streamlit
+streamlit-authenticator
+streamlit-option-menu
+fuzzywuzzy
+scikit-learn
+pandas
