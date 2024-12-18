@@ -35,7 +35,8 @@ Les analyses porteront sur :
 ## Détails des KPI et Visualisations
 
 ### 1. Vue générale des bases de données (Oeuvres, Supports Genres)
-- **KPI :** Nombre totale d'oeuvre (hors film Adultes) = 
+- **📊 KPI** :
+   - Nombre total d'oeuvres (hors film Adultes) : *10 885 933*
 - **Visualisation :**
   - Graphique en barres pour les acteurs les plus présents.
   - Timeline pour représenter les périodes associées.
