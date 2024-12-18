@@ -33,8 +33,7 @@ Le 23ème Ecran a pour ambition de :
    - [Création d'un DataFrame "Informations"]()
 
 #### 4. 📈 Analyse Statistique et KPI
-   - Extraction et visualisation des indicateurs clés
-   - Insights pour la programmation du cinéma
+   - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md)
 
 #### 5. 🤖 Système de Recommandation
    - Implémentation d'algorithmes de machine learning
