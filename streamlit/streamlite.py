@@ -18,6 +18,20 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import time
 import os # lire la feuille de style (chemin absolu)
+from rapidfuzz import process
+
+
+
+# ------- CHEMINS FICHIERS DONNEES -------
+
+logo = "streamlit/logo.png"
+
+style_css = "streamlit/style.css"
+
+df_title_akas = "gitignore/title.akas.tsv" #"https://datasets.imdbws.com/title.akas.tsv.gz"
+
+df_infos_csv = "donnees/data/df_info.csv.gz"
+
 
 
 # ------- Configuration globale -------
@@ -25,7 +39,8 @@ import os # lire la feuille de style (chemin absolu)
 st.set_page_config(
     page_title="Le 23ème Écran",
     layout="wide")
-st.image("streamlit\logo.png", caption="Le 23ème Écran")
+st.image(logo, caption="Le 23ème Écran")
+
 
 
 # ------ Style CSS ------
@@ -40,25 +55,44 @@ def load_css(file_name):
         st.error("Erreur : Le fichier CSS n'a pas été trouvé. Vérifiez le chemin.")
         
 
-# ------- DONNEES -------
 
-load_css("streamlit\style.css")
+# ------- CHARGEMENT DES DONNEES -------
 
-df_recherche_titres_films = pd.DataFrame({
-    'tconst': ['tt001', 'tt002', 'tt003', 'tt004', 'tt005'],
-    'Title': ['Film A', 'Film B', 'Film C', 'Film D', 'Film E'],
-}) # à remplacer par fichier.csv --> title_akas.csv --> à compléter
+load_css(style_css)
+
+@st.cache_data
+def load_movie_titles(df_title_akas):
+    return pd.read_csv(df_title_akas, sep='\t', usecols=['titleId', 'title'], on_bad_lines='skip')
+
+df_recherche_titres_films = load_movie_titles(df_title_akas)
+
+# df_recherche_titres_films = pd.read_csv(
+#     df_title_akas, 
+#     sep='\t', 
+#     usecols=['title', 'tconst'], 
+#     on_bad_lines='skip'
+# )
+
+df_infos = pd.read_csv(df_infos_csv, compression='infer')
 
 
-df_infos = pd.DataFrame({ # Simulation du dataframe des informations des films
-    'tconst': ['tt001', 'tt002', 'tt003', 'tt004', 'tt005'],
-    'Title': ['Film A', 'Film B', 'Film C', 'Film D', 'Film E'],
-    'Affiche': ['https://via.placeholder.com/400'] * 5,
-    'Note': [8.5, 7.2, 6.8, 9.1, 7.0],
-    'Annee_de_Sortie': [2023, 2022, 2021, 2020, 2019],
-    'Duree': [120, 110, 95, 105, 100],
-    'Genres': ['Action', 'Drama', 'Comedy', 'Sci-Fi', 'Thriller']
-}) # à remplacer par fichier.csv --> à compléter pour pouvoir aller piocher les infos à afficher
+# Données test : 
+
+# df_recherche_titres_films = pd.DataFrame({
+#     'tconst': ['tt001', 'tt002', 'tt003', 'tt004', 'tt005'],
+#     'title': ['Film A', 'Film B', 'Film C', 'Film D', 'Film E'],
+# }) # Code de test pour le df_info, remplacé par les données réelles title_akas.csv
+
+# df_infos = pd.DataFrame({ # Simulation du dataframe des informations des films
+#     'tconst': ['tt001', 'tt002', 'tt003', 'tt004', 'tt005'],
+#     'Title': ['Film A', 'Film B', 'Film C', 'Film D', 'Film E'],
+#     'Affiche': ['https://via.placeholder.com/400'] * 5,
+#     'Note': [8.5, 7.2, 6.8, 9.1, 7.0],
+#     'Annee_de_Sortie': [2023, 2022, 2021, 2020, 2019],
+#     'Duree': [120, 110, 95, 105, 100],
+#     'Genres': ['Action', 'Drama', 'Comedy', 'Sci-Fi', 'Thriller']
+# }) # Code de test pour le df_info, remplacé par les données réelles
+
 
 
 # ------- Fonctions de navigation -------
@@ -94,14 +128,21 @@ def afficher_programmation():
     st.write("**Le 23ème Écran**, voici les films que nous vous proposons.")
     # Ajouter d'autres contenus...
 
+
+
 # ------- Fonction de recherche -------
 
 # Fonction pour trouver les correspondances proches dans la colonne
+
+# def search(query, choices, limit=10, threshold=50):
+#     results = process.extract(query, choices, limit=limit)
+#     filtered_results = [result[0] for result in results if result[1] >= threshold]
+#     return filtered_results
+
 def search(query, choices, limit=10, threshold=50):
-    results = process.extract(query, choices, limit=limit)
+    results = process.extract(query, choices, limit=limit, scorer=rapidfuzz.fuzz.ratio)
     filtered_results = [result[0] for result in results if result[1] >= threshold]
     return filtered_results
-
 
 # Fonction de similarité avec un modèle de ML
 def compute_similarity(selected_title):
@@ -156,23 +197,24 @@ def afficher_resultats_similarite(df_resultats_similarite):
 
     
 # Fonction pour afficher les détails du film sélectionné
-# def afficher_details_film():
-#     movie_title = st.session_state.selected_movie
-#   # Recherche du film dans la base de données
-#    movie_data = df[df['Titre'] == movie_title].iloc[0]
+def afficher_details_film():
+    movie_title = st.session_state['selected_movie']
+    # Recherche du film dans la base de données
+    movie_data = df_infos[df_infos['Titre'] == movie_title]
 
     # Affichage des informations détaillées du film
-#    st.title(movie_data['Titre'])
-#    st.image(movie_data['Affiche'], width=300)
-#    st.markdown(f"**Année de sortie :** {movie_data['Annee_de_Sortie']}")
-#    st.markdown(f"**Durée :** {movie_data['Duree']} min")
-#    st.markdown(f"**Genres :** {movie_data['Genres']}")
-#   st.markdown(f"**Note :** {movie_data['Note']}/10")
+    st.title(movie_data['Titre'])
+    st.image(movie_data['Chemin Affiche'], width=300)
+    st.markdown(f"**Année de sortie :** {movie_data['Annee_de_Sortie']}")
+    st.markdown(f"**Durée :** {movie_data['Durée (min)']} min")
+    st.markdown(f"**Genres :** {movie_data['genres']}")
+    st.markdown(f"**Note :** {movie_data['Note']}/10")
 
     # Bouton pour revenir à la liste des films
-#    if st.button("Retour à la liste des films"):
-#        del st.session_state.selected_movie
-#        st.rerun()
+    if st.button("Retour à la liste des films"):
+        del st.session_state['selected_movie']
+        st.rerun()
+
 
 
 # ------- État de Session -------
@@ -180,6 +222,8 @@ def afficher_resultats_similarite(df_resultats_similarite):
 # Initialiser la session_state pour la recherche
 if "search_query" not in st.session_state:
     st.session_state["search_query"] = ""
+
+
 
 # ------- Interface Utilisateur (UI) -------
     
@@ -198,7 +242,7 @@ if __name__ == "__main__":
         st.session_state["search_query"] = ""
         st.session_state["current_page"] = page
 
-    # Barre de recherche
+    # Barre de recherche interactive
     search_query = st.text_input(
         "Recherchez un film :", 
         placeholder="Tapez un titre de film...",
@@ -207,11 +251,12 @@ if __name__ == "__main__":
 
     # Résultats dynamiques
     if search_query:
-        results = search(search_query, df_recherche_titres_films['Title'].tolist())
+        results = search(search_query, df_recherche_titres_films['title'].tolist())
         if results:
-            selected_title = st.selectbox("Résultats :", results)
+            selected_title = st.selectbox("Confirmez le film recherché :", results)
             st.write(f"Vous avez sélectionné : {selected_title}")
-            compute_similarity(selected_title) # à voir si on envoi un tconst et adapter si besoin
+            selected_movie = df_recherche_titres_films[df_recherche_titres_films['title'] == selected_title]
+            compute_similarity(selected_movie['tconst']) # à voir si on envoi un tconst et adapter si besoin
         else:
             st.write("Aucun résultat trouvé.")
     else:
@@ -222,7 +267,7 @@ if __name__ == "__main__":
     if page == "Accueil":
         # Si un film est sélectionné, afficher la page de détails
         if 'selected_movie' in st.session_state:
-            t.write(f"Vous avez sélectionné le film : {st.session_state['selected_movie']}")
+            st.write(f"Vous avez sélectionné le film : {st.session_state['selected_movie']}")
             afficher_details_film()
         else:
             afficher_accueil()
