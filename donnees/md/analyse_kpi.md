@@ -37,8 +37,8 @@ Les analyses porteront sur :
 ### 1. **📊 KPI** : Vue générale des bases de données (Oeuvres, Supports Genres)
 
 - Nombre total d'oeuvres (hors films Adulte) : *10 885 933*
-- Poids des Supports : *82,1% Télévision, 15,75% Cinéma, 2,15% Autre**
- ![oeuvres_support](../images/kpi/1_oeuvre_support.png)
+- Poids des Supports : *82,1% Télévision, 15,75% Cinéma, 2,15% Autre*
+  [oeuvres_support](../images/kpi/1_oeuvre_support.png)
 - **Visualisation :**
   - Graphique en barres pour les acteurs les plus présents.
   - Timeline pour représenter les périodes associées.
