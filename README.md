@@ -32,7 +32,7 @@ Le 23ème Ecran a pour ambition de :
    - [Exploration des bases de données](./donnees/md/intro_bdd.md)
    - [Création d'un DataFrame "Informations"]()
 
-#### 4. 📈 Analyse Statistique et KPI
+#### 4. 📈 Analyse Statistique, KPI et Visualisation
    - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md)
 
 #### 5. 🤖 Système de Recommandation
