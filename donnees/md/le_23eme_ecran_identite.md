@@ -53,7 +53,7 @@ Le cinéma se situe dans une ville centrale de la Creuse, à proximité des comm
 ## **Les Salles**
 
 <p align="center">
-  <img src="../images/Cinéma.jpg" alt="Logo Cinéma" width="300">
+  <img src="../images/Cinéma.JPG" alt="Logo Cinéma" width="300">
 </p>
 
 **Capacité :**
