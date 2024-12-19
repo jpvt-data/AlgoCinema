@@ -8,11 +8,11 @@ Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dan
 
 <div style="text-align: center;">
   <div style="display: inline-block; margin: 0 10px;">
-    <img src="../images/23_2.jpg" alt="Façade du Cinéma" width="300">
+    <img src="../images/23_2.JPG" alt="Façade du Cinéma" width="300">
   </div>
   
   <div style="display: inline-block; margin: 0 10px;">
-    <img src="../images/23_3.jpg" alt="Façade du Cinéma" width="300">
+    <img src="../images/23_3.JPG" alt="Façade du Cinéma" width="300">
   </div>
 </div>
 
@@ -26,7 +26,7 @@ Une fois cette identité solidement établie, elle guidera l’orientation et le
 **Le 23ème Ecran**
 
 <p align="center">
-  <img src="../images/23.jpg" alt="23 - le département de la Creuse" width="300">
+  <img src="../images/23.JPG" alt="23 - le département de la Creuse" width="300">
 </p>
 
 Ce nom incarne l’ancrage local en Creuse, une région connue pour ses paysages vallonnés et son authenticité. Il symbolise une ouverture sur un univers cinématographique riche, tout en étant un lieu de partage et de rencontre.
