@@ -69,7 +69,7 @@ Les analyses porteront sur :
 ***Source : ImdB title.basics***
 
 - Les 3 décennies les plus prolifiques sont ***2000s, 2010s, 2020s***
-- Depuis les années 2000, la ***Comédie*** est en forte expansion.
+- Depuis les années 2000, le ***documentaire*** est en forte expansion.
 - Les années prolifiques pour le film d'Action sont entre ***1960 et 2000***
 
 ---
