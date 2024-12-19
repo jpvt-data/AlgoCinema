@@ -22,7 +22,7 @@ Une fois cette identité solidement établie, elle guidera l’orientation et le
 ---
 
 ## **Nom**
-**Le 23ème Ecran**
+### **Le 23ème Ecran**
 
 <p align="center">
   <img src="../images/23.JPG" alt="23 - le département de la Creuse" width="300">
