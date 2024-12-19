@@ -9,10 +9,10 @@ Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dan
 
 <br>
 <div style="text-align: center;">
-  <div style="display: inline-block; margin: 0 10px;">
+  <p align="center">
     <img src="../images/23_2.JPG" alt="Façade du Cinéma" width="300">
     <img src="../images/23_3.JPG" alt="Façade du Cinéma" width="300">
-  </div>
+  </p>
 </div>
    
 <br>
