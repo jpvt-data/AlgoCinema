@@ -76,7 +76,7 @@ Les analyses porteront sur :
 ### Répartition des Films par Pays
 <br>
 
-![Pays](../images/kpi/6_pays.PNG)
+![Pays](../images/kpi/7_pays.PNG)
 ***Source : TmdB Full***
 
 
