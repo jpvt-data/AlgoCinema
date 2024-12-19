@@ -6,16 +6,15 @@
 
 Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dans la Creuse, nous avons choisi de concevoir un cinéma fictif, **Le 23ème Écran**, en tant que client. Ce choix nous permet d'explorer les besoins concrets d'un établissement culturel et de proposer une solution adaptée pour répondre à ses enjeux.
 
-
 <br>
-<div style="text-align: center;">
+
   <p align="center">
     <img src="../images/23_2.JPG" alt="Façade du Cinéma" width="300">
     <img src="../images/23_3.JPG" alt="Façade du Cinéma" width="300">
   </p>
-</div>
-   
+
 <br>
+
 À travers cette identité de marque, nous avons donc imaginé un cinéma ancré dans la région de la Creuse, combinant proximité, accessibilité et innovation technologique, tout en valorisant la culture locale.
 
 Une fois cette identité solidement établie, elle guidera l’orientation et les axes stratégiques qui structureront les prochaines étapes de notre projet.
