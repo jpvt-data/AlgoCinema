@@ -32,7 +32,10 @@ Les analyses porteront sur :
 
 ---
 
-## 1. **📊 KPI** : Vue générale des bases de données
+## 1. **Schéma de liaison des Tables sur Power BI
+---
+
+## 2. **📊 KPI** : Vue générale des bases de données
 
 ### Nombre d'oeuvres par supports et poids des oeuvres par type
 <br>
