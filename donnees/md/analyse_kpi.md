@@ -32,16 +32,30 @@ Les analyses porteront sur :
 
 ---
 
-## Détails des KPI et Visualisations
+## 1. **📊 KPI** : Vue générale des bases de données (Oeuvres, Supports Genres)
 
-### 1. **📊 KPI** : Vue générale des bases de données (Oeuvres, Supports Genres)
+### Nombre d'oeuvres par supports et poids des oeuvres par type
+<br>
 
-- Nombre total d'oeuvres (hors films Adulte) : *10 885 933*
-- Poids des Supports : *82,1% Télévision, 15,75% Cinéma, 2,15% Autre*
-  [oeuvres_support](../images/kpi/1_oeuvre_support.png)
-- **Visualisation :**
-  - Graphique en barres pour les acteurs les plus présents.
-  - Timeline pour représenter les périodes associées.
+![oeuvres_support](../images/kpi/3_répartition.PNG)
+
+- Nombre total d'oeuvres (hors films Adulte) : ***10 885 933***
+- Poids des Supports : ***82,1% Télévision, 15,75% Cinéma, 2,15% Autre***
+- Pour le Cinéma : ***plus d'1 million de court métrages, 688 342 films***
+
+**Remarque** : Nous pouvons travailler sur une base de 688342 films en nous concentrant uniquement sur les films, pour alléger la base de données et faciliter le traitement.
+
+---
+
+### Genres les plus fréquents dans le Cinéma
+<br>
+
+![genres](../images/kpi/4_genres.PNG)
+
+- 3 Genres (Drame, Documentaire, Comédie) représentent ***72% des films***
+- Le ***documentaire*** est particulièrement présent dans la base de données.
+
+---
 
 ### 1. Identification des acteurs les plus présents et les périodes associées
 - **KPI :** Nombre de films/séries par acteur, période d'activité (années de début et de fin).
