@@ -1,6 +1,6 @@
 # Analyse des KPI et Visualisation
 
-## Objectifs de l'analyse
+## 🎯 Objectifs de l'analyse
 L'objectif de ce projet est d'explorer les bases de données IMDb et TMDb afin d'en tirer des insights pertinents à l'aide de visualisations PowerBI.
 
 Les analyses porteront sur :
@@ -14,7 +14,7 @@ Les analyses porteront sur :
 
 ---
 
-## Méthodologie
+## 📋 Méthodologie
 ### Étapes clés :
 
 1. **Préparation des données :**
