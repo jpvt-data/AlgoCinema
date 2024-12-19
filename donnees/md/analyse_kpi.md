@@ -41,6 +41,7 @@ Les analyses porteront sur :
 <br>
 
 ![oeuvres_support](../images/kpi/3_répartition.PNG)
+***Source : ImdB title.basics***
 
 - Nombre total d'oeuvres (hors films Adulte) : ***10 885 933***
 - Poids des Supports : ***82,1% Télévision, 15,75% Cinéma, 2,15% Autre***
@@ -54,6 +55,7 @@ Les analyses porteront sur :
 <br>
 
 ![genres](../images/kpi/4_genres.PNG)
+***Source : ImdB title.basics***
 
 - 3 Genres (Drame, Documentaire, Comédie) représentent ***72% des films***
 - Le ***documentaire*** est particulièrement présent dans la base de données.
@@ -64,6 +66,7 @@ Les analyses porteront sur :
 <br>
 
 ![décennie](../images/kpi/5_evolution_film.PNG)
+***Source : ImdB title.basics***
 
 - Les 3 décennies les plus prolifiques sont ***2000s, 2010s, 2020s***
 - Depuis les années 2000, la ***Comédie*** est en forte expansion.
