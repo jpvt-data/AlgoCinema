@@ -32,7 +32,7 @@ Les analyses porteront sur :
 
 ---
 
-## 1. **Schéma de liaison des Tables sur Power BI
+## 1. **Schéma de liaison des Tables sur Power BI**
 ---
 
 ## 2. **📊 KPI** : Vue générale des bases de données
