@@ -6,7 +6,7 @@
 
 Nous sommes un groupe de quatre étudiants, Alice, Pierre, Rodrigo et Jean Paul, en formation Data Analyst à la **Wild Code School**.
 
-Dans le cadre de notre apprentissage, nous réalisons un projet ambitieux pour un client fictif : un cinéma situé dans la Creuse, région où l’activité cinématographique est en perte de vitesse.
+Dans le cadre de notre apprentissage, nous réalisons un projet ambitieux pour un client fictif : un cinéma situé dans la Creuse qui souhaite se moderniser, dans une région où l’activité cinématographique est en perte de vitesse.
 
 Ce projet combine **études de données, machine learning et outils de visualisation** afin de concevoir **un moteur de recommandation** qui répondra aux besoins spécifiques du client.
 
