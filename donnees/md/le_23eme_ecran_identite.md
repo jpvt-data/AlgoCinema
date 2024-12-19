@@ -6,11 +6,16 @@
 
 Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dans la Creuse, nous avons choisi de concevoir un cinéma fictif, **Le 23ème Écran**, en tant que client. Ce choix nous permet d'explorer les besoins concrets d'un établissement culturel et de proposer une solution adaptée pour répondre à ses enjeux.
 
-
-<div style="display: flex; justify-content: center; align-items: center; gap: 20px;">
-  <img src="../images/23_2.JPG" alt="Façade du Cinéma" style="width: 300px;">
-  <img src="../images/23_3.JPG" alt="Façade du Cinéma" style="width: 300px;">
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="../images/23_2.JPG" alt="Façade du Cinéma" width="300">
+    </td>
+    <td align="center">
+      <img src="../images/23_3.JPG" alt="Façade du Cinéma" width="300">
+    </td>
+  </tr>
+</table>
 
 
 <br>
