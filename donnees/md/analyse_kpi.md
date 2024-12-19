@@ -76,6 +76,10 @@ Les analyses porteront sur :
 ### Répartition des Films par Pays
 <br>
 
+![Pays](../images/kpi/6_pays.PNG)
+***Source : TmdB Full***
+
+
 
 ### 1. Identification des acteurs les plus présents et les périodes associées
 - **KPI :** Nombre de films/séries par acteur, période d'activité (années de début et de fin).
