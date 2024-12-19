@@ -26,7 +26,7 @@ Une fois cette identité solidement établie, elle guidera l’orientation et le
 **Le 23ème Ecran**
 
 <p align="center">
-  <img src="../donnees/images/23.jpg" alt="23 - le département de la Creuse" width="300">
+  <img src="../images/23.jpg" alt="23 - le département de la Creuse" width="300">
 </p>
 
 Ce nom incarne l’ancrage local en Creuse, une région connue pour ses paysages vallonnés et son authenticité. Il symbolise une ouverture sur un univers cinématographique riche, tout en étant un lieu de partage et de rencontre.
@@ -54,7 +54,7 @@ Le cinéma se situe dans une ville centrale de la Creuse, à proximité des comm
 ## **Les Salles**
 
 <p align="center">
-  <img src="../donnees/images/Cinéma.jpg" alt="Logo Cinéma" width="300">
+  <img src="../images/Cinéma.jpg" alt="Logo Cinéma" width="300">
 </p>
 
 **Capacité :**
