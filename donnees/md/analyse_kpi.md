@@ -47,7 +47,7 @@ Les analyses porteront sur :
 
 ---
 
-### Genres les plus fréquents dans le Cinéma
+### Fréquences des Films par Genre
 <br>
 
 ![genres](../images/kpi/4_genres.PNG)
