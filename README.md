@@ -25,8 +25,6 @@ Le 23ème Ecran a pour ambition de :
 
 #### 2. 🧳 Étude de Marché et Fiche d'identité
    - [Etude de marché](/donnees/md/etude_de_marche.md) : Analyse détaillée et orientations stratégiques.
-   - [Orientation Stratégique](/donnees/md/axes_strategiques.md) : Insights Clés et définition de la Stratégie.
-   - [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md) : Création du cinéma fictif.
 
 #### 3. 🔍 Exploration et Nettoyage des Données
    - [Exploration des bases de données](./donnees/md/intro_bdd.md)
@@ -34,6 +32,10 @@ Le 23ème Ecran a pour ambition de :
 
 #### 4. 📈 Analyse Statistique, KPI et Visualisation
    - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md)
+
+#### 5. 🧭 Orientation Stratégique et Axes de développement
+   - [Orientation Stratégique](/donnees/md/axes_strategiques.md) : Insights Clés et définition de la Stratégie pour la suite du projet.
+   - [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md) : Création du cinéma fictif.
 
 #### 5. 🤖 Système de Recommandation
    - Implémentation d'algorithmes de machine learning
