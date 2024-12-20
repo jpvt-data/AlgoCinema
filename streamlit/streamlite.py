@@ -161,15 +161,29 @@ def afficher_resultats_similarite(df_resultats_similarite):
     num_cols = min(5, num_results)
     cols = st.columns(num_cols)
 
+    
     # Remplir chaque colonne avec les infos d'un film
     for col, (_, row) in zip(cols, df_display.iterrows()):
         with col:
-            # Crée un lien cliquable sur l'image
-            image_lien = f'''
-            <a href="javascript:void(0)" 
-            onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);">
-            <img src="{row["Chemin Affiche"]}" width="400">
-            </a>'''
+            # Gestion des affiches
+            if pd.notna(row["Chemin Affiche"]) and row["Chemin Affiche"]:
+                image_lien = f'''
+                <a href="javascript:void(0)" 
+                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);">
+                <img src="https://image.tmdb.org/t/p/w500{row['Chemin Affiche']}" width="300">
+                </a>'''
+            else:
+                # Création d'un bloc noir avec le nom du film
+                image_lien = f'''
+                <a href="javascript:void(0)" 
+                onclick="window.parent.sessionStorage.setItem('selected_movie', '{row["Titre"]}'); window.parent.location.reload(true);"
+                style="display: block; width: 300px; height: 400px; background-color: black; color: white; 
+                display: flex; justify-content: center; align-items: center; text-align: center; 
+                text-decoration: none; font-size: 1.2em;">
+                {row["Titre"]}
+                </a>'''
+
+            # Afficher le bloc (image ou texte)
             st.markdown(image_lien, unsafe_allow_html=True)
 
             # Crée un lien cliquable sur le titre avec du style
@@ -180,6 +194,7 @@ def afficher_resultats_similarite(df_resultats_similarite):
             {row["Titre"]}
             </a>'''
             st.markdown(titre_lien, unsafe_allow_html=True)
+
 
             # Calcul des étoiles
             étoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note/5)
@@ -200,7 +215,12 @@ def afficher_details_film():
 
     # Affichage des informations détaillées du film
     st.title(movie_data['Titre'])
-    st.image(movie_data['Chemin Affiche'], width=300)
+    image_url = f"https://image.tmdb.org/t/p/w500{movie_data['Chemin Affiche']}"
+    if movie_data['Chemin Affiche'].isna()== False:
+        st.image(image_url, width=300)
+    else:
+        st.write("Aucune affiche disponible.")
+
     st.markdown(f"**Année de sortie :** {movie_data['Année de Sortie']}")
     st.markdown(f"**Durée :** {movie_data['Durée (min)']} min")
     st.markdown(f"**Genres :** {movie_data['genres']}")
@@ -240,7 +260,7 @@ if __name__ == "__main__":
 
     # Barre de recherche interactive
     search_query = st.text_input(
-        "Recherchez un film :", 
+        "Recherchez un titre de film :", 
         placeholder="Tapez un titre de film...",
         key="search_query"
     )
@@ -249,10 +269,11 @@ if __name__ == "__main__":
     if search_query:
         results = search(search_query, df_infos['Titre'].tolist())
         if results:
-            selected_title = st.selectbox("Confirmez le film recherché :", results)
+            selected_title = st.selectbox("Est-il disponible ?", results)
             st.write(f"Vous avez sélectionné : {selected_title}")
-            selected_movie = df_infos[df_infos['Titre'] == selected_title]
-            compute_similarity(selected_movie['tconst']) # à voir si on envoi un tconst et adapter si besoin
+            # Récupérer le tconst
+            selected_movie = df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0]
+            compute_similarity(selected_movie)  # Passer uniquement le tconst
         else:
             st.write("Aucun résultat trouvé.")
     else:
@@ -263,7 +284,6 @@ if __name__ == "__main__":
     if page == "Accueil":
         # Si un film est sélectionné, afficher la page de détails
         if 'selected_movie' in st.session_state:
-            st.write(f"Vous avez sélectionné le film : {st.session_state['selected_movie']}")
             afficher_details_film()
         else:
             afficher_accueil()
