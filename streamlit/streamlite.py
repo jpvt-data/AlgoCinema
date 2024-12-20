@@ -38,9 +38,9 @@ df_ml_csv = "machine learning\DF_ML.csv.gz"
 
 
 st.set_page_config(
-    page_title="Le 23ème Écran",
+    page_title="Cinéma le 23ème Écran",
     layout="wide")
-st.image(logo, caption="Le 23ème Écran")
+st.image(logo)
 
 
 
@@ -84,10 +84,17 @@ def afficher_menu():
     )
 
 # Pages spécifiques
-def afficher_accueil():
-    st.title("Bienvenue au **23ème Écran**")
-    st.write("Votre cinéma local innovant, au cœur de la Creuse.")
-    # Autres contenus pour l'accueil...
+def afficher_accueil(search_query=""):
+    if search_query:
+        results = search(search_query, df_infos['Titre'].tolist())
+        if results:
+            selected_title = st.selectbox("Sélectionnez un des noms de films les plus proches :", results)
+            st.write(f"Vous avez sélectionné : {selected_title}")
+            compute_similarity(df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0])  # Passer uniquement le tconst
+        else:
+            st.write("Aucun résultat trouvé.")
+    else:
+        st.write("Commencez à taper pour voir les suggestions.")
 
 def afficher_a_propos():
     st.title("À propos")
@@ -227,12 +234,12 @@ def afficher_resultats_similarite(df_resultats_similarite):
 
             # Affichage des autres informations avec moins d'espace
             st.markdown(f"<p style='margin: 0;'>{row['Année de Sortie']} - {row['Durée (min)']} min.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='margin: 0;'>{row['Note']} / 10  - {étoiles}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='margin: 0;'>{round(row['Note'], 1)} / 10  - {étoiles}</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='margin: 0;'>{row['genres']}</p>", unsafe_allow_html=True)
 
 
     
-# Fonction pour afficher les détails du film sélectionné
+# Fonction pour afficher les détails du film sélectionné A FINIR ET RELIER AU RESTE NE FONCTIONNE PAS POUR LINSTANT
 def afficher_details_film():
     movie_title = st.session_state['selected_movie']
     # Recherche du film dans la base de données
@@ -249,7 +256,7 @@ def afficher_details_film():
     st.markdown(f"**Année de sortie :** {movie_data['Année de Sortie']}")
     st.markdown(f"**Durée :** {movie_data['Durée (min)']} min")
     st.markdown(f"**Genres :** {movie_data['genres']}")
-    st.markdown(f"**Note :** {movie_data['Note']}/10")
+    st.markdown(f"**Note :** {round(movie_data['Note'], 2)}/10")
 
     # Bouton pour revenir à la liste des films
     if st.button("Retour à la liste des films"):
@@ -258,69 +265,40 @@ def afficher_details_film():
 
 
 
-# ------- État de Session -------
-
-# Initialiser la session_state pour la recherche
-if "search_query" not in st.session_state:
-    st.session_state["search_query"] = ""
-
-
-
 # ------- Interface Utilisateur (UI) -------
-    
-# Main
 if __name__ == "__main__":
-    
-    # Afficher le menu principal et récupérer la page sélectionnée
+    # Afficher le menu principal
     page = afficher_menu()
 
-    # Vérifier si la recherche a déjà été effectuée, et réinitialiser si nécessaire
+    # Gestion de l'état de session
     if "search_query" not in st.session_state:
         st.session_state["search_query"] = ""
-    
-    # Réinitialiser la recherche si l'utilisateur change de page
     if page != st.session_state.get("current_page", ""):
         st.session_state["search_query"] = ""
         st.session_state["current_page"] = page
 
-    # Barre de recherche interactive
-    search_query = st.text_input(
-        "Recherchez un titre de film :", 
-        placeholder="Tapez un titre de film...",
-        key="search_query"
-    )
-
-    # Résultats dynamiques
-    if search_query:
-        results = search(search_query, df_infos['Titre'].tolist())
-        if results:
-            selected_title = st.selectbox("Est-il disponible ?", results)
-            st.write(f"Vous avez sélectionné : {selected_title}")
-            # Récupérer le tconst
-            selected_movie = df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0]
-            compute_similarity(selected_movie)  # Passer uniquement le tconst
-        else:
-            st.write("Aucun résultat trouvé.")
-    else:
-        st.write("Commencez à taper pour voir les suggestions.")
-
-
-    # Coordonner l'affichage en fonction de la page sélectionnée
+    # Logique pour chaque page
     if page == "Accueil":
-        # Si un film est sélectionné, afficher la page de détails
+        st.title("Votre cinéma local et innovant vous accueille")  # Titre spécifique
+        search_query = st.text_input(
+            "Recherchez un titre de film :", 
+            placeholder="Tapez un titre de film...",
+            key="search_query"
+        )
         if 'selected_movie' in st.session_state:
             afficher_details_film()
         else:
-            afficher_accueil()
-    
+            afficher_accueil(search_query)
+
     elif page == "À propos":
         afficher_a_propos()
-    
+
     elif page == "Actualités":
         afficher_actualites()
-    
+
     elif page == "Programmation":
         afficher_programmation()
+
 
 
 # elif page == "Connexion":   
