@@ -80,6 +80,12 @@ Les analyses porteront sur :
 ***Source : TmdB Full***
 
 
+---
+### Films les mieux notés
+<br>
+
+#### Top 10 des films les mieux notés par Continent
+<br>
 
 ### 1. Identification des acteurs les plus présents et les périodes associées
 - **KPI :** Nombre de films/séries par acteur, période d'activité (années de début et de fin).
