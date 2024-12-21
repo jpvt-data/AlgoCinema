@@ -86,6 +86,13 @@ Les analyses porteront sur :
 #### Top 10 des films les mieux notés par Continent
 <br>
 
+## 2. **📊 KPI** : Analyse des acteurs dans la base de données
+
+### Nombre d'acteurs au cinéma, à la télévision par décennie
+<br>
+
+![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
+
 
 ### 1. Identification des acteurs les plus présents et les périodes associées
 - **KPI :** Nombre de films/séries par acteur, période d'activité (années de début et de fin).
