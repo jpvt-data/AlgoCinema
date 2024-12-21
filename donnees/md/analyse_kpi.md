@@ -92,6 +92,12 @@ Les analyses porteront sur :
 <br>
 
 ![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
+***Source : ImdB title.basics / name.basics***
+
+- Depuis 1950, le nombre d'acteurs au cinéma et à la télévision n'a cessé de croître.
+- Entre 1960 et 2000, la télévision a promu plus d'acteurs que le cinéma ; cela est du au nombre conséquent de séries.
+- A partir de 2010, on constate une "explosion" du nombre d'acteurs tout support confondu, que l'on peut expliquer par la démocratisation d'internet et des plateformes de streaming.
+- Dans les années 2010 et pour la première fois depuis 1950, le nombre d'acteurs au cinéma dépasse celui de la télévision (environ 1,4M)
 
 
 ### 1. Identification des acteurs les plus présents et les périodes associées
