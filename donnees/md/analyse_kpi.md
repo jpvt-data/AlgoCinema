@@ -107,6 +107,10 @@ Les analyses porteront sur :
 
 ![top_15_acteur](../images/kpi/8_top_15_acteurs.PNG)
 
+#### A la télévision
+
+![top_15_télévision](../images/kpi/9_top_15_télévision.PNG)
+
 
 ### 2. Évolution de la durée moyenne des films au fil des années
 - **KPI :** Durée moyenne par décennie ou année.
