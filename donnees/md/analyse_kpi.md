@@ -106,10 +106,12 @@ Les analyses porteront sur :
 #### Au cinéma
 
 ![top_15_acteur](../images/kpi/8_top_15_acteurs.PNG)
+***Source : ImdB title.basics / name.basics***
 
 #### A la télévision
 
 ![top_15_télévision](../images/kpi/9_top_15_télévision.PNG)
+***Source : ImdB title.basics / name.basics***
 
 
 ### 2. Évolution de la durée moyenne des films au fil des années
