@@ -88,6 +88,10 @@ Les analyses porteront sur :
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
+**Périmètre** :
+- ***Cinéma*** : Tous les films - hors Court Métrages
+- ***Télévision*** : TVSeries, TVMiniSeries, TVMovies
+
 ### Nombre d'acteurs au cinéma, à la télévision par décennie
 <br>
 
