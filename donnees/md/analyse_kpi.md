@@ -35,6 +35,13 @@ Les analyses porteront sur :
 ##  **Schéma de liaison des Tables sur Power BI**
 ---
 
+## Périmètre d'analyse
+
+- ***Cinéma*** : Tous les films - hors Court Métrages
+- ***Télévision*** : TVSeries, TVMiniSeries, TVMovies
+
+---
+
 ##  **📊 KPI** : Vue générale des bases de données
 
 ### Nombre d'oeuvres par supports et poids des oeuvres par type
@@ -88,9 +95,7 @@ Les analyses porteront sur :
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
-**Périmètre** :
-- ***Cinéma*** : Tous les films - hors Court Métrages
-- ***Télévision*** : TVSeries, TVMiniSeries, TVMovies
+
 
 ### Nombre d'acteurs au cinéma, à la télévision par décennie
 <br>
