@@ -32,10 +32,17 @@ Les analyses porteront sur :
 
 ---
 
-## 1. **Schéma de liaison des Tables sur Power BI**
+##  **Schéma de liaison des Tables sur Power BI**
 ---
 
-## 2. **📊 KPI** : Vue générale des bases de données
+## Périmètre d'analyse
+
+- ***Cinéma*** : Tous les films - hors Court Métrages
+- ***Télévision*** : TVSeries, TVMiniSeries, TVMovies
+
+---
+
+##  **📊 KPI** : Vue générale des bases de données
 
 ### Nombre d'oeuvres par supports et poids des oeuvres par type
 <br>
@@ -69,7 +76,7 @@ Les analyses porteront sur :
 ***Source : ImdB title.basics***
 
 - Les 3 décennies les plus prolifiques sont ***2000s, 2010s, 2020s***
-- Depuis les années 2000, la ***Comédie*** est en forte expansion.
+- Depuis les années 2000, le ***documentaire*** est en forte expansion.
 - Les années prolifiques pour le film d'Action sont entre ***1960 et 2000***
 
 ---
@@ -80,12 +87,41 @@ Les analyses porteront sur :
 ***Source : TmdB Full***
 
 
+---
+### Films les mieux notés
 
-### 1. Identification des acteurs les plus présents et les périodes associées
-- **KPI :** Nombre de films/séries par acteur, période d'activité (années de début et de fin).
-- **Visualisation :**
-  - Graphique en barres pour les acteurs les plus présents.
-  - Timeline pour représenter les périodes associées.
+#### Top 10 des films les mieux notés par Continent
+<br>
+
+##  **📊 KPI** : Analyse des acteurs dans la base de données
+
+
+
+### Nombre d'acteurs au cinéma, à la télévision par décennie
+<br>
+
+![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
+***Source : ImdB title.basics / name.basics***
+
+- Depuis 1950, le nombre d'acteurs au cinéma et à la télévision n'a cessé de croître.
+- Entre 1960 et 2000, la télévision a promu plus d'acteurs que le cinéma ; cela est du au nombre conséquent de séries.
+- A partir de 2010, on constate une "explosion" du nombre d'acteurs tout support confondu, que l'on peut expliquer par la démocratisation d'internet et des plateformes de streaming.
+- Dans les années 2010 et pour la première fois depuis 1950, le nombre d'acteurs au cinéma dépasse celui de la télévision (environ 1,4M)
+
+---
+
+### Identification des acteurs les plus présents et les périodes associées
+
+#### Au cinéma
+
+![top_15_acteur](../images/kpi/8_top_15_acteurs.PNG)
+***Source : ImdB title.basics / name.basics***
+
+#### A la télévision
+
+![top_15_télévision](../images/kpi/9_top_15_télévision.PNG)
+***Source : ImdB title.basics / name.basics***
+
 
 ### 2. Évolution de la durée moyenne des films au fil des années
 - **KPI :** Durée moyenne par décennie ou année.
