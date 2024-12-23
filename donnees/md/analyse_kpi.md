@@ -48,7 +48,7 @@ Les analyses porteront sur :
 ### Nombre d'oeuvres par supports, Ratio et Evolution par Décennie
 <br>
 
-![oeuvres_support](../images/kpi/2.PNG)
+![oeuvres_support](../images/kpi/3_repartition.PNG)
 ***Source : ImdB title.basics***
 
 - Nombre total d'oeuvres (hors films Adulte) : ***834 859***
