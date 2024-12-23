@@ -54,32 +54,43 @@ Les analyses porteront sur :
 - Nombre total d'oeuvres (hors films Adulte) : ***834 859***
 - Ratio des Supports : ***70,3% Cinéma, 29,7% Télévision***
 - **Evolution dans le temps** :
-  - Le cinéma connait une première période de croissance entre les 2 guerres mondiales, puis connait à partir des années 2000 une très forte croissance consécutive à l'***explosion*** d'internet et l'apparition des Platformes de Streaming.
+  - Le cinéma connait une première période de croissance entre les 2 guerres mondiales, puis connait à partir des années 2000 une très forte croissance consécutive à l'***explosion*** d'internet et l'apparition des Plateformes de Streaming.
   - La télévision ***suit cette courbe*** à partir de 1950, dans une moindre mesure.
 - Le nombre d'oeuvres cinématographiques restent pour chaque décennie **entre 40 et 50% supérieur** au nombre de Séries télévisées.
 
 ---
 
-### Fréquences des Films par Genre
+### Fréquences des Films par Genre au Cinéma
 <br>
 
 ![genres](../images/kpi/4_genres.PNG)
 ***Source : ImdB title.basics***
 
-- 3 Genres (Drame, Documentaire, Comédie) représentent ***72% des films***
-- Le ***documentaire*** est particulièrement présent dans la base de données.
+- 3 Genres (Drame, Documentaire, Comédie) représentent ***79% des films***
+- Le ***Drame*** occupe depuis toujours la 1ère place des genres de films.
+- La période ***phare*** pour les films d'action est entre 1660 et 2000
+- Depuis les années 2000, le ***documentaire*** ne cesse de croitre et représente 30% des oeuvres dans le top 5 des genres par décennie.
 
 ---
 
-### Evolution du nombre de Films dans le temps
+### Films par Genre 2000-2024 au Cinéma
 <br>
 
-![décennie](../images/kpi/5_evolution_film.PNG)
+![genres_2000](../images/kpi/4_genres_2000_2020.PNG)
 ***Source : ImdB title.basics***
 
-- Les 3 décennies les plus prolifiques sont ***2000s, 2010s, 2020s***
-- Depuis les années 2000, le ***documentaire*** est en forte expansion.
-- Les années prolifiques pour le film d'Action sont entre ***1960 et 2000***
+- Une vue plus détaillée de la répartition des genres de films sur la période la plus prolifique (2000 - 2024)
+
+---
+
+### Séries par Genre 2000-2024 à la télévision
+<br>
+
+![genre_tv](../images/kpi/4_genres_tv.PNG)
+
+- La répartition des genres à la télévision est différente, avec un place dédiée aux Séries ***'***Talk-Show'*** et ***'TV Réalité'***
+- La ***Comédie*** est le genre le plus présent à la télévision ; qui reste donc un ***divertissement*** pour le public.
+- Le ***Drame*** a toujours une place importante, l'objectif étant de créer des ***émotions*** aux téléspectateurs.
 
 ---
 ### Répartition des Films par Pays
@@ -88,6 +99,9 @@ Les analyses porteront sur :
 ![Pays](../images/kpi/7_pays.PNG)
 ***Source : TmdB Full***
 
+- L'***Amérique*** a produit ***37,67%*** des oeuvres cinématographiques et télévisuelles et s'affirme comme leader dans la production.
+- 
+- 
 
 ---
 ### Films les mieux notés
