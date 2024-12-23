@@ -38,23 +38,25 @@ Les analyses porteront sur :
 ## Périmètre d'analyse
 
 - ***Cinéma*** : Tous les films - hors Court Métrages
-- ***Télévision*** : TVSeries, TVMiniSeries, TVMovies
+- ***Télévision*** : Uniquement TVSeries
+- **Suppression des Films et Séries pour Adulte**
 
 ---
 
 ##  **📊 KPI** : Vue générale des bases de données
 
-### Nombre d'oeuvres par supports et poids des oeuvres par type
+### Nombre d'oeuvres par supports, Ratio et Evolution par Décennie
 <br>
 
 ![oeuvres_support](../images/kpi/3_répartition.PNG)
 ***Source : ImdB title.basics***
 
-- Nombre total d'oeuvres (hors films Adulte) : ***10 885 933***
-- Poids des Supports : ***82,1% Télévision, 15,75% Cinéma, 2,15% Autre***
-- Pour le Cinéma : ***plus d'1 million de court métrages, 688 342 films***
-
-**Remarque** : Nous pouvons travailler sur une base de 688342 films en nous concentrant uniquement sur les films, pour alléger la base de données et faciliter le traitement.
+- Nombre total d'oeuvres (hors films Adulte) : ***834 859***
+- Ratio des Supports : ***70,3% Cinéma, 29,7% Télévision***
+- **Evolution dans le temps** :
+  - Le cinéma connait une première période de croissance entre les 2 guerres mondiales, puis connait à partir des années 2000 une très forte croissance consécutive à l'***explosion*** d'internet et l'apparition des Platformes de Streaming.
+  - La télévision ***suit cette courbe*** à partir de 1950, dans une moindre mesure.
+- Le nombre d'oeuvres cinématographiques restent pour chaque décennie **entre 40 et 50% supérieur** au nombre de Séries télévisées.
 
 ---
 
@@ -103,14 +105,15 @@ Les analyses porteront sur :
 ![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
 ***Source : ImdB title.basics / name.basics***
 
-- Depuis 1950, le nombre d'acteurs au cinéma et à la télévision n'a cessé de croître.
-- Entre 1960 et 2000, la télévision a promu plus d'acteurs que le cinéma ; cela est du au nombre conséquent de séries.
-- A partir de 2010, on constate une "explosion" du nombre d'acteurs tout support confondu, que l'on peut expliquer par la démocratisation d'internet et des plateformes de streaming.
-- Dans les années 2010 et pour la première fois depuis 1950, le nombre d'acteurs au cinéma dépasse celui de la télévision (environ 1,4M)
+- Entre 1950 et 2000, le nombre d'acteurs au cinéma et à la télévision est en croissance constante, en raison du développement mondial.
+- A partir des années 2000, la croissance s'accélère; le nombre d'acteurs doublant pour chaque décennie pour atteindre **576K** acteurs dans les années 2010 pour le cinéma, et **340K** pour la télévision. Cela s'explique par le **démocratisation d'internet et des supports numériques** d'une part, et par l'apparition à partir de 2010 des **plateformes de Streaming**.
 
 ---
 
 ### Identification des acteurs les plus présents et les périodes associées
+
+#### Périmètre 
+- Nous analysons la période 1950 - 2024 ;
 
 #### Au cinéma
 
