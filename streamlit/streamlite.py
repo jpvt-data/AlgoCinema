@@ -90,7 +90,7 @@ def afficher_accueil(search_query=""):
         if results:
             selected_title = st.selectbox("Sélectionnez un des noms de films les plus proches :", results)
             st.write(f"Vous avez sélectionné : {selected_title}")
-            compute_similarity(df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0])  # Passer uniquement le tconst
+            recommandation(df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0])  # Passer uniquement le tconst
         else:
             st.write("Aucun résultat trouvé.")
     else:
@@ -124,61 +124,111 @@ def search(query, choices, limit=10, threshold=50):
 
 
 # Fonction de similarité avec un modèle de ML
-def compute_similarity(tconst):
-# def recommandation(tconst):
+def recommandation(tconst):
+    import pandas as pd
+    from sklearn.neighbors import NearestNeighbors
 
-     import pandas as pd
-     from sklearn.neighbors import NearestNeighbors
+    import warnings
+    warnings.filterwarnings("ignore", category=UserWarning)
+    warnings.filterwarnings("ignore", category=FutureWarning)
 
-     import warnings
-     warnings.filterwarnings("ignore", category=UserWarning)
-     warnings.filterwarnings("ignore", category=FutureWarning)
+    df_test = pd.read_csv("machine learning/DF_ML.csv.gz")
 
-     df_ml = pd.read_csv(df_ml_csv)
+    # ----------------------------------------------------------
+    # Préparation des données
+    # ----------------------------------------------------------
 
-     index = df_ml.index
-     df_ml_num = df_ml.select_dtypes('number')
-     df_ml_cat = df_ml.select_dtypes(['object', 'category', 'string', 'bool'])
+    index = df_test.index
+    df_test_num = df_test.select_dtypes('number')
+    df_test_cat = df_test.select_dtypes(['object', 'category', 'string', 'bool'])
 
-     from sklearn.preprocessing import MinMaxScaler
-     SN = MinMaxScaler()
-     df_ml_num_SN = pd.DataFrame(SN.fit_transform(df_ml_num), columns=df_ml_num.columns, index=index)
+    # Normalisation des colonnes numériques
+    from sklearn.preprocessing import MinMaxScaler
+    SN = MinMaxScaler()
+    df_test_num_SN = pd.DataFrame(SN.fit_transform(df_test_num), columns=df_test_num.columns, index=index)
 
-     df_ml_encoded = pd.concat([df_ml_num_SN, df_ml_cat], axis=1)
+    # Encodage uniquement de la colonne 'nconst'
+    df_test_cat_encoded = df_test_cat.copy()
+    from sklearn.preprocessing import LabelEncoder
+    le = LabelEncoder()
+    df_test_cat_encoded['nconst'] = le.fit_transform(df_test_cat_encoded['nconst'].fillna('inconnu'))
 
-     #On crée une liste des colonnes à utiliser pour le modèle
-     caracteristiques = df_ml_encoded.columns.drop(['tconst', 'nconst', 'title', 'tmdb_popularity', 'title_ratings_numVotes','tmdb_US',
-          'tmdb_FR', 'tmdb_GB', 'tmdb_DE', 'tmdb_JP', 'tmdb_IN', 'tmdb_IT',
-          'tmdb_CA', 'tmdb_ES', 'tmdb_MX', 'tmdb_HK', 'tmdb_BR', 'tmdb_SE',
-          'tmdb_SU', 'tmdb_PH', 'tmdb_KR', 'tmdb_AU', 'tmdb_CN', 'tmdb_AR',
-          'tmdb_RU', 'tmdb_DK', 'tmdb_NL', 'tmdb_BE', 'tmdb_AT', 'tmdb_TR',
-          'tmdb_PL', 'tmdb_CH', 'tmdb_XC', 'tmdb_FI', 'tmdb_NO', 'tmdb_IR',
-          'tmdb_XG', 'tmdb_EG', 'tmdb_NG', 'tmdb_ZA'])
+    # On assemble le df numérique et le df texte
+    df_test_encoded = pd.concat([df_test_num_SN, df_test_cat_encoded], axis=1)
 
-     #On sépare notre df en deux groupes, en fonction de la note
-     bons_films = df_ml_encoded[df_ml_encoded['notes'] >= 0.7]
-     mauvais_films = df_ml_encoded[df_ml_encoded['notes'] < 0.7]
+    #On sépare notre df en deux groupes, en fonction de la note
+    bons_films = df_test_encoded[df_test_encoded['notes'] >= 0.7]
 
-     #On crée notre modèle
-     model = NearestNeighbors(n_neighbors=10, metric='euclidean')
-     model.fit(bons_films[caracteristiques])
+    # ----------------------------------------------------------
+    # KNN sur les caractéristiques numériques
+    # ----------------------------------------------------------
 
-     #On déclare les caractéristiques du film sélectionné par l'utilisateur
-     caract_film = df_ml_encoded[df_ml_encoded['tconst'] == tconst]
-     caract_film = caract_film[caracteristiques]
-     caract_film
+    colonnes_a_exclure = ['tconst', 'title', 'tmdb_popularity', 'title_ratings_numVotes', 'imdb_id', 'genres', 'overview', 'overview_lem']
+    caracteristiques = df_test_encoded.columns.drop(colonnes_a_exclure, errors='ignore')
 
-     distances, indices = model.kneighbors(caract_film)
+    model = NearestNeighbors(n_neighbors=1000, metric='euclidean') # Il faudra tester d'autres combinaisons
+    model.fit(bons_films[caracteristiques])
 
-     if caract_film['notes'].values[0] > 0.7:
-          distances = distances[0][1:]
-          indices = indices[0][1:]
-          selection = bons_films.iloc[indices]['tconst']
-     else:
-          selection = bons_films.iloc[indices[0]]['tconst']
+    caract_film = df_test_encoded[df_test_encoded['tconst'] == tconst][caracteristiques]
+    distances, indices = model.kneighbors(caract_film)
 
-     df_resultats_similarite = pd.DataFrame(selection).reset_index(drop=True)
-     return afficher_resultats_similarite(df_resultats_similarite)
+    if not df_test_encoded[(df_test_encoded['tconst'] == tconst) & (df_test_encoded['notes'] >= 0.7)].empty:
+        selection = bons_films.iloc[indices[0]].copy()
+        selection['distance_knn'] = distances[0]
+    else:
+        selection = bons_films.iloc[indices[0]].copy()
+        selection = pd.concat([df_test_encoded[df_test_encoded['tconst'] == tconst], selection.iloc[:-1]], axis=0)
+        selection['distance_knn'] = distances[0]
+
+    # ----------------------------------------------------------
+    # TF-IDF avec lemmatisation
+    # ----------------------------------------------------------
+
+    colonnes_poids = {
+        'genres': 1,
+        'overview_lem': 1,
+        'nconst': 1
+    }
+
+    # On crée une colonne 'texte' qui combine les valeurs pondérées des colonnes spécifiées
+    selection['texte'] = selection.apply(lambda row: 
+        ' '.join([
+            (str(row[col]) + ' ') * colonnes_poids.get(col, 1)  # Répète la valeur de la colonne selon son poids
+            for col in colonnes_poids.keys()
+        ]),
+        axis=1
+    )
+
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    vectorizer = TfidfVectorizer(stop_words='english', max_df=0.8)
+    tfidf_matrix = vectorizer.fit_transform(selection['texte'])
+
+    model_tfidf = NearestNeighbors(n_neighbors=1000, metric='cosine')
+    model_tfidf.fit(tfidf_matrix)
+
+    distances_tfidf, indices_tfidf = model_tfidf.kneighbors(tfidf_matrix[0])
+    selection['distance_tfidf'] = distances_tfidf[0]
+
+    # ----------------------------------------------------------
+    # Moyenne pondérée des distances
+    # ----------------------------------------------------------
+
+    poids_knn = 1
+    poids_tfidf = 100
+
+    selection['distance_ponderee'] = (
+        poids_knn * selection['distance_knn']) + (poids_tfidf * selection['distance_tfidf']
+    ) 
+
+    # Tri final par la distance pondérée
+    selection = selection.sort_values(by='distance_ponderee')
+
+    # ----------------------------------------------------------
+    # Résultat final
+    # ----------------------------------------------------------
+    selection_finale = pd.DataFrame(selection['tconst'][1:11]).reset_index(drop=True)
+
+    return afficher_resultats_similarite(selection_finale)
 
 
 
@@ -188,8 +238,7 @@ def afficher_resultats_similarite(df_resultats_similarite):
     df_display = df_infos[df_infos['tconst'].isin(df_resultats_similarite['tconst'])]
 
     # Gestion dynamique du nombre de colonnes
-    num_results = len(df_display)
-    num_cols = min(5, num_results)
+    num_cols = len(df_display)
     cols = st.columns(num_cols)
 
     
