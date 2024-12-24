@@ -1,8 +1,5 @@
-streamlit
-streamlit_authenticator
+streamlit-authenticator
 pandas
-streamlit_option_menu
+streamlit-option-menu
 scikit-learn
 rapidfuzz
-time
-os

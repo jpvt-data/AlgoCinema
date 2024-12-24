@@ -32,45 +32,65 @@ Les analyses porteront sur :
 
 ---
 
-## 1. **Schéma de liaison des Tables sur Power BI**
+##  **Schéma de liaison des Tables sur Power BI**
 ---
 
-## 2. **📊 KPI** : Vue générale des bases de données
+## Périmètre d'analyse
 
-### Nombre d'oeuvres par supports et poids des oeuvres par type
+- ***Cinéma*** : Tous les films - hors Court Métrages
+- ***Télévision*** : Uniquement TVSeries
+- **Suppression des Films et Séries pour Adulte**
+
+---
+
+##  **📊 KPI** : Vue générale des bases de données
+
+### Nombre d'oeuvres par supports, Ratio et Evolution par Décennie
 <br>
 
 ![oeuvres_support](../images/kpi/3_répartition.PNG)
 ***Source : ImdB title.basics***
 
-- Nombre total d'oeuvres (hors films Adulte) : ***10 885 933***
-- Poids des Supports : ***82,1% Télévision, 15,75% Cinéma, 2,15% Autre***
-- Pour le Cinéma : ***plus d'1 million de court métrages, 688 342 films***
-
-**Remarque** : Nous pouvons travailler sur une base de 688342 films en nous concentrant uniquement sur les films, pour alléger la base de données et faciliter le traitement.
+- Nombre total d'oeuvres (hors films Adulte) : ***834 859***
+- Ratio des Supports : ***70,3% Cinéma, 29,7% Télévision***
+- **Evolution dans le temps** :
+  - Le cinéma connait une première période de croissance entre les 2 guerres mondiales, puis connait à partir des années 2000 une très forte croissance consécutive à l'***explosion*** d'internet et l'apparition des Plateformes de Streaming.
+  - La télévision ***suit cette courbe*** à partir de 1950, dans une moindre mesure.
+- Le nombre d'oeuvres cinématographiques restent pour chaque décennie **entre 40 et 50% supérieur** au nombre de Séries télévisées.
 
 ---
 
-### Fréquences des Films par Genre
+### Fréquences des Films par Genre au Cinéma
 <br>
 
 ![genres](../images/kpi/4_genres.PNG)
 ***Source : ImdB title.basics***
 
-- 3 Genres (Drame, Documentaire, Comédie) représentent ***72% des films***
-- Le ***documentaire*** est particulièrement présent dans la base de données.
+- 3 Genres (Drame, Documentaire, Comédie) représentent ***79% des films***
+- Le ***Drame*** occupe depuis toujours la 1ère place des genres de films.
+- La période ***phare*** pour les films d'action est entre 1660 et 2000
+- Depuis les années 2000, le ***documentaire*** ne cesse de croitre et représente 30% des oeuvres dans le top 5 des genres par décennie.
 
 ---
 
-### Evolution du nombre de Films dans le temps
+### Films par Genre 2000-2024 au Cinéma
 <br>
 
-![décennie](../images/kpi/5_evolution_film.PNG)
+![genres_2000](../images/kpi/4_genres_2000_2020.PNG)
 ***Source : ImdB title.basics***
 
-- Les 3 décennies les plus prolifiques sont ***2000s, 2010s, 2020s***
-- Depuis les années 2000, le ***documentaire*** est en forte expansion.
-- Les années prolifiques pour le film d'Action sont entre ***1960 et 2000***
+- Une vue plus détaillée de la répartition des genres de films sur la période la plus prolifique (2000 - 2024)
+
+---
+
+### Séries par Genre 2000-2024 à la télévision
+<br>
+
+![genre_tv](../images/kpi/4_genres_tv.PNG)
+
+- La répartition des genres à la télévision est différente, avec un place dédiée aux Séries ***'***Talk-Show'*** et ***'TV Réalité'***
+- La ***Comédie*** est le genre le plus présent à la télévision ; qui reste donc un ***divertissement*** pour le public.
+- Le ***Drame*** a toujours une place importante, l'objectif étant de créer des ***émotions*** aux téléspectateurs.
 
 ---
 ### Répartition des Films par Pays
@@ -79,6 +99,9 @@ Les analyses porteront sur :
 ![Pays](../images/kpi/7_pays.PNG)
 ***Source : TmdB Full***
 
+- L'***Amérique*** a produit ***37,67%*** des oeuvres cinématographiques et télévisuelles et s'affirme comme leader dans la production.
+- 
+- 
 
 ---
 ### Films les mieux notés
@@ -86,12 +109,36 @@ Les analyses porteront sur :
 #### Top 10 des films les mieux notés par Continent
 <br>
 
+##  **📊 KPI** : Analyse des acteurs dans la base de données
 
-### 1. Identification des acteurs les plus présents et les périodes associées
-- **KPI :** Nombre de films/séries par acteur, période d'activité (années de début et de fin).
-- **Visualisation :**
-  - Graphique en barres pour les acteurs les plus présents.
-  - Timeline pour représenter les périodes associées.
+
+
+### Nombre d'acteurs au cinéma, à la télévision par décennie
+<br>
+
+![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
+***Source : ImdB title.basics / name.basics***
+
+- Entre 1950 et 2000, le nombre d'acteurs au cinéma et à la télévision est en croissance constante, en raison du développement mondial.
+- A partir des années 2000, la croissance s'accélère; le nombre d'acteurs doublant pour chaque décennie pour atteindre **576K** acteurs dans les années 2010 pour le cinéma, et **340K** pour la télévision. Cela s'explique par le **démocratisation d'internet et des supports numériques** d'une part, et par l'apparition à partir de 2010 des **plateformes de Streaming**.
+
+---
+
+### Identification des acteurs les plus présents et les périodes associées
+
+#### Périmètre 
+- Nous analysons la période 1950 - 2024 ;
+
+#### Au cinéma
+
+![top_15_acteur](../images/kpi/8_top_15_acteurs.PNG)
+***Source : ImdB title.basics / name.basics***
+
+#### A la télévision
+
+![top_15_télévision](../images/kpi/9_top_15_télévision.PNG)
+***Source : ImdB title.basics / name.basics***
+
 
 ### 2. Évolution de la durée moyenne des films au fil des années
 - **KPI :** Durée moyenne par décennie ou année.
