@@ -33,16 +33,6 @@ df_infos_csv = "donnees/data/df_info.csv.gz"
 df_ml_csv = "machine learning\DF_ML.csv.gz"
 
 
-# ------- Thème -------
-
-[theme]
-primaryColor="#FF4B4B"
-backgroundColor="#333"
-secondaryBackgroundColor="#F0F2F6"
-textColor="#ffffff"
-font="sans serif"
-
-
 # ------- Configuration globale -------
 
 
