@@ -6,11 +6,11 @@ L'objectif de ce projet est d'explorer les bases de données IMDb et TMDb afin d
 Les analyses porteront sur :
 
 1. **Vue générale des bases de données (Oeuvres, Supports, Genres, Pays)**
-2. **L'identification des acteurs les plus présents et les périodes associées.**
-3. **L'évolution de la durée moyenne des films au fil des années.**
-4. **La comparaison entre les acteurs présents au cinéma et dans les séries.**
-5. **L'âge moyen des acteurs.**
-6. **Les films les mieux notés et les caractéristiques qu'ils partagent.**
+2. **Les films les mieux notés et les caractéristiques qu'ils partagent.**
+3. **L'identification des acteurs les plus présents et les périodes associées.**
+4. **L'évolution de la durée moyenne des films au fil des années.**
+5. **La comparaison entre les acteurs présents au cinéma et dans les séries.**
+6. **L'âge moyen des acteurs.** 
 
 ---
 
@@ -96,12 +96,13 @@ Les analyses porteront sur :
 ### Répartition des Films par Pays
 <br>
 
-![Pays](../images/kpi/7_pays.PNG)
+![Pays](../images/kpi/7b_pays.PNG)
 ***Source : TmdB Full***
 
 - L'***Amérique*** a produit ***37,67%*** des oeuvres cinématographiques et télévisuelles et s'affirme comme leader dans la production.
-- 
-- 
+- L'***Europe*** et l'***Asie*** suivent dans le classement avec respectivement ***33,52%*** et ***26,23%***.
+- Sans surprise, les ***Etats-Unis*** est le pays le plus prolifique en création cinématographique, suivi de l'***Inde***, le ***Japon***, la ***France*** et le ***Royaume-Uni***.
+- Par la quantité d'oeuvres proposées, ces 5 pays sont des acteurs majeurs et doivent être intégrés dans la sélection du moteur de recherche.
 
 ---
 ### Films les mieux notés
@@ -109,9 +110,24 @@ Les analyses porteront sur :
 #### Top 10 des films les mieux notés par Continent
 <br>
 
+![TOP10Amerique](../images/kpi/10_TopFilms_Amerique.PNG)
+
+![TOP10Europe](../images/kpi/10_TopFilms_Europe.PNG)
+
+![TOP10Asie](../images/kpi/10_TopFilms_Asie.PNG)
+
+![TOP10Océanie](../images/kpi/10_TopFilms_Oceanie.PNG)
+
+![TOP10Afrique](../images/kpi/10_TopFilms_Afrique.PNG)
+***Source : ImdB - TmdB***
+
+- La note de chaque film est obtenue en calculant la moyenne pondérée entre les notes ImDb et TmdB en fonction du nombre de votes.
+- Un filtre (> 5000 votes) a été appliqué pour discerner les films les plus populaires.
+- Une analyse peut être faite en incluant les films où les nombre de votants sont inférieurs pour ***dénicher les pépites*** utiles pour le moteur de recherche et la future programmation.
+
+---
+
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
-
-
 
 ### Nombre d'acteurs au cinéma, à la télévision par décennie
 <br>
@@ -127,11 +143,29 @@ Les analyses porteront sur :
 ### Identification des acteurs les plus présents et les périodes associées
 
 #### Périmètre 
-- Nous analysons la période 1950 - 2024 ;
+- Nous analysons la présence des acteurs selon le ***nombre d'apparitions*** dans les films. Le classement est établi sur le ***Top 15***.
+- L'analyse est faite par continent de production des films / séries. Dans le rapport, l'analyse peut être filtrée par pays également.
+- Les visuels ci dessous montrent un échantillon des analyses possibles.
+- L'analyse est construite selon les grandes périodes du cinéma :
+  - 1910-1949 : Du cinéma muet jusqu'à l'après guerre
+  - 1950-1979 : L'age d'or d'Hollywood et le développement du cinéma et de la télévision
+  - 1980-1999 : La démocratisation de la télévision et les débuts de la mondialisation
+  - 2000-2024 : L'explosion d'internet, l'apparition des plateformes de Streaming
+- Un focus est fait sur le ***Cinéma Français***
 
 #### Au cinéma
 
-![top_15_acteur](../images/kpi/8_top_15_acteurs.PNG)
+![top_15_acteur](../images/kpi/8_top_15_france.PNG)
+
+![top_15_acteur](../images/kpi/8_top_15_amerique.PNG)
+
+![top_15_acteur](../images/kpi/8_top_15_europe.PNG)
+
+![top_15_acteur](../images/kpi/8_top_15_asie.PNG)
+
+![top_15_acteur](../images/kpi/8_top_15_oceanie.PNG)
+
+![top_15_acteur](../images/kpi/8_top_15_afrique.PNG)
 ***Source : ImdB title.basics / name.basics***
 
 #### A la télévision
