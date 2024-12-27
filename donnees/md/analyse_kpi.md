@@ -7,8 +7,8 @@ Les analyses porteront sur :
 
 1. **Vue générale des bases de données (Oeuvres, Supports, Genres, Pays)**
 2. **Les films les mieux notés et les caractéristiques qu'ils partagent.**
-3. **L'identification des acteurs les plus présents et les périodes associées.**
-4. **L'évolution de la durée moyenne des films au fil des années.**
+3. **L'évolution de la durée moyenne des films au fil des années.**
+4. **L'identification des acteurs les plus présents et les périodes associées.**
 5. **La comparaison entre les acteurs présents au cinéma et dans les séries.**
 6. **L'âge moyen des acteurs.** 
 
@@ -108,22 +108,33 @@ Les analyses porteront sur :
 ### Films les mieux notés
 
 #### Top 10 des films les mieux notés par Continent
-<br>
 
+##### Top 10 - Amérique
 ![TOP10Amerique](../images/kpi/10_TopFilms_Amerique.PNG)
 
+##### Top 10 - Europe
 ![TOP10Europe](../images/kpi/10_TopFilms_Europe.PNG)
 
+##### Top 10 - Asie
 ![TOP10Asie](../images/kpi/10_TopFilms_Asie.PNG)
 
+##### Top 10 - Océanie
 ![TOP10Océanie](../images/kpi/10_TopFilms_Oceanie.PNG)
 
+##### Top 10 - Afrique
 ![TOP10Afrique](../images/kpi/10_TopFilms_Afrique.PNG)
 ***Source : ImdB - TmdB***
 
 - La note de chaque film est obtenue en calculant la moyenne pondérée entre les notes ImDb et TmdB en fonction du nombre de votes.
 - Un filtre (> 5000 votes) a été appliqué pour discerner les films les plus populaires.
 - Une analyse peut être faite en incluant les films où les nombre de votants sont inférieurs pour ***dénicher les pépites*** utiles pour le moteur de recherche et la future programmation.
+- Une analyse peut être faite également par Genre de Films
+
+### Évolution de la durée moyenne des films au fil des années
+- **KPI :** Durée moyenne par décennie ou année.
+- **Visualisation :**
+  - Graphique en courbes montrant l'évolution au fil des décennies.
+  - Histogramme pour une répartition plus détaillée.
 
 ---
 
@@ -137,6 +148,12 @@ Les analyses porteront sur :
 
 - Entre 1950 et 2000, le nombre d'acteurs au cinéma et à la télévision est en croissance constante, en raison du développement mondial.
 - A partir des années 2000, la croissance s'accélère; le nombre d'acteurs doublant pour chaque décennie pour atteindre **576K** acteurs dans les années 2010 pour le cinéma, et **340K** pour la télévision. Cela s'explique par le **démocratisation d'internet et des supports numériques** d'une part, et par l'apparition à partir de 2010 des **plateformes de Streaming**.
+
+### Comparaison entre les acteurs présents au cinéma et dans les séries
+- **KPI :** Proportion d'acteurs présents dans les films, les séries ou les deux.
+- **Visualisation :**
+  - Diagramme de Venn ou un graphique en barres empilées.
+  - Tableau croisé dynamique pour une exploration plus fine.
 
 ---
 
@@ -155,16 +172,22 @@ Les analyses porteront sur :
 
 #### Au cinéma
 
+##### Top 15 Acteurs en France
 ![top_15_acteur](../images/kpi/8_top_15_france.PNG)
 
+##### Top 15 Acteurs en Amérique
 ![top_15_acteur](../images/kpi/8_top_15_amerique.PNG)
 
+##### Top 15 Acteurs en Europe
 ![top_15_acteur](../images/kpi/8_top_15_europe.PNG)
 
+##### Top 15 Acteurs en Asie
 ![top_15_acteur](../images/kpi/8_top_15_asie.PNG)
 
+##### Top 15 Acteurs en Océanie
 ![top_15_acteur](../images/kpi/8_top_15_oceanie.PNG)
 
+##### Top 15 Acteurs en Afrique
 ![top_15_acteur](../images/kpi/8_top_15_afrique.PNG)
 ***Source : ImdB title.basics / name.basics***
 
@@ -174,17 +197,6 @@ Les analyses porteront sur :
 ***Source : ImdB title.basics / name.basics***
 
 
-### 2. Évolution de la durée moyenne des films au fil des années
-- **KPI :** Durée moyenne par décennie ou année.
-- **Visualisation :**
-  - Graphique en courbes montrant l'évolution au fil des décennies.
-  - Histogramme pour une répartition plus détaillée.
-
-### 3. Comparaison entre les acteurs présents au cinéma et dans les séries
-- **KPI :** Proportion d'acteurs présents dans les films, les séries ou les deux.
-- **Visualisation :**
-  - Diagramme de Venn ou un graphique en barres empilées.
-  - Tableau croisé dynamique pour une exploration plus fine.
 
 ### 4. Âge moyen des acteurs
 - **KPI :** Calcul de l'âge moyen des acteurs par période et par genre (homme/femme).
