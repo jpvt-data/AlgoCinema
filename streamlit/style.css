@@ -94,29 +94,29 @@ header h1 {
 
 /* Boutons de navigation */
 nav {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    display: flex; /* Utilise le modèle de boîte flexbox pour organiser les éléments enfants (les boutons) dans la barre de navigation. */
+    justify-content: center; /* Aligne les boutons horizontalement au centre de l'espace disponible dans le conteneur nav. */
+    margin: 20px 0; /* Ajoute un espace vertical de 20 pixels au-dessus et en dessous de la barre de navigation. */
 }
 
 nav button {
-    margin: 0 5px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #ffffff;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    margin: 0 5px; /* Ajoute un espace horizontal de 5 pixels entre les boutons. */
+    padding: 10px 20px; /* Ajoute un espace intérieur (entre le contenu du bouton et ses bords) de 10 pixels en haut/bas et 20 pixels à gauche/droite.*/
+    border: none; /* Supprime les bordures par défaut du bouton.*/
+    border-radius: 5px; /* Ajoute des coins arrondis au bouton avec un rayon de 5 pixels.*/ 
+    background-color: #333; /* Définit une couleur de fond pour le bouton.*/ 
+    color: #ffffff; /* Définit la couleur du texte en blanc.*/ 
+    font-size: 1em; /* Définit la taille du texte (1em = taille de base du texte).*/ 
+    cursor: pointer; /* Change le curseur en forme de main pour indiquer que le bouton est cliquable.*/ 
+    transition: background-color 0.3s; /* Ajoute une transition fluide pour les changements de couleur de fond, avec une durée de 0.3 seconde.*/ 
 }
 
 nav button:hover {
-    background-color: #444;
+    background-color: #444; /* Change la couleur de fond du bouton en gris légèrement plus clair lorsqu'on passe la souris dessus.*/ 
 }
 
 nav button.active {
-    background-color: #e50914;
+    background-color: #e50914; /* */
 }
 
 /* Pied de page */
