@@ -1,10 +1,9 @@
 /* Style général pour le site */
-body {
-    background-color: #141414;
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+:root {
+    --primary-color: #e50914;
+    --secondary-color: #181818;
+    --text-color: #ffffff;
+    --background-color: #141414;
 }
 
 /* En-tête du site */
@@ -58,7 +57,7 @@ header h1 {
 .movie-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 30px; /* Espacement entre les films */
     padding: 20px;
 }
 
@@ -67,11 +66,12 @@ header h1 {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .movie-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .movie-item img {
