@@ -39,7 +39,6 @@ st.set_page_config(
     layout="wide")
 
 
-
 # ------- CHARGEMENT DES DONNEES -------
 
 @st.cache_data
