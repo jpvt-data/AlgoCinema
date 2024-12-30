@@ -39,7 +39,6 @@ st.set_page_config(
     layout="wide")
 
 
-
 # ------- CHARGEMENT DES DONNEES -------
 
 @st.cache_data
@@ -61,6 +60,9 @@ def load_css(file_name):
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     except FileNotFoundError:
         st.error("Erreur : Le fichier CSS n'a pas été trouvé. Vérifiez le chemin.")
+
+    # Injecter le CSS
+    st.markdown(f, unsafe_allow_html=True)
 
 load_css(style_css)
 
