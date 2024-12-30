@@ -9,7 +9,7 @@
 /* En-tête du site */
 header {
     background-color: #181818;
-    padding: 15px;
+    /*padding: 15px;*/
     text-align: center;
     border-bottom: 1px solid #333;
 }
@@ -53,46 +53,9 @@ header h1 {
     background-color: #f40612;
 }
 
-/* Liste des films */
-.movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px; /* Espacement entre les films */
-    padding: 20px;
-}
-
-.movie-item {
-    background-color: #181818;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.movie-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-}
-
-.movie-item img {
-    width: 100%;
-    height: auto;
-}
-
-.movie-item .movie-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 10px;
-    color: #ffffff;
-}
-
-.movie-item .movie-description {
-    font-size: 0.9em;
-    padding: 0 10px 10px 10px;
-    color: #b3b3b3;
-}
 
 /* Boutons de navigation */
+
 nav {
     display: flex; /* Utilise le modèle de boîte flexbox pour organiser les éléments enfants (les boutons) dans la barre de navigation. */
     justify-content: center; /* Aligne les boutons horizontalement au centre de l'espace disponible dans le conteneur nav. */
@@ -109,6 +72,7 @@ nav button {
     font-size: 1em; /* Définit la taille du texte (1em = taille de base du texte).*/ 
     cursor: pointer; /* Change le curseur en forme de main pour indiquer que le bouton est cliquable.*/ 
     transition: background-color 0.3s; /* Ajoute une transition fluide pour les changements de couleur de fond, avec une durée de 0.3 seconde.*/ 
+    justify-content: center;
 }
 
 nav button:hover {

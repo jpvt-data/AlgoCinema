@@ -32,14 +32,11 @@ df_infos_csv = "donnees/data/df_info.csv.gz"
 
 df_ml_csv = "machine learning/DF_ML.csv.gz"
 
-
-# ------- Configuration globale -------
-
+# ------- CONFIG GLOBALE -------
 
 st.set_page_config(
     page_title="Cinéma le 23ème Écran",
     layout="wide")
-st.image(logo)
 
 
 
@@ -73,31 +70,24 @@ load_css(style_css)
 
 # Fonction pour afficher le menu
 def afficher_menu():
+    # Affichage du menu avec le logo à gauche et les boutons de navigation
+    col1, col2 = st.columns([1, 4])
+    with col1:
+    # Affichage du logo à gauche
+        st.image(logo, use_container_width=True)
+    with col2:
     # Initialisation de l'état si nécessaire
-    if "menu_choice" not in st.session_state:
-        st.session_state["menu_choice"] = "Accueil"
+        if "menu_choice" not in st.session_state:
+            st.session_state["menu_choice"] = "Accueil" 
+        # Liste des options du menu
+        options = ["Accueil", "À propos", "Actualités"]
+        # Construction des boutons dans une disposition horizontale
+        cols = st.columns(len(options))
+        for i, option in enumerate(options):
+            # Bouton interactif dans chaque colonne
+            if cols[i].button(option, key=f"bouton_{option}"):
+                st.session_state["menu_choice"] = option
     
-    # Liste des options du menu
-    options = ["Accueil", "À propos", "Actualités", "Programmation"]
-
-    # Construction du menu en HTML avec classe `active` dynamique
-    st.markdown("<nav>", unsafe_allow_html=True)
-    for option in options:
-        # Bouton interactif qui met à jour l'état Streamlit
-        if st.button(option, key=f"bouton_{option}"):
-            st.session_state["menu_choice"] = option
-    
-    st.markdown("</nav>", unsafe_allow_html=True)
-    # Ajouter la classe active au bouton sélectionné
-    for option in options:
-        button_class = "active" if st.session_state["menu_choice"] == option else ""
-        st.markdown(f"""
-        <script>
-        document.querySelector("[data-testid='bouton_{option}']").className += " {button_class}";
-        </script>
-        """, unsafe_allow_html=True)
-
-
 
 # Fonction pour afficher l'accueil
 def afficher_accueil(search_query=""):
@@ -133,26 +123,6 @@ def afficher_a_propos():
 def afficher_actualites():
     st.title("Actualités")
     st.write("Les actualités de votre cinéma à Guéret.")
-
-
-
-# Fonction pour afficher la programmation
-def afficher_programmation():
-    st.title("Programmation")
-    st.markdown("<div class='movie-list'>", unsafe_allow_html=True)
-    for _, row in df_infos.head().iterrows(): # ne fonctionne pas
-        st.markdown(
-            f"""
-            <div class='movie-item'>
-                <img src='https://image.tmdb.org/t/p/w500{row['Chemin Affiche']}' alt='{row['Titre']}'>
-                <div class='movie-title'>{row['Titre']}</div>
-                <div class='movie-description'>{row['genres']} - {row['Année de Sortie']} - {row['Durée (min)']} min</div>
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
-    st.markdown("</div>", unsafe_allow_html=True)
-
 
 
 # ------- Fonction de correspondances de noms entré barre de recherches -------
@@ -266,60 +236,57 @@ def recommandation(tconst):
 
 
 # ------- Fonction d'affichage des résultats de recherche de similarité (ML) -------
-def afficher_resultats_similarite(df_resultats_similarite): 
-    # Recherche des informations dans DF_Infos pour les tconst du df_ML
+
+def afficher_resultats_similarite(df_resultats_similarite):
+    # Recherche des informations dans df_infos pour les films identifiés 
+    # dans df_resultats_similarite via leur identifiant unique (tconst).
     df_display = df_infos[df_infos['tconst'].isin(df_resultats_similarite['tconst'])]
-    # Nombre de colonnes souhaité
-    num_cols = 5
-    # Création des lignes dynamiques
-    rows = [df_display.iloc[i:i + num_cols] for i in range(0, len(df_display), num_cols)]
 
+    # Configuration des colonnes
+    num_cols = 5                # Définit le nombre de colonnes à afficher dans l'interface.
+    rows = [df_display.iloc[i:i + num_cols] for i in range(0, len(df_display), num_cols)] # Divise le DataFrame en groupes de 5 films pour créer des lignes dans le tableau.
+
+    # Gestion de l'état (Session)
+    # Initialiser une variable de session pour stocker le film sélectionné.
+    if "selected_movie_from_reco" not in st.session_state: 
+        st.session_state["selected_movie_from_reco"] = None 
+
+    # Parcours des lignes de films
+    # st.columns(num_cols) : Crée un ensemble de colonnes pour afficher plusieurs films côte à côte.
+    # La boucle : Parcourt chaque ligne de films (définie précédemment).
     for row_df in rows:
-        cols = st.columns(num_cols)
+        cols = st.columns(num_cols) 
 
-        for col, (_, row) in zip(cols, row_df.iterrows()):
+
+        for col, (_, row) in zip(cols, row_df.iterrows()): # Pour chaque film dans une ligne
             with col:
-                # Gestion des affiches
+                # Affichage de l'affiche ou du titre en fallback
+
+                # Si une affiche est disponible
                 if pd.notna(row["Chemin Affiche"]) and row["Chemin Affiche"]:
-                    image_lien = f'''
-                    <a href="javascript:void(0)" 
-                    onclick="window.parent.sessionStorage.setItem('selected_movie_from_reco', '{row["Titre"]}'); window.parent.location.reload(true);">
-                    <img src="https://image.tmdb.org/t/p/w500{row['Chemin Affiche']}" width="300">
-                    </a>'''
+                    st.image(f"https://image.tmdb.org/t/p/w500{row['Chemin Affiche']}", width=150)
+                    if st.button("Voir les détails de ce film", key=f"poster_{row['tconst']}"):
+                        st.session_state["selected_movie_from_reco"] = row['Titre']
+                        afficher_details_film()
                 else:
-                    # Création d'un bloc noir avec le nom du film
-                    image_lien = f'''
-                    <a href="javascript:void(0)" 
-                    onclick="window.parent.sessionStorage.setItem('selected_movie_from_reco', '{row["Titre"]}'); window.parent.location.reload(true);"
-                    style="display: block; width: 300px; height: 400px; background-color: black; color: white; 
-                    display: flex; justify-content: center; align-items: center; text-align: center; 
-                    text-decoration: none; font-size: 1.2em;">
-                    {row["Titre"]}
-                    </a>'''
+                    st.markdown(
+                        f"<div style='width: 150px; height: 225px; background-color: black; color: white; display: flex; justify-content: center; align-items: center; text-align: center;'>{row['Titre']}</div>",
+                        unsafe_allow_html=True
+                    )
+                    if st.button(row["Titre"], key=f"title_{row['tconst']}"):
+                        st.session_state["selected_movie_from_reco"] = row['Titre']
+                        afficher_details_film()
+                    
 
-                # Afficher le bloc (image ou texte)
-                st.markdown(image_lien, unsafe_allow_html=True)
+                # Informations supplémentaires
+                st.markdown(f"**{row['Titre']}**", unsafe_allow_html=True)
+                st.markdown(f"{row['Année de Sortie']} - {row['Durée (min)']} min")
+                st.markdown(f"{row['genres']}")
 
-                # Crée un lien cliquable sur le titre avec du style
-                titre_lien = f'''
-                <a href="javascript:void(0)" 
-                onclick="window.parent.sessionStorage.setItem('selected_movie_from_reco', '{row["Titre"]}'); window.parent.location.reload(true);" 
-                style="font-size: 1.5em; color: white; text-decoration: none; font-weight: bold;">
-                {row["Titre"]}
-                </a>'''
-                st.markdown(titre_lien, unsafe_allow_html=True)
+                etoiles_jaunes = "⭐" * round(row['Note'] / 2)
+                st.markdown(f"{round(row['Note'],1)}/10 {etoiles_jaunes}")
 
-                # Calcul des étoiles
-                etoile_j = round(row['Note'] / 2)  # Nombre d'étoiles jaunes (note/5)
-                etoile_n = 5 - etoile_j  # Nombre d'étoiles vides pour compléter
-                etoiles = "⭐" * etoile_j + "⚫" * etoile_n  # Étoiles jaunes + vides
-
-                # Affichage des autres informations avec moins d'espace
-                st.markdown(f"<p style='margin: 0;'>{row['Année de Sortie']} - {row['Durée (min)']} min.</p>", unsafe_allow_html=True)
-                st.markdown(f"<p style='margin: 0;'>{round(row['Note'], 1)} / 10  - {etoiles}</p>", unsafe_allow_html=True)
-                st.markdown(f"<p style='margin: 0;'>{row['genres']}</p>", unsafe_allow_html=True)
-
-        # Remplir les colonnes restantes si la dernière ligne n'est pas complète
+        # Remplissage des colonnes vides si nécessaire
         for col in cols[len(row_df):]:
             with col:
                 st.empty()
@@ -353,13 +320,13 @@ def afficher_details_film():
 
 
 # ------- Interface Utilisateur (UI) -------
+
 if __name__ == "__main__":
     if "search_query" not in st.session_state:
         st.session_state["search_query"] = ""
-    
     # Afficher le menu principal
     page = afficher_menu()
-
+    
     # Navigation basée sur le choix dans l'état
     # .get("menu_choice", "Accueil") : récupère la valeur associée à "menu_choice". 
     # Si cette clé n'existe pas encore, elle retourne "Accueil" par défaut.
@@ -367,21 +334,13 @@ if __name__ == "__main__":
     # Si l'utilisateur est sur la page "Accueil", 
     # la fonction afficher_accueil() est appelée pour afficher son contenu.
     if menu_choice == "Accueil":
-        #Vérifie si un film a été sélectionné dans st.session_state via la clé "selected_movie_from_reco".
-        # Si oui, la fonction afficher_details_film() est appelée pour afficher les détails du film.
-        if 'selected_movie_from_reco' in st.session_state:
-            afficher_details_film()
-        # Sinon, la fonction afficher_accueil() est appelée avec l'argument search_query (texte saisi par l'utilisateur).
-        else:
-            afficher_accueil(st.session_state["search_query"])
+        afficher_accueil(st.session_state["search_query"])
     # Selon la valeur de menu_choice, l'application appelle la fonction
     # correspondante pour afficher le contenu des autres pages
     elif menu_choice == "A_propos":
         afficher_a_propos()
     elif menu_choice == "Actualites":
         afficher_actualites()
-    elif menu_choice == "Programmation":
-        afficher_programmation()
 
     # Gestion de l'état de session
 
