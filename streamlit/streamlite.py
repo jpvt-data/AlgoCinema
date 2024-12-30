@@ -61,9 +61,6 @@ def load_css(file_name):
     except FileNotFoundError:
         st.error("Erreur : Le fichier CSS n'a pas été trouvé. Vérifiez le chemin.")
 
-    # Injecter le CSS
-    st.markdown(f, unsafe_allow_html=True)
-
 load_css(style_css)
 
 
