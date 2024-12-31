@@ -121,9 +121,44 @@ Les principales analyses du dashboard présenteront :
 ***Source : ImdB title.basics***
 <br>
 
-#### Analyse
+#### **Répartition globale des genres :**
+- **Top 5 des genres les plus représentés** :  
+  1. **Drame** : ***35,12 %*** des séries.  
+  2. **Comédie** : ***24,84 %***.  
+  3. **Documentaire** : ***14,56 %***.  
+  4. **Animation** : ***8,23 %***.  
+  5. **Action** : ***7,45 %***.  
+
+#### **Genres minoritaires :**
+- Les genres tels que **Talk-Show (0,12 %)**, **Reality-TV (0,15 %)**, et **Western (0,65 %)** sont parmi les moins représentés.
+
+#### **Évolution des genres par décennie (Top 5) :**
+1. **1950-1960** :  
+   - **Drame** : prédominant avec une part atteignant jusqu'à ***45 %***.  
+   - **Comédie** : en croissance, représentant environ ***30 %*** des séries.  
+   - **Documentaire** : émerge avec environ ***10 %***.  
+
+2. **1970-1990** :  
+   - **Drame** : stable autour de ***40 %***.  
+   - **Comédie** : légère baisse, oscillant entre ***25 %*** et ***28 %***.  
+   - **Animation** : apparition notable, atteignant environ ***10 %***.  
+
+3. **2000-2020** :  
+   - **Drame** : augmentation significative, culminant à plus de ***50 %***.  
+   - **Comédie** : déclin progressif, descendant à environ ***20 %***.  
+   - **Documentaire** : croissance continue, atteignant près de ***15 %***.  
+   - **Action** : émergence notable, représentant environ ***10 %***.  
+   - **Animation** : stable autour de ***8 %***.
 
 #### Insights pertinents
+- **Tendances générales** :  
+  - Le **Drame** demeure le genre dominant, avec une croissance notable au cours des dernières décennies.  
+  - La **Comédie** connaît une baisse relative, bien qu'elle reste un genre majeur.  
+  - Les genres **Documentaire**, **Animation**, et **Action** affichent une progression constante, reflétant une diversification des préférences du public.  
+
+- **Recommandations** :  
+  - Pour le développement d'un moteur de recommandation, il serait judicieux de mettre l'accent sur les genres **Drame** et **Comédie**, tout en intégrant des options pour les genres en croissance tels que **Documentaire**, **Animation**, et **Action**.  
+  - Adapter les recommandations en fonction des tendances par décennie pourrait améliorer l'engagement des utilisateurs, en proposant des séries correspondant aux évolutions historiques des préférences.  
 <br>
 
 ---
@@ -135,16 +170,99 @@ Les principales analyses du dashboard présenteront :
 ***Source : TmdB***
 <br>
 
-- L'***Amérique*** a produit ***37,67%*** des oeuvres cinématographiques et télévisuelles et s'affirme comme leader dans la production.
-- L'***Europe*** et l'***Asie*** suivent dans le classement avec respectivement ***33,52%*** et ***26,23%***.
-- Sans surprise, les ***Etats-Unis*** est le pays le plus prolifique en création cinématographique, suivi de l'***Inde***, le ***Japon***, la ***France*** et le ***Royaume-Uni***.
-- Par la quantité d'oeuvres proposées, ces 5 pays sont des acteurs majeurs et doivent être intégrés dans la sélection du moteur de recherche.
+#### **Top 5 des pays contributeurs (Cinéma uniquement)**  
+
+1. **États-Unis** :  
+   - En tête avec une production écrasante, représentant la majorité des œuvres cinématographiques.  
+   - Les États-Unis dominent grâce à Hollywood, qui est un moteur mondial pour les blockbusters, les franchises populaires et les films d’animation.  
+
+2. **Inde** :  
+   - Deuxième plus grand contributeur, principalement à travers Bollywood.  
+   - L’Inde produit un volume colossal de films chaque année, axés sur la musique, la danse et des récits épiques qui séduisent une audience mondiale et locale.  
+
+3. **Royaume-Uni** :  
+   - Le Royaume-Uni occupe la troisième place, avec des films qui allient souvent qualité artistique et succès critique.  
+   - Les productions britanniques se distinguent par leur richesse culturelle et historique, en particulier dans les drames et les adaptations littéraires.  
+
+4. **France** :  
+   - Acteur majeur du cinéma mondial, reconnu pour ses comédies sophistiquées, ses drames et ses films d’auteur.  
+   - La France conserve une influence notable grâce à son identité cinématographique forte et son soutien institutionnel.  
+
+5. **Japon** :  
+   - Cinquième contributeur, le Japon est un acteur incontournable, en particulier pour son cinéma d’animation (*anime*) qui s’exporte largement.  
+   - Les œuvres japonaises sont uniques et captivantes, mêlant souvent récits fantastiques et explorations émotionnelles.  
+
+---
+
+#### **Analyse par continent (Top 3)** :
+1. **Amérique du Nord** :  
+   - ***Plus de 60 %*** des œuvres proviennent de ce continent.  
+   - Hollywood reste un pôle incontournable pour le cinéma mondial, tandis que les productions canadiennes apportent un complément qualitatif.  
+
+2. **Europe** :  
+   - ***Environ 20 %*** des œuvres.  
+   - L’Europe offre des productions diversifiées : cinéma d’auteur, comédies légères, films historiques et drames puissants.  
+
+3. **Asie** :  
+   - ***Environ 10 %*** des œuvres, avec une dominance de l’Inde et du Japon.  
+   - On remarque une montée en puissance des contenus coréens, qui séduisent un public international.  
+
+#### **Insights pertinents :**
+
+##### **1. Un filtre géographique pertinent dans le moteur de recherche :**
+Pour améliorer l’expérience utilisateur et attirer plus de spectateurs, intégrer des filtres géographiques dans un moteur de recherche pourrait être stratégique :  
+- **Exemple de filtres** :  
+  - *Par pays* : États-Unis, Royaume-Uni, France, Inde, Japon.  
+  - *Par continent* : Amérique du Nord, Europe, Asie.  
+- Cela permettrait aux cinéphiles de découvrir facilement des œuvres correspondant à une culture ou une région d’intérêt.  
+
+##### **2. Programmation adaptée selon les attentes culturelles :**
+En analysant les données géographiques, le cinéma peut mettre en avant des thématiques ou cycles spécifiques, en fonction des attentes du public :  
+
+- **Amérique du Nord** :  
+  - Proposer des blockbusters ou des films à gros budgets pour attirer un public large (ex. : films Marvel, thrillers américains).  
+
+- **Europe** :  
+  - Organiser des *soirées cinéma d’auteur* ou des projections de comédies françaises, britanniques ou italiennes.  
+  - Valoriser des productions indépendantes européennes qui plaisent aux spectateurs recherchant un contenu plus intimiste.  
+
+- **Asie** :  
+  - Lancer des événements spécifiques, comme des *projections de films Bollywood*, *soirées animation japonaise* ou marathons de *dramas coréens*.  
+  - Les œuvres asiatiques, bien que minoritaires, attirent souvent des spectateurs passionnés.  
+
+##### **3. Événements thématiques autour des régions dominantes :**
+Proposer des cycles régionaux pourrait permettre de diversifier l’offre et fidéliser une audience plus ciblée. Voici quelques idées :  
+- **Semaine américaine** : blockbusters, thrillers, séries cultes.  
+- **Focus européen** : comédies françaises, drames britanniques, cinéma d’auteur espagnol.  
+- **Festival asiatique** : Bollywood, films japonais (ex. *Your Name*), œuvres coréennes primées (*Parasite*).  
+
+##### **4. Optimisation des recommandations géographiques :**
+Dans un moteur de recherche, enrichir les recommandations en fonction des pays ou continents dominants permettrait de répondre à des attentes précises :  
+- Exemple : si un spectateur choisit *cinéma asiatique*, afficher des œuvres indiennes, japonaises ou coréennes, triées par popularité ou critiques.  
+
+
+#### **Recommandations spécifiques pour le cinéma :**
+
+1. **Mettre en avant les productions américaines et européennes :**  
+   - Elles représentent la majorité des œuvres et répondent à un large éventail de goûts.  
+
+2. **Accentuer la diversité avec des productions asiatiques :**  
+   - Intégrer régulièrement des films Bollywood, des animations japonaises ou des thrillers coréens pour séduire un public curieux.  
+
+3. **Créez des cycles et festivals régionaux :**  
+   - Offrir des expériences immersives avec des projections et événements thématiques (*Semaine Bollywood*, *Cycle cinéma britannique*).  
+
+4. **Enrichissez le moteur de recherche :**  
+   - Ajouter des catégories géographiques claires pour permettre une exploration facile des œuvres par pays ou continent.  
+<br>
 
 ---
 ### Films les mieux notés et leurs caractéristiques
 <br>
 
-![TOP10Amerique](../images/kpi/3_kpi_film_global.PNG)
+#### Top Films 1920 - 1949
+
+![TOP1920_1949](../images/kpi/4_top_films_1920_1949.PNG)
 ***Source : ImdB - TmdB***
 <br>
 
@@ -271,3 +389,28 @@ Les principales analyses du dashboard présenteront :
 ## Conclusion
 Cette analyse permettra d'extraire des insights clés sur les tendances des acteurs, les films, et les séries, tout en mettant en avant les outils de visualisation Power BI pour une compréhension claire et efficace des données.
 
+
+
+Pourquoi un cinéma devrait intégrer des séries TV dans sa programmation ou son moteur de recherche ?
+Opportunités commerciales :
+
+    Attirer de nouveaux publics :
+        Les séries TV ont gagné en popularité ces dernières années, notamment grâce aux plateformes de streaming. Intégrer des séries permettrait d’attirer des spectateurs qui recherchent des formats narratifs longs et immersifs.
+        Proposer des marathons ou des projections d’épisodes spéciaux de séries cultes (Drame, Action, ou Comédie) peut séduire un public jeune et les fans de franchises.
+
+    Diversifier l’offre de contenu :
+        Les Documentaires et les Animations pourraient être utilisés pour organiser des événements thématiques (éducation, culture pop, etc.).
+        Les genres comme Action ou Science-fiction, bien qu’en minorité, sont des atouts pour des projections à thème ou des collaborations avec des festivals.
+
+    Créer de l’engagement :
+        Organiser des avant-premières de séries très attendues ou des projections d’épisodes de fin de saison peut fidéliser le public.
+        Les projections spéciales permettent de créer une expérience communautaire autour des séries (fans clubs, cosplay, débats).
+
+Avantages d’un moteur de recherche incluant les séries TV :
+
+    Meilleure personnalisation : Enrichir un moteur de recherche avec des séries permettrait de répondre aux goûts variés des spectateurs. Par exemple :
+        Recommander des séries Comédie ou Drame pour les amateurs de récits légers ou intenses.
+        Proposer des Documentaires ou des séries Historiques pour des publics cherchant un contenu éducatif ou culturel.
+
+    Cross-content : Créer des ponts entre séries et films basés sur des genres communs ou des acteurs partagés.
+        Exemple : Un spectateur ayant apprécié un film dramatique pourrait être tenté par une série TV similaire.
