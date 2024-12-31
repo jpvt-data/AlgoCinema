@@ -257,6 +257,7 @@ Dans un moteur de recherche, enrichir les recommandations en fonction des pays o
 <br>
 
 ---
+
 ### Films les mieux notés et leurs caractéristiques
 <br>
 
@@ -268,38 +269,41 @@ Dans un moteur de recherche, enrichir les recommandations en fonction des pays o
 
 #### Analyse
 
+- **Top 10 des films selon la note moyenne** :
+Les films les mieux notés de cette période incluent des classiques intemporels qui ont marqué l'histoire du cinéma.
+Ils sont souvent issus de réalisateurs de renom et bénéficient d'une reconnaissance critique exceptionnelle.
+Les genres semblent variés (drame, film noir, comédie romantique).
+La majorité des films provient des États-Unis, soulignant l'impact d'Hollywood dès ses débuts.
+
+- **Top 10 selon le nombre de votes** :
+Ces films ont une notoriété massive auprès des spectateurs, même aujourd'hui.
+La popularité peut être attribuée à des rééditions, des restaurations, ou à une présence régulière dans des rétrospectives ou plateformes de streaming.
+Les genres incluent des drames et des films emblématiques souvent étudiés dans les écoles de cinéma.
+Là encore, une forte représentation des films américains est notable.
+
 #### Insights pertinents
+
+- **Pour le moteur de recherche** :
+
+Intégrer un filtre spécifique pour les films classiques (années 1920-1949), afin de valoriser cette période.
+Inclure des classements selon les deux métriques principales (note et votes), permettant aux spectateurs de choisir entre qualité critique et popularité.
+Proposer une catégorie dédiée pour les réalisateurs emblématiques de cette période (Hitchcock, Chaplin, etc.).
+
+- **Pour la programmation cinéma** :
+
+Focus sur les films les mieux notés : Ces œuvres attireraient un public de cinéphiles cherchant à découvrir ou redécouvrir des classiques peu accessibles en salle.
+Mise en avant des films les plus votés : Ils garantissent une forte attractivité, notamment grâce à leur popularité persistante et leur impact culturel.
+Organiser des cycles thématiques : Proposer des rétrospectives par réalisateur ou par genre dominant (ex. : film noir, comédie romantique, drame).
+Prévoir des projections restaurées ou accompagnées de présentations pour enrichir l’expérience et l’intérêt historique.
 <br>
 
----
-#### Top 10 des films les mieux notés par Continent
+#### Top Films 1950-1979
 
-##### Top 10 - Amérique
-![TOP10Amerique](../images/kpi/10_TopFilms_Amerique.PNG)
-
-##### Top 10 - Europe
-![TOP10Europe](../images/kpi/10_TopFilms_Europe.PNG)
-
-##### Top 10 - Asie
-![TOP10Asie](../images/kpi/10_TopFilms_Asie.PNG)
-
-##### Top 10 - Océanie
-![TOP10Océanie](../images/kpi/10_TopFilms_Oceanie.PNG)
-
-##### Top 10 - Afrique
-![TOP10Afrique](../images/kpi/10_TopFilms_Afrique.PNG)
+![TOP1950_1979](../images/kpi/4_top_films_1950_1979.PNG)
 ***Source : ImdB - TmdB***
+<br>
 
-- La note de chaque film est obtenue en calculant la moyenne pondérée entre les notes ImDb et TmdB en fonction du nombre de votes.
-- Un filtre (> 5000 votes) a été appliqué pour discerner les films les plus populaires.
-- Une analyse peut être faite en incluant les films où les nombre de votants sont inférieurs pour ***dénicher les pépites*** utiles pour le moteur de recherche et la future programmation.
-- Une analyse peut être faite également par Genre de Films
-
-### Évolution de la durée moyenne des films au fil des années
-- **KPI :** Durée moyenne par décennie ou année.
-- **Visualisation :**
-  - Graphique en courbes montrant l'évolution au fil des décennies.
-  - Histogramme pour une répartition plus détaillée.
+#### Analyse
 
 ---
 
