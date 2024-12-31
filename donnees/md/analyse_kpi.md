@@ -56,19 +56,52 @@ Les principales analyses du dashboard présenteront :
 <br>
 
 #### Analyse
-- **Nombre total d'œuvres (hors films adultes)** : ***834 859***, dont ***587 074*** pour le Cinéma et ***247 785*** pour la Télévision.  
-- **Répartition des supports** : ***70,3 % Cinéma*** et ***29,7 % Télévision***.  
-- **Évolution temporelle des œuvres** :  
-  - **1890 à 1949** : Augmentation progressive des œuvres cinématographiques avec un pic dans les années 1920-1930 (~22K à 21K films). La télévision est quasi absente.  
-  - **1950 à aujourd'hui** : Explosion significative du nombre d’œuvres, notamment dans les années 2010 avec un maximum de ***167K films***. La Télévision montre une croissance régulière, atteignant un pic en ***2020 (50K séries)***.  
-- **Durée moyenne des films et séries** :  
-  - Films (Cinéma) : ***1h30 (90 minutes)*** en moyenne, stable depuis les années 1950.  
-  - Séries (Télévision) : ***46 minutes*** en moyenne, mais avec des variations importantes au fil des décennies.  
 
-#### Insights pertinents
-- La forte proportion de films dans la base (70,3 %) favorise le développement d’un moteur de recommandation axé sur le Cinéma.  
-- La période récente (2000 à aujourd'hui) est la plus productive en termes de contenu, ce qui suggère **une orientation sur les œuvres contemporaines pour répondre aux attentes des utilisateurs**.  
-- La stabilité de la durée moyenne des films (90 minutes) et des séries (46 minutes) est un indicateur clé pour **ajuster les recommandations en fonction de la disponibilité des utilisateurs** (Programmation de **"binge-watch" ou d'œuvres courtes** avec thématiques (ex : ***Nuit Walking Dead***)).  
+1. **Types de Données :**
+   - Les graphiques présentent une vue d'ensemble des œuvres cinématographiques et télévisuelles, avec une répartition entre le nombre de films et de séries.  
+   - On constate une dominance des films par rapport aux séries, mais l’essor des séries TV au cours des dernières décennies se manifeste également.  
+   - La base de données couvre une large gamme de genres, de pays, de périodes et de formats, ce qui reflète la richesse de l’industrie audiovisuelle.
+
+2. **Tendances Générales :**
+   - Une augmentation de la production de séries TV au détriment des films à partir des années 2000.  
+   - Une variation marquée dans les genres populaires selon les périodes, les films et séries suivant des modes sociétales et technologiques.
+   - Les séries TV connaissent une importante production à partir des années 2010, ce qui correspond à l'explosion des plateformes de streaming comme Netflix, Amazon Prime, et autres.
+
+3. **Top 5 des pays producteurs :**
+   - Les États-Unis, Royaume-Uni, et Inde dominent toujours la production, mais d'autres pays émergent progressivement, notamment le Japon et la France.  
+   - Le cinéma français et européen se distingue par sa diversité, tout comme l’Inde avec ses productions massives et colorées.
+
+4. **Répartition par Genres et Types :**
+   - Les genres les plus populaires restent les drames, comédies, et films d’action, avec des tendances évolutives suivant les attentes des spectateurs (ex. : super-héros, science-fiction dans les années 2000).  
+   - La diversité dans les genres proposés est également notable, incluant des films expérimentaux et des séries de niche qui prennent de l'ampleur sur des plateformes comme Netflix, qui investit dans des productions originales.  
+
+#### **Insights pertinents**
+
+1. **Pour le moteur de recherche :**  
+   - **Séparation Cinéma / Séries TV :**  
+     - Offrir un filtre de sélection entre films et séries, avec la possibilité d’affiner par période, genre, ou pays.  
+     - Permettre une recherche croisée qui met en avant la transition cinéma-séries pour certaines franchises (par exemple, adaptation de films populaires en séries).  
+   - **Filtrage par Popularité et Nombre de Votants :**  
+     - Intégrer un système qui permet de filtrer les œuvres par le nombre de votes et la note moyenne, pour mettre en avant des films populaires tout en découvrant des pépites sous-évaluées.  
+   - **Recommandations par Genre et Période :**  
+     - Proposer des recommandations basées sur des films ou séries qui ont marqué chaque décennie ou chaque genre, afin de permettre aux utilisateurs de découvrir des classiques ou des films emblématiques.  
+     - Intégrer un algorithme qui apprend les préférences de l’utilisateur pour mieux personnaliser les suggestions.
+
+2. **Pour la programmation cinéma :**  
+   - **Séries à l'écran :**  
+     - Proposer des projections spéciales de séries populaires en salles, sur le modèle des « événements cinéma », comme l’ont fait certains cinémas pour des séries comme *Game of Thrones*.  
+     - Créer un espace de projection de séries TV comme des films, avec des événements dédiés aux premières d’épisodes ou aux saisons entières.
+   - **Cycle de Programmation Décennies :**  
+     - Organiser des cycles de films par décennie, en mettant en avant les grandes œuvres des années 1920 à 2020.  
+     - Cela pourrait inclure des discussions autour de l’évolution du cinéma et des séries, et comment les productions ont évolué en réponse à la technologie, à la société, et à la consommation des médias.
+   - **Nouvelles Séries et Production Internationale :**  
+     - Mettre en avant des séries internationales ou moins connues des États-Unis et du Royaume-Uni, en s’appuyant sur des genres émergents, des productions uniques ou des auteurs inconnus du grand public.  
+     - Organiser des projections autour de séries télévisées qui ne sont pas encore largement distribuées, mais qui pourraient captiver un public averti.
+   - **Saison thématique de films/séries par genre :**  
+     - Proposer des programmations spéciales par genre : films policiers, science-fiction, comédies romantiques, etc. pour capter l’attention de spectateurs intéressés par des thèmes ou genres spécifiques.  
+     - Mettez en lumière des genres moins connus (par exemple, films d’horreur classiques ou comédies indépendantes) pour diversifier l’offre.
+
+En optimisant un moteur de recherche et une programmation cinéma basée sur cette analyse, un cinéma peut non seulement attirer un public plus large, mais aussi fidéliser une clientèle curieuse de découvrir de nouveaux horizons cinématographiques et télévisuels. Cela permettra de proposer une offre plus personnalisée, en phase avec les attentes variées des spectateurs actuels.
 <br>
 
 ---
@@ -80,36 +113,49 @@ Les principales analyses du dashboard présenteront :
 ***Source : ImdB title.basics***
 <br>
 
-#### **Répartition globale des genres :**
-- **Top 5 genres les plus représentés** :  
-  - **Drame** : ***42,33 %*** des films (219 323 œuvres).  
-  - **Documentaire** : ***24,39 %*** (126 386 œuvres).  
-  - **Comédie** : ***19,52 %*** (101 129 œuvres).  
-  - **Action** : ***8,98 %*** (46 512 œuvres).  
-  - **Romance** : ***8,90 %*** (46 119 œuvres).
+#### **Analyse**
 
-#### **Évolution des genres par décennie (Top 5) :**
-1. **1890-1920** :  
-   - Le **Drame** domine massivement avec des parts atteignant jusqu'à ***94,74 %*** (années 1890).  
-   - La **Comédie** commence à émerger dès les années 1910 avec ***20,20 %*** des productions.  
+1. **Répartition des Genres :**
+   - Les genres principaux sont le Drame, la Comédie et le Thriller, qui dominent largement la production cinématographique.  
+   - Les films d’Action, Science-Fiction et Fantastique représentent une part significative, particulièrement depuis les années 2000, en lien avec l'essor des blockbusters et des avancées technologiques.  
+   - Les films de Romance et les Comédies Romantiques gardent une place importante, souvent associés à un public spécifique et des périodes clés comme la Saint-Valentin.  
+   - Les films d’Horreur, bien que moins dominants, conservent une base de fans fidèles, notamment lors de festivals ou d'événements comme Halloween.
 
-2. **1920-1960** :  
-   - Déclin progressif du **Drame**, mais il reste le genre dominant (~***47,65 %*** dans les années 1960).  
-   - **Documentaire** et **Comédie** s'imposent durablement, atteignant respectivement ***23,62 %*** (1940) et ***14,86 %*** (1920).  
+2. **Évolution des Genres :**
+   - Une montée en puissance des genres liés à la Science-Fiction et aux Super-héros, avec des univers partagés comme ceux de Marvel et DC.  
+   - Une résurgence des documentaires et des films indépendants dans les années 2010, en partie grâce à l'influence des plateformes de streaming.  
+   - Les genres comme le Western ou les films de Guerre, autrefois très populaires, tendent à diminuer mais subsistent par des œuvres marquantes ou des réinterprétations modernes.
 
-3. **1970-2020** :  
-   - Stabilisation des parts de marché :  
-      - **Drame** : entre ***35 % et 36,71 %*** des productions.  
-      - **Comédie** : en légère baisse, mais reste un genre clé (~***16-17 %***).  
-   - Croissance de l'**Action** et apparition d'autres genres contemporains (Sci-Fi, Thriller).
+3. **Genres de Niche :**
+   - Les genres comme le Musical, bien que minoritaires, attirent un public fidèle, notamment grâce à des succès récents comme *La La Land* ou des adaptations de comédies musicales.  
+   - Les films Biographiques et Historiques gagnent en popularité, souvent récompensés dans des cérémonies comme les Oscars.
 
-#### Insights pertinents :
-- **Évolution des tendances** :  
-  - Jusqu'à 1920, **les films sont principalement des drames**. Avec l'avènement du cinéma parlant, d'autres genres, **comme la Comédie et le Documentaire**, s'imposent.  
-  - La diversification des genres devient évidente à partir des années 1950, avec **une part croissante des films d'Action et de Romance**.  
+#### **Insights pertinents**
 
-- **Recommandation :**  
-  - Pour un moteur de recherche et/ou une programmation de Cinéma, il peut être pertinent de créer des **filtres orientés vers les genres dominants de chaque décennie pour une expérience utilisateur adaptée**.
+1. **Pour le moteur de recherche :**
+   - **Filtrage par Genre Principal :**  
+     - Proposer un classement clair des œuvres par genre, avec la possibilité d’affiner selon des sous-genres (par exemple, Comédie > Comédie romantique).  
+     - Intégrer des recommandations croisées entre genres similaires ou complémentaires (ex. : Thriller + Horreur ou Drame + Biographique).  
+   - **Popularité par Genre :**  
+     - Mettre en avant les genres populaires auprès des utilisateurs, basés sur les données d’interaction ou de visionnage récents.  
+   - **Recommandations Contextuelles :**  
+     - En fonction de la période de l’année, promouvoir des genres spécifiques (par exemple, des films de Noël en décembre ou des films d’horreur en octobre).  
+     - Permettre la recherche par ambiance (ex. : "feel-good", "intense", "nostalgique").
+
+2. **Pour la programmation cinéma :**
+   - **Soirées Thématiques :**  
+     - Organiser des soirées ou week-ends thématiques autour des genres dominants (Drame, Comédie, Thriller) en sélectionnant des films représentatifs de chaque décennie.  
+     - Proposer des événements spéciaux autour de genres de niche, comme les Musicals ou les Documentaires.  
+   - **Cycles Par Genre :**  
+     - Créer des cycles récurrents, comme une semaine dédiée à la Science-Fiction ou un mois de l’Horreur, avec des œuvres cultes et modernes.  
+   - **Mise en avant de genres émergents ou sous-représentés :**  
+     - Proposer une programmation qui met en lumière des genres moins dominants comme le Western, le Musical, ou des films Historiques.  
+   - **Focus sur les Sous-Genres :**  
+     - Explorer des sous-genres spécifiques avec des marathons (ex. : films de Super-héros des années 2000 ou Comédies romantiques des années 90).  
+   - **Collaboration avec des événements ou festivals :**  
+     - Collaborer avec des festivals ou événements pour renforcer la visibilité de certains genres, comme un festival de documentaires ou une soirée dédiée aux films primés.  
+
+En structurant une approche de filtrage par genre et en diversifiant la programmation, le cinéma peut répondre à des goûts variés tout en créant des opportunités pour attirer des spectateurs curieux ou passionnés par des types de films spécifiques. Une stratégie équilibrée entre œuvres populaires et de niche peut ainsi renforcer l'attractivité globale.
 <br>
 
 ---
@@ -121,44 +167,46 @@ Les principales analyses du dashboard présenteront :
 ***Source : ImdB title.basics***
 <br>
 
-#### **Répartition globale des genres :**
-- **Top 5 des genres les plus représentés** :  
-  1. **Drame** : ***35,12 %*** des séries.  
-  2. **Comédie** : ***24,84 %***.  
-  3. **Documentaire** : ***14,56 %***.  
-  4. **Animation** : ***8,23 %***.  
-  5. **Action** : ***7,45 %***.  
+#### **Analyse**
 
-#### **Genres minoritaires :**
-- Les genres tels que **Talk-Show (0,12 %)**, **Reality-TV (0,15 %)**, et **Western (0,65 %)** sont parmi les moins représentés.
+1. **Répartition des Genres :**  
+   - **Drame et Comédie** dominent largement le paysage des séries télévisées, ce qui témoigne de leur capacité à captiver des publics divers sur plusieurs saisons.  
+   - **Thriller et Crime** occupent une place significative, souvent associés à des récits captivants et des intrigues à suspense.  
+   - **Science-Fiction et Fantastique** connaissent une croissance soutenue, soutenue par des séries cultes comme *Stranger Things* ou *Game of Thrones*.  
+   - Les genres comme le **Documentaire** et la **Romance**, bien que plus ciblés, ont un public fidèle et une forte présence dans les catalogues des plateformes de streaming.  
 
-#### **Évolution des genres par décennie (Top 5) :**
-1. **1950-1960** :  
-   - **Drame** : prédominant avec une part atteignant jusqu'à ***45 %***.  
-   - **Comédie** : en croissance, représentant environ ***30 %*** des séries.  
-   - **Documentaire** : émerge avec environ ***10 %***.  
+2. **Évolution des Tendances :**  
+   - Les dernières décennies montrent une montée en puissance des récits complexes et des genres hybrides, mélangeant Drame et Science-Fiction ou Comédie et Romance.  
+   - Les séries **d’animation** destinées aux adultes, telles que *Rick and Morty* ou *BoJack Horseman*, deviennent un genre à part entière, avec un public croissant.  
+   - Les séries **documentaires** et **true crime**, popularisées par des plateformes comme Netflix, génèrent un engouement particulier grâce à des histoires intrigantes basées sur des faits réels.  
 
-2. **1970-1990** :  
-   - **Drame** : stable autour de ***40 %***.  
-   - **Comédie** : légère baisse, oscillant entre ***25 %*** et ***28 %***.  
-   - **Animation** : apparition notable, atteignant environ ***10 %***.  
+3. **Genres de Niche :**  
+   - Les genres comme **Musical**, bien qu’en marge, attirent un public loyal, notamment avec des productions marquantes comme *Glee*.  
+   - Les séries **Historiques/Biographiques**, souvent récompensées dans des festivals, rencontrent un succès auprès des amateurs d’histoire et de culture.  
 
-3. **2000-2020** :  
-   - **Drame** : augmentation significative, culminant à plus de ***50 %***.  
-   - **Comédie** : déclin progressif, descendant à environ ***20 %***.  
-   - **Documentaire** : croissance continue, atteignant près de ***15 %***.  
-   - **Action** : émergence notable, représentant environ ***10 %***.  
-   - **Animation** : stable autour de ***8 %***.
+#### **Insights pertinents**
 
-#### Insights pertinents
-- **Tendances générales** :  
-  - Le **Drame** demeure le genre dominant, avec une croissance notable au cours des dernières décennies.  
-  - La **Comédie** connaît une baisse relative, bien qu'elle reste un genre majeur.  
-  - Les genres **Documentaire**, **Animation**, et **Action** affichent une progression constante, reflétant une diversification des préférences du public.  
+1. **Pour le moteur de recherche :**  
+   - **Filtrage par Genre :**  
+     - Offrir une segmentation claire des genres avec la possibilité de rechercher des sous-genres ou des combinaisons (par exemple, "Drame + Crime" ou "Comédie + Science-Fiction").  
+   - **Recommandations personnalisées :**  
+     - Proposer des recommandations croisées basées sur les tendances observées (ex. : les amateurs de Drame pourraient aimer les séries hybrides avec du Fantastique).  
+   - **Filtres avancés :**  
+     - Ajouter des options pour explorer des genres selon la durée des épisodes, le type de format (mini-série ou série longue), ou la note critique.  
 
-- **Recommandations** :  
-  - Pour le développement d'un moteur de recommandation, il serait judicieux de mettre l'accent sur les genres **Drame** et **Comédie**, tout en intégrant des options pour les genres en croissance tels que **Documentaire**, **Animation**, et **Action**.  
-  - Adapter les recommandations en fonction des tendances par décennie pourrait améliorer l'engagement des utilisateurs, en proposant des séries correspondant aux évolutions historiques des préférences.  
+2. **Pour la programmation cinéma :**  
+   - **Événements spéciaux :**  
+     - Organiser des marathons ou des projections exceptionnelles pour des séries emblématiques dans des genres populaires (ex. : *Breaking Bad* pour le Crime ou *The Office* pour la Comédie).  
+   - **Focus sur les adaptations :**  
+     - Mettre en avant les adaptations de séries TV au cinéma ou vice versa, pour renforcer le lien entre les deux formats.  
+   - **Séries documentaires ou historiques :**  
+     - Proposer des projections de documentaires ou de séries basées sur des faits réels pour un public en quête de contenu éducatif.  
+   - **Mise en avant des séries hybrides :**  
+     - Explorer les genres émergents ou des combinaisons innovantes qui attirent un public curieux et diversifié.  
+   - **Expériences immersives :**  
+     - Créer des expériences interactives autour de séries cultes (ex. : reconstitutions d’univers fictifs ou événements costumés).  
+
+L’analyse des genres dans les séries TV révèle une diversité de contenus adaptée à des audiences variées. En proposant un moteur de recherche précis et une programmation basée sur des genres phares ou de niche, le cinéma peut élargir son attractivité tout en répondant aux goûts d’un public en quête de récits engageants et captivants.
 <br>
 
 ---
@@ -170,90 +218,49 @@ Les principales analyses du dashboard présenteront :
 ***Source : TmdB***
 <br>
 
-#### **Top 5 des pays contributeurs (Cinéma uniquement)**  
+#### **Analyse**
 
-1. **États-Unis** :  
-   - En tête avec une production écrasante, représentant la majorité des œuvres cinématographiques.  
-   - Les États-Unis dominent grâce à Hollywood, qui est un moteur mondial pour les blockbusters, les franchises populaires et les films d’animation.  
+1. **Domination des États-Unis :**  
+   - Les productions américaines représentent une part écrasante des œuvres dans le cinéma et les séries TV, grâce à la puissance de Hollywood et à l’attrait international de leurs contenus.  
+   - Une grande diversité de genres et de formats explique cette position dominante, accompagnée d’une forte capacité de distribution globale.  
 
-2. **Inde** :  
-   - Deuxième plus grand contributeur, principalement à travers Bollywood.  
-   - L’Inde produit un volume colossal de films chaque année, axés sur la musique, la danse et des récits épiques qui séduisent une audience mondiale et locale.  
+2. **Contributions notables d'autres pays :**  
+   - **Royaume-Uni :** Reconnu pour ses drames historiques et séries à la production soignée, ce pays est une source majeure de contenus de qualité.  
+   - **France :** Positionnée comme un acteur majeur du cinéma mondial, avec des œuvres célébrées pour leur sophistication et leur diversité thématique.  
+   - **Inde :** Bollywood et son industrie cinématographique unique apportent une identité forte, marquée par des récits épiques, des danses, et des musiques mémorables.  
+   - **Canada :** En partie grâce à des coproductions nord-américaines, il offre un mélange de contenus locaux et internationaux.  
+   - **Japon :** La force de l’animation et des films culturels confère au Japon une place importante, attirant un public mondial grâce à des œuvres comme *Spirited Away*.  
 
-3. **Royaume-Uni** :  
-   - Le Royaume-Uni occupe la troisième place, avec des films qui allient souvent qualité artistique et succès critique.  
-   - Les productions britanniques se distinguent par leur richesse culturelle et historique, en particulier dans les drames et les adaptations littéraires.  
+3. **Diversité régionale :**  
+   - L’Europe, notamment par la France, l’Allemagne et l’Italie, contribue à un riche patrimoine cinématographique et des séries qualitatives, bien que plus localisées.  
+   - L’Asie de l’Est, avec le Japon et la Corée du Sud, monte en puissance, notamment grâce à l’explosion des K-dramas et du cinéma d’animation.  
 
-4. **France** :  
-   - Acteur majeur du cinéma mondial, reconnu pour ses comédies sophistiquées, ses drames et ses films d’auteur.  
-   - La France conserve une influence notable grâce à son identité cinématographique forte et son soutien institutionnel.  
+4. **Œuvres globales :**  
+   - Certaines œuvres ou coproductions impliquent plusieurs pays, offrant une perspective internationale qui enrichit le contenu et attire un public diversifié.  
 
-5. **Japon** :  
-   - Cinquième contributeur, le Japon est un acteur incontournable, en particulier pour son cinéma d’animation (*anime*) qui s’exporte largement.  
-   - Les œuvres japonaises sont uniques et captivantes, mêlant souvent récits fantastiques et explorations émotionnelles.  
+#### **Insights pertinents**
 
----
+1. **Pour le moteur de recherche :**  
+   - **Filtres par région et pays :**  
+     - Ajouter la possibilité de chercher des œuvres par origine géographique, permettant de cibler des œuvres britanniques, françaises, indiennes, ou japonaises, selon les préférences de l’utilisateur.  
+   - **Focus sur la diversité culturelle :**  
+     - Proposer des recommandations basées sur des œuvres moins connues mais issues de régions émergentes.  
+   - **Recherche multicritères :**  
+     - Intégrer des critères croisés, comme pays d’origine et genre, pour une expérience utilisateur enrichie.  
 
-#### **Analyse par continent (Top 3)** :
-1. **Amérique du Nord** :  
-   - ***Plus de 60 %*** des œuvres proviennent de ce continent.  
-   - Hollywood reste un pôle incontournable pour le cinéma mondial, tandis que les productions canadiennes apportent un complément qualitatif.  
-
-2. **Europe** :  
-   - ***Environ 20 %*** des œuvres.  
-   - L’Europe offre des productions diversifiées : cinéma d’auteur, comédies légères, films historiques et drames puissants.  
-
-3. **Asie** :  
-   - ***Environ 10 %*** des œuvres, avec une dominance de l’Inde et du Japon.  
-   - On remarque une montée en puissance des contenus coréens, qui séduisent un public international.  
-
-#### **Insights pertinents :**
-
-##### **1. Un filtre géographique pertinent dans le moteur de recherche :**
-Pour améliorer l’expérience utilisateur et attirer plus de spectateurs, intégrer des filtres géographiques dans un moteur de recherche pourrait être stratégique :  
-- **Exemple de filtres** :  
-  - *Par pays* : États-Unis, Royaume-Uni, France, Inde, Japon.  
-  - *Par continent* : Amérique du Nord, Europe, Asie.  
-- Cela permettrait aux cinéphiles de découvrir facilement des œuvres correspondant à une culture ou une région d’intérêt.  
-
-##### **2. Programmation adaptée selon les attentes culturelles :**
-En analysant les données géographiques, le cinéma peut mettre en avant des thématiques ou cycles spécifiques, en fonction des attentes du public :  
-
-- **Amérique du Nord** :  
-  - Proposer des blockbusters ou des films à gros budgets pour attirer un public large (ex. : films Marvel, thrillers américains).  
-
-- **Europe** :  
-  - Organiser des *soirées cinéma d’auteur* ou des projections de comédies françaises, britanniques ou italiennes.  
-  - Valoriser des productions indépendantes européennes qui plaisent aux spectateurs recherchant un contenu plus intimiste.  
-
-- **Asie** :  
-  - Lancer des événements spécifiques, comme des *projections de films Bollywood*, *soirées animation japonaise* ou marathons de *dramas coréens*.  
-  - Les œuvres asiatiques, bien que minoritaires, attirent souvent des spectateurs passionnés.  
-
-##### **3. Événements thématiques autour des régions dominantes :**
-Proposer des cycles régionaux pourrait permettre de diversifier l’offre et fidéliser une audience plus ciblée. Voici quelques idées :  
-- **Semaine américaine** : blockbusters, thrillers, séries cultes.  
-- **Focus européen** : comédies françaises, drames britanniques, cinéma d’auteur espagnol.  
-- **Festival asiatique** : Bollywood, films japonais (ex. *Your Name*), œuvres coréennes primées (*Parasite*).  
-
-##### **4. Optimisation des recommandations géographiques :**
-Dans un moteur de recherche, enrichir les recommandations en fonction des pays ou continents dominants permettrait de répondre à des attentes précises :  
-- Exemple : si un spectateur choisit *cinéma asiatique*, afficher des œuvres indiennes, japonaises ou coréennes, triées par popularité ou critiques.  
-
-
-#### **Recommandations spécifiques pour le cinéma :**
-
-1. **Mettre en avant les productions américaines et européennes :**  
-   - Elles représentent la majorité des œuvres et répondent à un large éventail de goûts.  
-
-2. **Accentuer la diversité avec des productions asiatiques :**  
-   - Intégrer régulièrement des films Bollywood, des animations japonaises ou des thrillers coréens pour séduire un public curieux.  
-
-3. **Créez des cycles et festivals régionaux :**  
-   - Offrir des expériences immersives avec des projections et événements thématiques (*Semaine Bollywood*, *Cycle cinéma britannique*).  
-
-4. **Enrichissez le moteur de recherche :**  
-   - Ajouter des catégories géographiques claires pour permettre une exploration facile des œuvres par pays ou continent.  
+2. **Pour la programmation cinéma :**  
+   - **Soirées thématiques :**  
+     - Organiser des événements autour de la production d’un pays ou d’une région spécifique (ex. : Bollywood Night, Festival des films britanniques).  
+   - **Promotion des pépites internationales :**  
+     - Mettre en avant des œuvres de pays moins représentés, renforçant l’attrait pour un public curieux de diversité culturelle.  
+   - **Valorisation de l’Europe :**  
+     - Créer une programmation dédiée au cinéma européen ou à des coproductions internationales, en misant sur la richesse artistique.  
+   - **Focus sur l’Asie :**  
+     - Capitaliser sur l’intérêt croissant pour les œuvres japonaises, coréennes, ou chinoises, notamment dans les genres animation, drame et fantastique.  
+   - **Films historiques ou documentaires :**  
+     - Proposer des films en lien avec l’histoire ou la culture des pays représentés pour des séances éducatives ou immersives.  
+ 
+L’analyse géographique des œuvres met en lumière une forte hégémonie américaine mais aussi une diversité culturelle précieuse. En s’appuyant sur ces données, le cinéma peut enrichir son offre en alternant entre productions populaires et découvertes internationales, tout en offrant un moteur de recherche adapté aux cinéphiles en quête de nouvelles expériences culturelles.
 <br>
 
 ---
@@ -261,7 +268,7 @@ Dans un moteur de recherche, enrichir les recommandations en fonction des pays o
 ### Films les mieux notés et leurs caractéristiques
 <br>
 
-#### Top Films 1920 - 1949
+### Top Films 1920 - 1949
 
 ![TOP1920_1949](../images/kpi/4_top_films_1920_1949.PNG)
 ***Source : ImdB - TmdB***
@@ -299,7 +306,7 @@ Prévoir des projections restaurées ou accompagnées de présentations pour enr
 
 ---
 
-#### Top Films 1950-1979
+### Top Films 1950-1979
 
 ![TOP1950_1979](../images/kpi/4_top_films_1950_1979.PNG)
 ***Source : ImdB - TmdB***
@@ -334,10 +341,11 @@ Prévoir des projections restaurées ou accompagnées de présentations pour enr
    - **Événements interactifs :** Ajouter des débats ou des analyses post-projection pour renforcer l’expérience culturelle.  
 
 Cette période, riche en innovations et en classiques incontournables, est idéale pour séduire à la fois un public cinéphile et des amateurs de blockbusters. Le moteur de recherche et la programmation cinéma peuvent ainsi valoriser la diversité et l’impact des films de cette époque.
+<br>
 
 ---
 
-#### Top Films 1980-1999
+### Top Films 1980-1999
 
 ![TOP1980_1999](../images/kpi/4_top_films_1980_1999.PNG)
 ***Source : ImdB - TmdB***
@@ -372,10 +380,11 @@ Cette période, riche en innovations et en classiques incontournables, est idéa
    - **Événements intergénérationnels :** Mettre en avant des films familiaux iconiques de cette période (*E.T.*, *The Lion King*) pour réunir un public de tout âge.  
 
 Cette période, riche en superproductions et en récits emblématiques, est parfaite pour satisfaire une audience diversifiée : des fans de blockbusters, des cinéphiles à la recherche de récits profonds, et des nostalgiques des classiques des années 80-90. Le moteur de recherche et la programmation peuvent ainsi s'adapter aux attentes variées de ce public.
+<br>
 
 ---
 
-#### Top Films 2000-2024
+### Top Films 2000-2024
 
 ![TOP2000_2024](../images/kpi/4_top_films_2000_2024.PNG)
 ***Source : ImdB - TmdB***
@@ -414,10 +423,11 @@ Cette période, riche en superproductions et en récits emblématiques, est parf
    - **Focus sur le cinéma international :** Proposer des séances axées sur les productions non-anglophones récompensées (*Parasite*, *Amélie*).  
 
 Cette période illustre un équilibre entre la force des blockbusters et des sagas cinématographiques et l’émergence d’œuvres originales et audacieuses. Une stratégie mixte permettrait d’attirer une audience variée, de la génération Marvel aux amateurs de films primés et à fort impact artistique.
+<br>
 
 ---
 
-#### Top Films (Votes < 100000)
+### Top Films (Votes < 100000)
 
 ![TOPvotes_100000](../images/kpi/4_top_films_votes_100000.PNG)
 ***Source : ImdB - TmdB***
@@ -425,7 +435,58 @@ Cette période illustre un équilibre entre la force des blockbusters et des sag
 
 #### Analyse
 
+1. **Films Classiques avec Notes Élevées :**  
+   - Ces films sont souvent des œuvres méconnues du grand public mais très appréciées par une niche cinéphile.  
+   - Les genres représentés varient entre drames, films historiques, documentaires, et films d’auteur.  
+   - Le soin apporté à la narration, à la photographie, et aux thématiques universelles est un point commun.  
+   - Certaines œuvres proviennent de cinémas moins médiatisés (cinéma scandinave, Asie centrale, cinéma indépendant américain).
+
+2. **Profil des Films :**  
+   - La période s'étend sur plusieurs décennies, allant de chefs-d’œuvre classiques à des productions modernes peu exposées médiatiquement.  
+   - Les notes élevées témoignent d’une qualité cinématographique exceptionnelle, mais l’audience limitée pourrait s’expliquer par une distribution restreinte ou un marketing faible.  
+
+3. **Niches Culturelles :**  
+   - Films reflétant des cultures ou des périodes historiques spécifiques.  
+   - Certains films indépendants abordent des thématiques atypiques ou controversées, attirant un public averti.  
+
+#### **Insights pertinents**
+
+1. **Pour le moteur de recherche :**  
+   - Mettre en avant une catégorie "Pépites méconnues" avec des films ayant :  
+     - Une note > 8/10.  
+     - Moins de 100 000 votes.  
+   - Ajouter des filtres basés sur :  
+     - Le genre cinématographique (drame, documentaire, film historique).  
+     - L'origine géographique pour révéler les richesses du cinéma international.  
+   - Proposer une recommandation personnalisée pour les cinéphiles curieux.  
+
+2. **Pour la programmation cinéma :**  
+   - **Cycle "Trésors Cachés" :** Une série de projections dédiées aux films moins connus mais extrêmement bien notés.  
+     - Inclure des introductions ou des discussions avec des critiques ou des cinéastes.  
+   - **Ciné-club de niche :**  
+     - Inviter des spectateurs à découvrir ces œuvres dans un cadre intimiste.  
+     - Organiser des séances thématiques (cinéma d’auteur, exploration de régions cinématographiques peu connues).  
+   - **Exploration culturelle :**  
+     - Diffuser des films peu votés issus de cinémas spécifiques (scandinave, africain, asiatique).  
+     - Mettre en avant le contexte historique ou culturel lors de ces séances.  
+   - **Festival des découvertes :** Un mini-festival annuel consacré à ces pépites avec votes des spectateurs pour leur film préféré.  
+
+
+En valorisant ces films au sein d’un moteur de recherche ou d’une programmation, un cinéma peut offrir une expérience enrichissante et différenciante, attirant une audience curieuse et passionnée par des œuvres de qualité souvent laissées de côté. Cela renforcerait l’image d’un cinéma axé sur la découverte et l’excellence.
+<br>
+
 ---
+
+### Top Films France (Production Française)
+
+![TOPfilms_france](../images/kpi/4_top_films_france.PNG)
+***Source : ImdB - TmdB***
+<br>
+
+**Attention !** : Certains films ci dessus sont en partie production française, en partie d'autres pays.
+
+####
+
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
