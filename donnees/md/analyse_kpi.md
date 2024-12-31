@@ -297,6 +297,8 @@ Organiser des cycles thématiques : Proposer des rétrospectives par réalisateu
 Prévoir des projections restaurées ou accompagnées de présentations pour enrichir l’expérience et l’intérêt historique.
 <br>
 
+---
+
 #### Top Films 1950-1979
 
 ![TOP1950_1979](../images/kpi/4_top_films_1950_1979.PNG)
@@ -333,6 +335,8 @@ Prévoir des projections restaurées ou accompagnées de présentations pour enr
 
 Cette période, riche en innovations et en classiques incontournables, est idéale pour séduire à la fois un public cinéphile et des amateurs de blockbusters. Le moteur de recherche et la programmation cinéma peuvent ainsi valoriser la diversité et l’impact des films de cette époque.
 
+---
+
 #### Top Films 1980-1999
 
 ![TOP1980_1999](../images/kpi/4_top_films_1980_1999.PNG)
@@ -340,6 +344,34 @@ Cette période, riche en innovations et en classiques incontournables, est idéa
 <br>
 
 #### Analyse
+
+1. **Top 10 des films selon la note moyenne :**  
+   - Cette période est marquée par des œuvres devenues des références culturelles, notamment dans les genres du drame, du thriller psychologique et de la science-fiction.  
+   - Les films de cette liste, comme *The Shawshank Redemption* (*Les Évadés*), *Pulp Fiction* ou *Schindler's List*, témoignent d'une période où le storytelling puissant et la profondeur émotionnelle sont au premier plan.  
+   - Les réalisateurs de renom comme Steven Spielberg, Quentin Tarantino et David Fincher dominent avec des chefs-d'œuvre intemporels.  
+   - Les films internationaux gagnent également en reconnaissance, notamment à travers des productions plus accessibles pour un public mondial.
+
+2. **Top 10 selon le nombre de votes :**  
+   - Les films les plus votés de cette période incluent des blockbusters emblématiques tels que *The Matrix*, *The Lord of the Rings* (précurseur avec *The Fellowship of the Ring*) et des films de science-fiction comme *Terminator 2*.  
+   - Le cinéma d'action et les franchises dominent le classement, reflétant une explosion des films orientés grand public et le début de l'ère des superproductions à gros budget.  
+   - Ces films continuent de bénéficier de vastes communautés de fans, notamment grâce à Internet et aux plateformes comme IMDb.  
+
+#### **Insights pertinents**
+
+1. **Pour le moteur de recherche :**  
+   - Ajouter une option spécifique pour explorer les films des années 1980-1999, avec des filtres par *note moyenne* et *popularité* (nombre de votes).  
+   - Inclure des catégories par réalisateurs marquants (Tarantino, Spielberg, James Cameron, les Wachowski) pour permettre un ciblage des recherches par affinité cinématographique.  
+   - Mettre en avant les sagas et franchises majeures de cette période, notamment pour attirer les fans nostalgiques de ces œuvres.  
+
+2. **Pour la programmation cinéma :**  
+   - **Soirées Blockbusters des années 80-90 :** Créer un événement dédié aux superproductions cultes (*Terminator 2*, *Jurassic Park*, *The Matrix*), pour raviver l'intérêt des fans de science-fiction et d'action.  
+   - **Hommage aux drames intemporels :** Diffuser des œuvres comme *Les Évadés* ou *Schindler's List* dans un cadre cinéphile avec des analyses ou des débats après projection.  
+   - **Cycles thématiques par réalisateur :**  
+     - Un cycle Spielberg pour découvrir sa contribution au cinéma (action, drame, aventure).  
+     - Un cycle Tarantino avec des films comme *Pulp Fiction* et *Reservoir Dogs*.  
+   - **Événements intergénérationnels :** Mettre en avant des films familiaux iconiques de cette période (*E.T.*, *The Lion King*) pour réunir un public de tout âge.  
+
+Cette période, riche en superproductions et en récits emblématiques, est parfaite pour satisfaire une audience diversifiée : des fans de blockbusters, des cinéphiles à la recherche de récits profonds, et des nostalgiques des classiques des années 80-90. Le moteur de recherche et la programmation peuvent ainsi s'adapter aux attentes variées de ce public.
 
 ---
 
