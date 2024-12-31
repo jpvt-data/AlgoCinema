@@ -485,8 +485,56 @@ En valorisant ces films au sein d’un moteur de recherche ou d’une programmat
 
 **Attention !** : Certains films ci dessus sont en partie production française, en partie d'autres pays.
 
-####
+#### **Analyse**
 
+1. **Sélection des films 100% français :**  
+   - Les œuvres retenues excluent les coproductions avec d’autres pays afin de représenter uniquement la production nationale pure.  
+   - Cette méthode met en avant les films qui reflètent le mieux l’identité et la culture cinématographique française.
+
+2. **Tendances dans le top français :**  
+   - **Genres dominants :**  
+     - Une forte présence des drames, souvent appréciés pour leur profondeur narrative et leur introspection sur des thèmes universels.  
+     - Les comédies sont également bien représentées, confirmant leur rôle central dans le paysage cinématographique français.  
+   - **Réalisateurs iconiques :**  
+     - Des noms incontournables du cinéma français apparaissent fréquemment, témoignant de leur impact culturel.  
+     - On note également l’émergence de réalisateurs plus récents qui diversifient les styles et approches narratives.  
+   - **Années marquantes :**  
+     - Les films du début des années 2000 et les productions plus récentes dominent, reflétant une évolution vers des œuvres modernes et connectées aux enjeux contemporains.  
+
+3. **Popularité et appréciation :**  
+   - **Notes élevées :**  
+     - Les œuvres françaises dans ce classement bénéficient souvent d’une reconnaissance critique et populaire.  
+   - **Nombre de votes modéré :**  
+     - Malgré des notes élevées, le volume de votes reste inférieur à celui des productions américaines, ce qui souligne une audience plus ciblée mais engagée.  
+
+4. **Absence de productions massives :**  
+   - Contrairement à Hollywood, la France privilégie des productions à taille humaine, centrées sur des récits authentiques et émotionnels, ce qui les distingue sur la scène internationale.  
+
+#### **Insights pour le moteur de recherche et la programmation**
+
+1. **Pour le moteur de recherche :**  
+   - **Filtrage par origine stricte :**  
+     - Offrir un filtre pour isoler les productions 100% françaises afin de garantir une recherche précise et représentative.  
+   - **Genres typiques :**  
+     - Ajouter des suggestions basées sur les genres les plus populaires en France, comme les comédies et drames.  
+   - **Valorisation des réalisateurs :**  
+     - Mettre en avant des œuvres par réalisateur, pour guider les utilisateurs vers des auteurs reconnus et leurs filmographies complètes.  
+
+2. **Pour la programmation cinéma :**  
+   - **Soirées 100% françaises :**  
+     - Proposer des programmations dédiées au cinéma français, en mettant en avant des thématiques comme « Drames intemporels » ou « Comédies cultes ».  
+   - **Découvertes contemporaines :**  
+     - Miser sur des œuvres récentes pour attirer un public jeune ou des spectateurs intéressés par des sujets modernes.  
+   - **Valorisation des pépites moins votées :**  
+     - Projeter des films peu connus mais acclamés par la critique pour surprendre et enrichir l’expérience des spectateurs.  
+
+3. **Partenariats culturels :**  
+   - Organiser des événements en collaboration avec des institutions culturelles pour souligner l’importance du patrimoine cinématographique français.  
+
+L’analyse des films 100% français révèle une production cinématographique riche et variée, marquée par des récits authentiques et des genres emblématiques. En intégrant ces œuvres dans le moteur de recherche et les programmations, il est possible de renforcer l’identité culturelle tout en séduisant des spectateurs curieux de découvrir ou redécouvrir le meilleur du cinéma français.
+<br>
+
+---
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
@@ -496,29 +544,7 @@ En valorisant ces films au sein d’un moteur de recherche ou d’une programmat
 ![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
 ***Source : ImdB title.basics / name.basics***
 
-- Entre 1950 et 2000, le nombre d'acteurs au cinéma et à la télévision est en croissance constante, en raison du développement mondial.
-- A partir des années 2000, la croissance s'accélère; le nombre d'acteurs doublant pour chaque décennie pour atteindre **576K** acteurs dans les années 2010 pour le cinéma, et **340K** pour la télévision. Cela s'explique par le **démocratisation d'internet et des supports numériques** d'une part, et par l'apparition à partir de 2010 des **plateformes de Streaming**.
-
-### Comparaison entre les acteurs présents au cinéma et dans les séries
-- **KPI :** Proportion d'acteurs présents dans les films, les séries ou les deux.
-- **Visualisation :**
-  - Diagramme de Venn ou un graphique en barres empilées.
-  - Tableau croisé dynamique pour une exploration plus fine.
-
----
-
-### Identification des acteurs les plus présents et les périodes associées
-
-#### Périmètre 
-- Nous analysons la présence des acteurs selon le ***nombre d'apparitions*** dans les films. Le classement est établi sur le ***Top 15***.
-- L'analyse est faite par continent de production des films / séries. Dans le rapport, l'analyse peut être filtrée par pays également.
-- Les visuels ci dessous montrent un échantillon des analyses possibles.
-- L'analyse est construite selon les grandes périodes du cinéma :
-  - 1910-1949 : Du cinéma muet jusqu'à l'après guerre
-  - 1950-1979 : L'age d'or d'Hollywood et le développement du cinéma et de la télévision
-  - 1980-1999 : La démocratisation de la télévision et les débuts de la mondialisation
-  - 2000-2024 : L'explosion d'internet, l'apparition des plateformes de Streaming
-- Un focus est fait sur le ***Cinéma Français***
+#### **Analyse**
 
 #### Au cinéma
 
