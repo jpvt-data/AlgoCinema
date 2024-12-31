@@ -305,6 +305,42 @@ Prévoir des projections restaurées ou accompagnées de présentations pour enr
 
 #### Analyse
 
+1. **Top 10 des films selon la note moyenne :**  
+   - Les films de cette période incluent des chefs-d’œuvre incontournables qui ont façonné le cinéma moderne.  
+   - Les genres dominants sont variés : drame, science-fiction, thriller et comédie.  
+   - Les réalisateurs comme Stanley Kubrick, Akira Kurosawa ou Sergio Leone sont fortement représentés, soulignant leur importance artistique.  
+   - Hollywood reste dominant, mais l'influence internationale se fait plus marquée (notamment le Japon et l'Europe).  
+
+2. **Top 10 selon le nombre de votes :**  
+   - Ces films, largement populaires, ont un impact culturel énorme qui perdure encore aujourd’hui.  
+   - On observe une surreprésentation des blockbusters et des œuvres cultes (notamment des films de science-fiction ou de fantasy).  
+   - Les sagas et franchises emblématiques commencent à émerger dans cette période (ex. : *Star Wars*).  
+
+#### **Insights pertinents**  
+
+1. **Pour le moteur de recherche :**  
+   - Ajouter une section pour les œuvres de 1950 à 1979, avec la possibilité de filtrer par *note* ou *nombre de votes*.  
+   - Proposer des recommandations par réalisateurs emblématiques de cette période (Kubrick, Kurosawa, Leone, Fellini).  
+   - Inclure un filtre pour les œuvres ayant marqué des genres spécifiques (sci-fi, western spaghetti, drame psychologique).  
+
+2. **Pour la programmation cinéma :**  
+   - **Focus sur les films les mieux notés :** Organiser des soirées « chefs-d’œuvre », ciblant les cinéphiles à la recherche de films reconnus pour leur qualité artistique.  
+   - **Films les plus votés :** Mettre en avant des blockbusters cultes pour attirer un public plus large, nostalgique des classiques populaires.  
+   - **Cycles par genres et réalisateurs :** Par exemple :  
+     - Cycle *Stanley Kubrick* avec des projections comme *2001, l’Odyssée de l’Espace* ou *Orange Mécanique*.  
+     - Cycle *westerns spaghetti* avec les œuvres de Sergio Leone (*Le Bon, la Brute et le Truand*).  
+   - **Événements interactifs :** Ajouter des débats ou des analyses post-projection pour renforcer l’expérience culturelle.  
+
+Cette période, riche en innovations et en classiques incontournables, est idéale pour séduire à la fois un public cinéphile et des amateurs de blockbusters. Le moteur de recherche et la programmation cinéma peuvent ainsi valoriser la diversité et l’impact des films de cette époque.
+
+#### Top Films 1980-1999
+
+![TOP1980_1999](../images/kpi/4_top_films_1980_1999.PNG)
+***Source : ImdB - TmdB***
+<br>
+
+#### Analyse
+
 ---
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
