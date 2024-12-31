@@ -375,6 +375,16 @@ Cette période, riche en superproductions et en récits emblématiques, est parf
 
 ---
 
+#### Top Films 1980-1999
+
+![TOP2000_2024](../images/kpi/4_top_films_2000_2024.PNG)
+***Source : ImdB - TmdB***
+<br>
+
+#### Analyse
+
+---
+
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
 ### Nombre d'acteurs au cinéma, à la télévision par décennie
