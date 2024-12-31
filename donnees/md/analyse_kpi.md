@@ -354,7 +354,7 @@ Cette période, riche en innovations et en classiques incontournables, est idéa
 2. **Top 10 selon le nombre de votes :**  
    - Les films les plus votés de cette période incluent des blockbusters emblématiques tels que *The Matrix*, *The Lord of the Rings* (précurseur avec *The Fellowship of the Ring*) et des films de science-fiction comme *Terminator 2*.  
    - Le cinéma d'action et les franchises dominent le classement, reflétant une explosion des films orientés grand public et le début de l'ère des superproductions à gros budget.  
-   - Ces films continuent de bénéficier de vastes communautés de fans, notamment grâce à Internet et aux plateformes comme IMDb.  
+   - Ces films continuent de bénéficier de vastes communautés de fans, notamment grâce à Internet et aux plateformes comme IMDb. 
 
 #### **Insights pertinents**
 
@@ -378,6 +378,48 @@ Cette période, riche en superproductions et en récits emblématiques, est parf
 #### Top Films 2000-2024
 
 ![TOP2000_2024](../images/kpi/4_top_films_2000_2024.PNG)
+***Source : ImdB - TmdB***
+<br>
+
+#### Analyse
+
+1. **Top 10 des films selon la note moyenne :**  
+   - Cette période est dominée par des films alliant puissance narrative et excellence technique, comme *The Dark Knight*, *The Lord of the Rings: The Return of the King*, et *Inception*.  
+   - Les genres variés, incluant la fantasy, la science-fiction, et les thrillers psychologiques, séduisent à la fois les critiques et le grand public.  
+   - Le cinéma international s’impose également : *Parasite*, une production sud-coréenne, a marqué l’histoire en remportant de multiples distinctions, dont l’Oscar du meilleur film en 2020.  
+   - Des réalisateurs visionnaires comme Christopher Nolan, Peter Jackson, et Bong Joon-ho sont omniprésents dans ce classement.
+
+2. **Top 10 selon le nombre de votes :**  
+   - Les films les plus votés comprennent des œuvres emblématiques comme *Avengers: Endgame*, *Avatar*, et *The Dark Knight*, illustrant l’hégémonie des franchises Marvel et DC dans le paysage cinématographique.  
+   - Cette période reflète l’essor des blockbusters grand public et l’industrialisation des univers cinématographiques partagés (notamment le MCU).  
+   - Les films basés sur des sagas populaires (*Harry Potter*, *The Lord of the Rings*, *Star Wars*) continuent de captiver les foules.  
+   - La popularité des plateformes de notation en ligne amplifie l’impact des fandoms sur les tendances.  
+
+#### **Insights pertinents**
+
+1. **Pour le moteur de recherche :**  
+   - Ajouter un filtre par période spécifique (2000-2024) et par franchise majeure (Marvel, DC, *Harry Potter*, etc.).  
+   - Permettre de trier les films par note moyenne et nombre de votes, pour répondre à la fois aux attentes des cinéphiles et des amateurs de blockbusters.  
+   - Intégrer des catégories comme :  
+     - Films oscarisés (*Parasite*, *The Return of the King*).  
+     - Films de réalisateurs renommés (Nolan, Villeneuve, Bong Joon-ho).  
+     - Films de science-fiction et fantasy incontournables.  
+
+2. **Pour la programmation cinéma :**  
+   - **Marathons Franchises :** Proposer des marathons autour des sagas cultes comme *The Lord of the Rings*, *Harry Potter*, ou l’univers Marvel, pour fidéliser un public jeune et intergénérationnel.  
+   - **Cycles Réalisateurs Visionnaires :** Dédiés à des figures majeures comme Christopher Nolan, Denis Villeneuve, ou Peter Jackson, avec des projections accompagnées de discussions thématiques.  
+   - **Projections Événements :**  
+     - Diffusion de films oscarisés suivie de débats ou de conférences (*Parasite*, *Slumdog Millionaire*).  
+     - Hommage aux blockbusters marquants (*Avatar*, *Avengers: Endgame*), couplé à des expériences immersives (3D, IMAX).  
+   - **Focus sur le cinéma international :** Proposer des séances axées sur les productions non-anglophones récompensées (*Parasite*, *Amélie*).  
+
+Cette période illustre un équilibre entre la force des blockbusters et des sagas cinématographiques et l’émergence d’œuvres originales et audacieuses. Une stratégie mixte permettrait d’attirer une audience variée, de la génération Marvel aux amateurs de films primés et à fort impact artistique.
+
+---
+
+#### Top Films (Votes < 100000)
+
+![TOPvotes_100000](../images/kpi/4_top_films_votes_100000.PNG)
 ***Source : ImdB - TmdB***
 <br>
 
