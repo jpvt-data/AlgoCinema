@@ -538,7 +538,7 @@ L’analyse des films 100% français révèle une production cinématographique 
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
-### Nombre d'acteurs au cinéma, à la télévision par décennie
+### Acteurs au cinéma, à la télévision par décennie
 <br>
 
 ![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
