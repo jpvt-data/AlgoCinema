@@ -19,22 +19,24 @@ Les principales analyses du dashboard présenteront :
 ## 📋 Méthodologie
 ### Étapes clés :
 
-1. **Préparation des données :**
+1. **Préparation des données Power BI:**
    - Nettoyage des datasets IMDb et TMDb pour éliminer les doublons et les valeurs manquantes.
    - Standardisation des formats de colonnes (dates, durées, notes, etc.).
    - Fusion des datasets pour enrichir les analyses (liens entre acteurs, films et séries).
+   - Mise en place des relations entre les tables (Schéma en Etoile).
+   - Création des mesures utiles pour les KPI.
 
-2. **Exploration et création des KPI :**
-   - Définition des indicateurs à suivre pour répondre aux objectifs.
-   - Extraction et transformation des données nécessaires.
-
-3. **Construction des visualisations Power BI :**
+2. **Construction des visualisations Power BI :**
    - Création de rapports dynamiques et interactifs.
    - Mise en place de filtres et slicers pour explorer les données en détail.
 
 ---
 
 ##  **Schéma de liaison des Tables sur Power BI**
+
+![schema_tables](../images/kpi/0_schema_tables.PNG)
+<br>
+
 ---
 
 ## Périmètre d'analyse
@@ -577,14 +579,39 @@ L’analyse montre une évolution marquée du rôle des acteurs entre le cinéma
 <br>
 
 **Périmètre** :
-- L'analyse ci dessous porte sur les films avec notes comprises entre 7 et 10, de façon à mettre en avant les acteurs qui apparaissent dans les oeuvres de qualité.
+- L'analyse ci dessous porte sur les films avec notes comprises entre 8 et 10, et entre 100000 et max pour le nombre de votes de façon à mettre en avant les acteurs qui apparaissent dans les oeuvres de qualité.
 - Dans le dashboard PowerBi, une analyse plus poussée permettre d'identifier les apparitions des acteurs ***selon le continent, le pays, les genres de film, les notes***.
 <br>
 
-#### En Amérique
+#### Au Global
+
+![top_global](../images/kpi/6_top_global.PNG)
+***Source : ImdB title.basics / name.basics***
+<br>
+
+#### En Amerique
 
 ![top_amerique](../images/kpi/6_top_amerique.PNG)
 ***Source : ImdB title.basics / name.basics***
+<br>
+
+#### En Europe
+
+![top_amerique](../images/kpi/6_top_europe.PNG)
+***Source : ImdB title.basics / name.basics***
+<br>
+
+#### En France
+
+![top_france](../images/kpi/6_top_france.PNG)
+***Source : ImdB title.basics / name.basics***
+<br>
+
+#### En Inde et au Japon
+
+![top_inde_japon](../images/kpi/6_top_inde_japon.PNG)
+***Source : ImdB title.basics / name.basics***
+<br>
 
 ---
 
