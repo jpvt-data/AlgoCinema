@@ -41,7 +41,7 @@ Le 23ème Ecran a pour ambition de :
    - Développement de l'application Streamlit
    - Démonstration des fonctionnalités interactives
 
-#### 7. 📑 Présentation et Livrables
+#### 6. 📑 Présentation et Livrables
    - Démarche suivie, outils utilisés et défis rencontrés
    - Pistes d'amélioration et retours d'expérience
 
