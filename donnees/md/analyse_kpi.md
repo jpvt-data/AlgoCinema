@@ -57,51 +57,19 @@ Les principales analyses du dashboard présenteront :
 
 #### Analyse
 
-1. **Types de Données :**
-   - Les graphiques présentent une vue d'ensemble des œuvres cinématographiques et télévisuelles, avec une répartition entre le nombre de films et de séries.  
-   - On constate une dominance des films par rapport aux séries, mais l’essor des séries TV au cours des dernières décennies se manifeste également.  
-   - La base de données couvre une large gamme de genres, de pays, de périodes et de formats, ce qui reflète la richesse de l’industrie audiovisuelle.
+- **Nombre total d'œuvres (hors films adultes)** : ***834 859***, dont ***587 074*** pour le Cinéma et ***247 785*** pour la Télévision.  
+- **Répartition des supports** : ***70,3 % Cinéma*** et ***29,7 % Télévision***.  
+- **Évolution temporelle des œuvres** :  
+  - **1890 à 1949** : Augmentation progressive des œuvres cinématographiques avec un pic dans les années 1920-1930 (~22K à 21K films). La télévision est quasi absente.  
+  - **1950 à aujourd'hui** : Explosion significative du nombre d’œuvres, notamment dans les années 2010 avec un maximum de ***167K films***. La Télévision montre une croissance régulière, atteignant un pic en ***2020 (50K séries)***.  
+- **Durée moyenne des films et séries** :  
+  - Films (Cinéma) : ***1h30 (90 minutes)*** en moyenne, stable depuis les années 1950.  
+  - Séries (Télévision) : ***46 minutes*** en moyenne, mais avec des variations importantes au fil des décennies.  
 
-2. **Tendances Générales :**
-   - Une augmentation de la production de séries TV au détriment des films à partir des années 2000.  
-   - Une variation marquée dans les genres populaires selon les périodes, les films et séries suivant des modes sociétales et technologiques.
-   - Les séries TV connaissent une importante production à partir des années 2010, ce qui correspond à l'explosion des plateformes de streaming comme Netflix, Amazon Prime, et autres.
-
-3. **Top 5 des pays producteurs :**
-   - Les États-Unis, Royaume-Uni, et Inde dominent toujours la production, mais d'autres pays émergent progressivement, notamment le Japon et la France.  
-   - Le cinéma français et européen se distingue par sa diversité, tout comme l’Inde avec ses productions massives et colorées.
-
-4. **Répartition par Genres et Types :**
-   - Les genres les plus populaires restent les drames, comédies, et films d’action, avec des tendances évolutives suivant les attentes des spectateurs (ex. : super-héros, science-fiction dans les années 2000).  
-   - La diversité dans les genres proposés est également notable, incluant des films expérimentaux et des séries de niche qui prennent de l'ampleur sur des plateformes comme Netflix, qui investit dans des productions originales.  
-
-#### **Insights pertinents**
-
-1. **Pour le moteur de recherche :**  
-   - **Séparation Cinéma / Séries TV :**  
-     - Offrir un filtre de sélection entre films et séries, avec la possibilité d’affiner par période, genre, ou pays.  
-     - Permettre une recherche croisée qui met en avant la transition cinéma-séries pour certaines franchises (par exemple, adaptation de films populaires en séries).  
-   - **Filtrage par Popularité et Nombre de Votants :**  
-     - Intégrer un système qui permet de filtrer les œuvres par le nombre de votes et la note moyenne, pour mettre en avant des films populaires tout en découvrant des pépites sous-évaluées.  
-   - **Recommandations par Genre et Période :**  
-     - Proposer des recommandations basées sur des films ou séries qui ont marqué chaque décennie ou chaque genre, afin de permettre aux utilisateurs de découvrir des classiques ou des films emblématiques.  
-     - Intégrer un algorithme qui apprend les préférences de l’utilisateur pour mieux personnaliser les suggestions.
-
-2. **Pour la programmation cinéma :**  
-   - **Séries à l'écran :**  
-     - Proposer des projections spéciales de séries populaires en salles, sur le modèle des « événements cinéma », comme l’ont fait certains cinémas pour des séries comme *Game of Thrones*.  
-     - Créer un espace de projection de séries TV comme des films, avec des événements dédiés aux premières d’épisodes ou aux saisons entières.
-   - **Cycle de Programmation Décennies :**  
-     - Organiser des cycles de films par décennie, en mettant en avant les grandes œuvres des années 1920 à 2020.  
-     - Cela pourrait inclure des discussions autour de l’évolution du cinéma et des séries, et comment les productions ont évolué en réponse à la technologie, à la société, et à la consommation des médias.
-   - **Nouvelles Séries et Production Internationale :**  
-     - Mettre en avant des séries internationales ou moins connues des États-Unis et du Royaume-Uni, en s’appuyant sur des genres émergents, des productions uniques ou des auteurs inconnus du grand public.  
-     - Organiser des projections autour de séries télévisées qui ne sont pas encore largement distribuées, mais qui pourraient captiver un public averti.
-   - **Saison thématique de films/séries par genre :**  
-     - Proposer des programmations spéciales par genre : films policiers, science-fiction, comédies romantiques, etc. pour capter l’attention de spectateurs intéressés par des thèmes ou genres spécifiques.  
-     - Mettez en lumière des genres moins connus (par exemple, films d’horreur classiques ou comédies indépendantes) pour diversifier l’offre.
-
-En optimisant un moteur de recherche et une programmation cinéma basée sur cette analyse, un cinéma peut non seulement attirer un public plus large, mais aussi fidéliser une clientèle curieuse de découvrir de nouveaux horizons cinématographiques et télévisuels. Cela permettra de proposer une offre plus personnalisée, en phase avec les attentes variées des spectateurs actuels.
+### **Insights pertinents pour la suite :**
+- La forte proportion de films dans la base (70,3 %) favorise le développement d’un moteur axé prioritairement sur le Cinéma.  
+- La période récente (2000 à aujourd'hui) est la plus productive en termes de contenu, ce qui suggère une orientation sur les œuvres contemporaines pour répondre aux attentes des utilisateurs.  
+- La stabilité de la durée moyenne des films (90 minutes) et des séries (46 minutes) est un indicateur clé pour ajuster les recommandations en fonction de la disponibilité des utilisateurs (ex. : recommandations de "binge-watch" ou d'œuvres courtes).
 <br>
 
 ---
@@ -485,40 +453,66 @@ En valorisant ces films au sein d’un moteur de recherche ou d’une programmat
 
 **Attention !** : Certains films ci dessus sont en partie production française, en partie d'autres pays.
 
-####
+#### **Analyse**
 
+1. **Sélection des films 100% français :**  
+   - Les œuvres retenues excluent les coproductions avec d’autres pays afin de représenter uniquement la production nationale pure.  
+   - Cette méthode met en avant les films qui reflètent le mieux l’identité et la culture cinématographique française.
+
+2. **Tendances dans le top français :**  
+   - **Genres dominants :**  
+     - Une forte présence des drames, souvent appréciés pour leur profondeur narrative et leur introspection sur des thèmes universels.  
+     - Les comédies sont également bien représentées, confirmant leur rôle central dans le paysage cinématographique français.  
+   - **Réalisateurs iconiques :**  
+     - Des noms incontournables du cinéma français apparaissent fréquemment, témoignant de leur impact culturel.  
+     - On note également l’émergence de réalisateurs plus récents qui diversifient les styles et approches narratives.  
+   - **Années marquantes :**  
+     - Les films du début des années 2000 et les productions plus récentes dominent, reflétant une évolution vers des œuvres modernes et connectées aux enjeux contemporains.  
+
+3. **Popularité et appréciation :**  
+   - **Notes élevées :**  
+     - Les œuvres françaises dans ce classement bénéficient souvent d’une reconnaissance critique et populaire.  
+   - **Nombre de votes modéré :**  
+     - Malgré des notes élevées, le volume de votes reste inférieur à celui des productions américaines, ce qui souligne une audience plus ciblée mais engagée.  
+
+4. **Absence de productions massives :**  
+   - Contrairement à Hollywood, la France privilégie des productions à taille humaine, centrées sur des récits authentiques et émotionnels, ce qui les distingue sur la scène internationale.  
+
+#### **Insights pour le moteur de recherche et la programmation**
+
+1. **Pour le moteur de recherche :**  
+   - **Filtrage par origine stricte :**  
+     - Offrir un filtre pour isoler les productions 100% françaises afin de garantir une recherche précise et représentative.  
+   - **Genres typiques :**  
+     - Ajouter des suggestions basées sur les genres les plus populaires en France, comme les comédies et drames.  
+   - **Valorisation des réalisateurs :**  
+     - Mettre en avant des œuvres par réalisateur, pour guider les utilisateurs vers des auteurs reconnus et leurs filmographies complètes.  
+
+2. **Pour la programmation cinéma :**  
+   - **Soirées 100% françaises :**  
+     - Proposer des programmations dédiées au cinéma français, en mettant en avant des thématiques comme « Drames intemporels » ou « Comédies cultes ».  
+   - **Découvertes contemporaines :**  
+     - Miser sur des œuvres récentes pour attirer un public jeune ou des spectateurs intéressés par des sujets modernes.  
+   - **Valorisation des pépites moins votées :**  
+     - Projeter des films peu connus mais acclamés par la critique pour surprendre et enrichir l’expérience des spectateurs.  
+
+3. **Partenariats culturels :**  
+   - Organiser des événements en collaboration avec des institutions culturelles pour souligner l’importance du patrimoine cinématographique français.  
+
+L’analyse des films 100% français révèle une production cinématographique riche et variée, marquée par des récits authentiques et des genres emblématiques. En intégrant ces œuvres dans le moteur de recherche et les programmations, il est possible de renforcer l’identité culturelle tout en séduisant des spectateurs curieux de découvrir ou redécouvrir le meilleur du cinéma français.
+<br>
+
+---
 
 ##  **📊 KPI** : Analyse des acteurs dans la base de données
 
-### Nombre d'acteurs au cinéma, à la télévision par décennie
+### Acteurs au cinéma, à la télévision par décennie
 <br>
 
 ![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
 ***Source : ImdB title.basics / name.basics***
 
-- Entre 1950 et 2000, le nombre d'acteurs au cinéma et à la télévision est en croissance constante, en raison du développement mondial.
-- A partir des années 2000, la croissance s'accélère; le nombre d'acteurs doublant pour chaque décennie pour atteindre **576K** acteurs dans les années 2010 pour le cinéma, et **340K** pour la télévision. Cela s'explique par le **démocratisation d'internet et des supports numériques** d'une part, et par l'apparition à partir de 2010 des **plateformes de Streaming**.
-
-### Comparaison entre les acteurs présents au cinéma et dans les séries
-- **KPI :** Proportion d'acteurs présents dans les films, les séries ou les deux.
-- **Visualisation :**
-  - Diagramme de Venn ou un graphique en barres empilées.
-  - Tableau croisé dynamique pour une exploration plus fine.
-
----
-
-### Identification des acteurs les plus présents et les périodes associées
-
-#### Périmètre 
-- Nous analysons la présence des acteurs selon le ***nombre d'apparitions*** dans les films. Le classement est établi sur le ***Top 15***.
-- L'analyse est faite par continent de production des films / séries. Dans le rapport, l'analyse peut être filtrée par pays également.
-- Les visuels ci dessous montrent un échantillon des analyses possibles.
-- L'analyse est construite selon les grandes périodes du cinéma :
-  - 1910-1949 : Du cinéma muet jusqu'à l'après guerre
-  - 1950-1979 : L'age d'or d'Hollywood et le développement du cinéma et de la télévision
-  - 1980-1999 : La démocratisation de la télévision et les débuts de la mondialisation
-  - 2000-2024 : L'explosion d'internet, l'apparition des plateformes de Streaming
-- Un focus est fait sur le ***Cinéma Français***
+#### **Analyse**
 
 #### Au cinéma
 
