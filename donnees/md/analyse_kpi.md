@@ -182,7 +182,7 @@ L’analyse des genres dans les séries TV révèle une diversité de contenus a
 ### Répartition des Films par Pays
 <br>
 
-![Pays](../images/kpi/7b_pays.PNG)
+![Pays](../images/kpi/3_pays.PNG)
 ***Source : TmdB***
 <br>
 
@@ -509,50 +509,82 @@ L’analyse des films 100% français révèle une production cinématographique 
 ### Acteurs au cinéma, à la télévision par décennie
 <br>
 
-![décennie_acteur](../images/kpi/6_décennie_acteur.PNG)
+![décennie_acteur](../images/kpi/5_décennie_acteur.PNG)
 ***Source : ImdB title.basics / name.basics***
 
 #### **Analyse**
 
-#### Au cinéma
+1. **Nombre d’acteurs par support (cinéma vs télévision) :**  
+   - **Cinéma :**  
+     - Le cinéma reste un support dominant jusqu’aux années 1990, avec une concentration d’acteurs liés à des genres bien définis (blockbusters, drames historiques, westerns).  
+     - Depuis les années 2000, le nombre d’acteurs liés exclusivement au cinéma continue d'augmenter, mais laisse également une place à une part croissante de talents travaillant sur plusieurs supports.  
 
-##### Top 15 Acteurs en France
-![top_15_acteur](../images/kpi/8_top_15_france.PNG)
+   - **Télévision :**  
+     - La télévision connaît une croissance significative dès les années 1990, liée à l'explosion des séries de qualité.  
+     - Dans les années 2000-2020, on observe un accroissement plus rapide du nombre d’acteurs liés aux séries, due à l’essor des plateformes de streaming (Netflix, Amazon Prime, etc.) et à l’attractivité croissante de la télévision pour les grands noms du cinéma.  
 
-##### Top 15 Acteurs en Amérique
-![top_15_acteur](../images/kpi/8_top_15_amerique.PNG)
+2. **Âge moyen des acteurs :**  
+   - **Cinéma :**  
+     - Les acteurs du cinéma ont en moyenne un âge légèrement supérieur à ceux de la télévision. Cela s’explique par la pérennité des carrières au cinéma, où les talents restent actifs sur plusieurs décennies, souvent avec une transition vers des rôles plus matures.  
 
-##### Top 15 Acteurs en Europe
-![top_15_acteur](../images/kpi/8_top_15_europe.PNG)
+   - **Télévision :**  
+     - La télévision attire des talents plus jeunes, en particulier dans les séries destinées à un public adolescent ou jeune adulte. L’entrée plus précoce dans l’industrie explique cet écart.  
 
-##### Top 15 Acteurs en Asie
-![top_15_acteur](../images/kpi/8_top_15_asie.PNG)
+3. **Évolution par décennie :**  
+   - **1920-1949 :**  
+     - Le cinéma est l’unique support de référence. L’âge moyen des acteurs est élevé, car les carrières étaient longues et les débutants moins nombreux.  
 
-##### Top 15 Acteurs en Océanie
-![top_15_acteur](../images/kpi/8_top_15_oceanie.PNG)
+   - **1950-1979 :**  
+     - La télévision émerge comme un support alternatif, mais le cinéma domine toujours. L’âge moyen diminue légèrement, avec une diversification des genres attirant des acteurs plus jeunes.  
 
-##### Top 15 Acteurs en Afrique
-![top_15_acteur](../images/kpi/8_top_15_afrique.PNG)
+   - **1980-1999 :**  
+     - Croissance marquée du nombre d’acteurs liés à la télévision. Le cinéma reste prestigieux, mais la télévision devient une porte d’entrée pour de nombreux talents.  
+
+   - **2000-2020 :**  
+     - La télévision rivalise avec le cinéma en termes de volume d’acteurs. L’âge moyen reste équilibré, mais les plateformes attirent des talents jeunes et expérimentés grâce à des productions variées et ambitieuses.  
+
+#### **Insights pertinents**
+
+##### **Moteur de recherche**
+
+1. **Filtrage par support et âge :**  
+   - Ajouter une fonctionnalité permettant de rechercher des films ou séries en fonction de l’âge moyen des acteurs pour répondre à des besoins spécifiques (rétrospectives, thématiques sur la jeunesse, etc.).  
+   - Séparer les recherches entre cinéma et télévision pour cibler des productions spécifiques.  
+
+2. **Personnalisation :**  
+   - Mettre en avant des recommandations basées sur des carrières multi-supports, en liant les œuvres télévisées et cinématographiques des mêmes acteurs.  
+
+##### **Programmation Cinéma**
+
+1. **Cycles par âge des acteurs :**  
+   - Organiser des rétrospectives mettant en avant des acteurs à différents stades de leur carrière, par exemple :  
+     - **Jeunesse au cinéma :** Les débuts marquants d’acteurs emblématiques.  
+     - **Rôles de maturité :** Explorations des performances d’acteurs dans des rôles tardifs.  
+
+2. **Télévision vs Cinéma :**  
+   - Comparer les performances d’acteurs dans des œuvres cinématographiques et télévisées, offrant une perspective sur leur évolution artistique.  
+
+3. **Valorisation des nouvelles générations :**  
+   - Programmer des projections ou diffusions mettant en lumière de jeunes talents qui se démarquent dans la décennie actuelle, sur les deux supports.  
+
+
+L’analyse montre une évolution marquée du rôle des acteurs entre le cinéma et la télévision, avec une démocratisation des supports et une diversification des profils. La croissance des plateformes de streaming a transformé les dynamiques, et une mise en valeur des données liées à l’âge et au support peut enrichir à la fois les outils de recherche et les programmations culturelles.
+<br>
+
+---
+
+### Nombre d'Apparitions des Acteurs par Continent, par Pays
+<br>
+
+**Périmètre** :
+- L'analyse ci dessous porte sur les films avec notes comprises entre 7 et 10, de façon à mettre en avant les acteurs qui apparaissent dans les oeuvres de qualité.
+- Dans le dashboard PowerBi, une analyse plus poussée permettre d'identifier les apparitions des acteurs ***selon le continent, le pays, les genres de film, les notes***.
+<br>
+
+#### En Amérique
+
+![top_amerique](../images/kpi/6_top_amerique.PNG)
 ***Source : ImdB title.basics / name.basics***
-
-#### A la télévision
-
-![top_15_télévision](../images/kpi/9_top_15_télévision.PNG)
-***Source : ImdB title.basics / name.basics***
-
-
-
-### 4. Âge moyen des acteurs
-- **KPI :** Calcul de l'âge moyen des acteurs par période et par genre (homme/femme).
-- **Visualisation :**
-  - Graphique en barres pour la moyenne par décennie.
-  - Carte de chaleur pour explorer la répartition par âge et genre.
-
-### 5. Les films les mieux notés et les caractéristiques qu'ils partagent
-- **KPI :** Moyenne des notes des films, analyse des caractéristiques communes (genres, réalisateurs, durée, année de sortie).
-- **Visualisation :**
-  - Tableau récapitulatif des films les mieux notés.
-  - Graphique en bulles pour explorer les corrélations (durée, notes, genres).
 
 ---
 
