@@ -1,12 +1,12 @@
 # Le 23ème Ecran - Moteur de Recommandation de Films
-
-<p align="center">
-  <img src="./donnees/images/IMG_0259.JPG" alt="Logo Cinéma" width="300">
-</p>
-
 Bienvenue sur le dépôt GitHub **Le 23ème Ecran**, un projet **Data Analyst** visant à revitaliser un cinéma dans la Creuse en perte de vitesse en développant un **moteur de recommandation de films** et des outils analytiques basés sur des données de la plateforme IMDb et TMDB.
+<br>
+<p align="center">
+  <img src="./donnees/images/logo_23_eme_ecran.PNG" alt="Logo Cinéma" width="300">
+</p>
+<br>
 
-Accédez directement à l'interface interactive Streamlit du **23ème Écran** ici : [Le 23ème Écran - Streamlit]()
+- Accès direct au **moteur de recommandation** : **[Le 23ème Écran](https://movie-recommendation-project-wcs-bleu-sauvage.streamlit.app/)**
 
 ## Objectifs du Projet
 
@@ -16,6 +16,12 @@ Le 23ème Ecran a pour ambition de :
 2. Extraire des indicateurs clés et statistiques à partir des bases de données de films.
 3. Développer un système de recommandation basé sur le machine learning pour suggérer des films aux utilisateurs en ligne.
 4. Proposer un outil interactif combinant des visualisations et des recommandations pour enrichir l'expérience utilisateur.
+
+<br>
+<p align="center">
+  <img src="./donnees/images/IMG_0259.JPG" alt="Logo Cinéma" width="300">
+</p>
+<br>
 
 ## Sommaire:
 
