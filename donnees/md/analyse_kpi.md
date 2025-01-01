@@ -57,51 +57,19 @@ Les principales analyses du dashboard présenteront :
 
 #### Analyse
 
-1. **Types de Données :**
-   - Les graphiques présentent une vue d'ensemble des œuvres cinématographiques et télévisuelles, avec une répartition entre le nombre de films et de séries.  
-   - On constate une dominance des films par rapport aux séries, mais l’essor des séries TV au cours des dernières décennies se manifeste également.  
-   - La base de données couvre une large gamme de genres, de pays, de périodes et de formats, ce qui reflète la richesse de l’industrie audiovisuelle.
+- **Nombre total d'œuvres (hors films adultes)** : ***834 859***, dont ***587 074*** pour le Cinéma et ***247 785*** pour la Télévision.  
+- **Répartition des supports** : ***70,3 % Cinéma*** et ***29,7 % Télévision***.  
+- **Évolution temporelle des œuvres** :  
+  - **1890 à 1949** : Augmentation progressive des œuvres cinématographiques avec un pic dans les années 1920-1930 (~22K à 21K films). La télévision est quasi absente.  
+  - **1950 à aujourd'hui** : Explosion significative du nombre d’œuvres, notamment dans les années 2010 avec un maximum de ***167K films***. La Télévision montre une croissance régulière, atteignant un pic en ***2020 (50K séries)***.  
+- **Durée moyenne des films et séries** :  
+  - Films (Cinéma) : ***1h30 (90 minutes)*** en moyenne, stable depuis les années 1950.  
+  - Séries (Télévision) : ***46 minutes*** en moyenne, mais avec des variations importantes au fil des décennies.  
 
-2. **Tendances Générales :**
-   - Une augmentation de la production de séries TV au détriment des films à partir des années 2000.  
-   - Une variation marquée dans les genres populaires selon les périodes, les films et séries suivant des modes sociétales et technologiques.
-   - Les séries TV connaissent une importante production à partir des années 2010, ce qui correspond à l'explosion des plateformes de streaming comme Netflix, Amazon Prime, et autres.
-
-3. **Top 5 des pays producteurs :**
-   - Les États-Unis, Royaume-Uni, et Inde dominent toujours la production, mais d'autres pays émergent progressivement, notamment le Japon et la France.  
-   - Le cinéma français et européen se distingue par sa diversité, tout comme l’Inde avec ses productions massives et colorées.
-
-4. **Répartition par Genres et Types :**
-   - Les genres les plus populaires restent les drames, comédies, et films d’action, avec des tendances évolutives suivant les attentes des spectateurs (ex. : super-héros, science-fiction dans les années 2000).  
-   - La diversité dans les genres proposés est également notable, incluant des films expérimentaux et des séries de niche qui prennent de l'ampleur sur des plateformes comme Netflix, qui investit dans des productions originales.  
-
-#### **Insights pertinents**
-
-1. **Pour le moteur de recherche :**  
-   - **Séparation Cinéma / Séries TV :**  
-     - Offrir un filtre de sélection entre films et séries, avec la possibilité d’affiner par période, genre, ou pays.  
-     - Permettre une recherche croisée qui met en avant la transition cinéma-séries pour certaines franchises (par exemple, adaptation de films populaires en séries).  
-   - **Filtrage par Popularité et Nombre de Votants :**  
-     - Intégrer un système qui permet de filtrer les œuvres par le nombre de votes et la note moyenne, pour mettre en avant des films populaires tout en découvrant des pépites sous-évaluées.  
-   - **Recommandations par Genre et Période :**  
-     - Proposer des recommandations basées sur des films ou séries qui ont marqué chaque décennie ou chaque genre, afin de permettre aux utilisateurs de découvrir des classiques ou des films emblématiques.  
-     - Intégrer un algorithme qui apprend les préférences de l’utilisateur pour mieux personnaliser les suggestions.
-
-2. **Pour la programmation cinéma :**  
-   - **Séries à l'écran :**  
-     - Proposer des projections spéciales de séries populaires en salles, sur le modèle des « événements cinéma », comme l’ont fait certains cinémas pour des séries comme *Game of Thrones*.  
-     - Créer un espace de projection de séries TV comme des films, avec des événements dédiés aux premières d’épisodes ou aux saisons entières.
-   - **Cycle de Programmation Décennies :**  
-     - Organiser des cycles de films par décennie, en mettant en avant les grandes œuvres des années 1920 à 2020.  
-     - Cela pourrait inclure des discussions autour de l’évolution du cinéma et des séries, et comment les productions ont évolué en réponse à la technologie, à la société, et à la consommation des médias.
-   - **Nouvelles Séries et Production Internationale :**  
-     - Mettre en avant des séries internationales ou moins connues des États-Unis et du Royaume-Uni, en s’appuyant sur des genres émergents, des productions uniques ou des auteurs inconnus du grand public.  
-     - Organiser des projections autour de séries télévisées qui ne sont pas encore largement distribuées, mais qui pourraient captiver un public averti.
-   - **Saison thématique de films/séries par genre :**  
-     - Proposer des programmations spéciales par genre : films policiers, science-fiction, comédies romantiques, etc. pour capter l’attention de spectateurs intéressés par des thèmes ou genres spécifiques.  
-     - Mettez en lumière des genres moins connus (par exemple, films d’horreur classiques ou comédies indépendantes) pour diversifier l’offre.
-
-En optimisant un moteur de recherche et une programmation cinéma basée sur cette analyse, un cinéma peut non seulement attirer un public plus large, mais aussi fidéliser une clientèle curieuse de découvrir de nouveaux horizons cinématographiques et télévisuels. Cela permettra de proposer une offre plus personnalisée, en phase avec les attentes variées des spectateurs actuels.
+### **Insights pertinents pour la suite :**
+- La forte proportion de films dans la base (70,3 %) favorise le développement d’un moteur axé prioritairement sur le Cinéma.  
+- La période récente (2000 à aujourd'hui) est la plus productive en termes de contenu, ce qui suggère une orientation sur les œuvres contemporaines pour répondre aux attentes des utilisateurs.  
+- La stabilité de la durée moyenne des films (90 minutes) et des séries (46 minutes) est un indicateur clé pour ajuster les recommandations en fonction de la disponibilité des utilisateurs (ex. : recommandations de "binge-watch" ou d'œuvres courtes).
 <br>
 
 ---
