@@ -6,7 +6,7 @@
 
 <br>
 <p align="center">
-  <img src="./donnees/images/logo_23_eme_ecran.PNG" alt="Logo Cinéma" width="300">
+  <img src="../images/logo_23_eme_ecran.PNG" alt="Logo Cinéma" width="300">
 </p>
 <br>
 
