@@ -4,6 +4,12 @@
 
 ## Introduction
 
+<br>
+<p align="center">
+  <img src="./donnees/images/logo_23_eme_ecran.PNG" alt="Logo Cinéma" width="300">
+</p>
+<br>
+
 Nous sommes un groupe de quatre étudiants, Alice, Pierre, Rodrigo et Jean Paul, en formation Data Analyst à la **Wild Code School**.
 
 Dans le cadre de notre apprentissage, nous réalisons un projet ambitieux pour un client fictif : un cinéma situé dans la Creuse qui souhaite se moderniser, dans une région où l’activité cinématographique est en perte de vitesse.
