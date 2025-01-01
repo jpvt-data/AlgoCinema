@@ -77,9 +77,11 @@ Les principales analyses du dashboard présenteront :
 - La stabilité de la durée moyenne des films (90 minutes) et des séries (46 minutes) est un indicateur clé pour ajuster les recommandations en fonction de la disponibilité des utilisateurs (ex. : recommandations de "binge-watch" ou d'œuvres courtes).
 <br>
 
-#### **Pourquoi un cinéma devrait intégrer des séries TV dans sa programmation ou son moteur de recherche ?**
+---
 
-##### **Opportunités commerciales :**
+### **Pourquoi un cinéma devrait intégrer des séries TV dans sa programmation ou son moteur de recherche ?**
+
+#### **Opportunités commerciales :**
 
 - **Attirer de nouveaux publics :**
 Les séries TV ont gagné en popularité ces dernières années, notamment grâce aux plateformes de streaming. Intégrer des séries permettrait d’attirer des spectateurs qui recherchent des formats narratifs longs et immersifs.
@@ -93,7 +95,7 @@ Les genres comme Action ou Science-fiction, bien qu’en minorité, sont des ato
 Organiser des avant-premières de séries très attendues ou des projections d’épisodes de fin de saison peut fidéliser le public.
 Les projections spéciales permettent de créer une expérience communautaire autour des séries (fans clubs, cosplay, débats).
 
-##### **Avantages d’un moteur de recherche incluant les séries TV :**
+#### **Avantages d’un moteur de recherche incluant les séries TV :**
 
 - **Meilleure personnalisation** : Enrichir un moteur de recherche avec des séries permettrait de répondre aux goûts variés des spectateurs.
 Par exemple :
@@ -102,6 +104,7 @@ Proposer des Documentaires ou des séries Historiques pour des publics cherchant
 
 - **Cross-content** : Créer des ponts entre séries et films basés sur des genres communs ou des acteurs partagés.
 Exemple : Un spectateur ayant apprécié un film dramatique pourrait être tenté par une série TV similaire.
+<br>
 
 ---
 
@@ -644,4 +647,10 @@ L’analyse montre une évolution marquée du rôle des acteurs entre le cinéma
 
 ---
 
+### Conclusion
 
+Pour conclure cette analyse des KPI, nous avons pu dégager des **insights précieux qui orienteront la stratégie de notre projet**.
+
+L'analyse détaillée des données IMDb et TMDb nous permet d'affiner **notre compréhension des tendances cinématographiques et télévisuelles, de la durée des œuvres, ainsi que des acteurs les plus présents dans ces deux domaines**.
+
+Ces éléments sont essentiels pour **sélectionner les œuvres les plus pertinentes et améliorer la qualité de notre moteur de recommandation**. Il reste maintenant à poursuivre cette exploration en affinant encore les visualisations et en adaptant nos choix aux préférences des utilisateurs.
