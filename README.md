@@ -1,8 +1,9 @@
 # Le 23ème Ecran - Moteur de Recommandation de Films
 Bienvenue sur le dépôt GitHub **Le 23ème Ecran**, un projet **Data Analyst** visant à revitaliser un cinéma dans la Creuse en perte de vitesse en développant un **moteur de recommandation de films** et des outils analytiques basés sur des données de la plateforme IMDb et TMDB.
+
 <br>
 <p align="center">
-  <img src="./donnees/images/logo_23_eme_ecran.PNG" alt="Logo Cinéma" width="300">
+  <img src="./donnees/images/IMG_0259.JPG" alt="Logo Cinéma" width="300">
 </p>
 <br>
 
@@ -17,37 +18,26 @@ Le 23ème Ecran a pour ambition de :
 3. Développer un système de recommandation basé sur le machine learning pour suggérer des films aux utilisateurs en ligne.
 4. Proposer un outil interactif combinant des visualisations et des recommandations pour enrichir l'expérience utilisateur.
 
-<br>
-<p align="center">
-  <img src="./donnees/images/IMG_0259.JPG" alt="Logo Cinéma" width="300">
-</p>
-<br>
-
 ## Sommaire:
 
 #### 1. 🎬 Introduction et Contexte
    - [Présentation du projet et des enjeux](./donnees/md/projet_enjeux.md)
+
+#### 2. 🔍 Exploration et Nettoyage des Données
    - [Description des bases de données utilisées](./donnees/md/description_bdd.md)
-
-#### 2. 🧳 Étude de Marché et Fiche d'identité
-   - [Etude de marché](/donnees/md/etude_de_marche.md) : Analyse détaillée et orientations stratégiques.
-
-#### 3. 🔍 Exploration et Nettoyage des Données
    - [Exploration des bases de données](./donnees/md/intro_bdd.md)
-   - [Création d'un DataFrame "Informations"]()
 
-#### 4. 📈 Analyse Statistique, KPI et Visualisation
+#### 3. 📈 Étude de Marché, Analyse des KPIs, Orientation stratégique
+   - [Etude de marché](/donnees/md/etude_de_marche.md) : Analyse détaillée et orientations stratégiques.
    - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md)
-
-#### 5. 🧭 Orientation Stratégique et Axes de développement
    - [Orientation Stratégique](/donnees/md/axes_strategiques.md) : Insights Clés et définition de la Stratégie pour la suite du projet.
    - [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md) : Création du cinéma fictif.
 
-#### 5. 🤖 Système de Recommandation
+#### 4. 🤖 Système de Recommandation
    - Implémentation d'algorithmes de machine learning
    - Démonstration de recommandations basées sur des films appréciés
 
-#### 6. 🖥️ Interface Streamlit
+#### 5. 🖥️ Interface Streamlit
    - Développement de l'application Streamlit
    - Démonstration des fonctionnalités interactives
 
