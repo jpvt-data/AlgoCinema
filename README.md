@@ -25,7 +25,7 @@ Le 23ème Ecran a pour ambition de :
 
 #### 2. 🔍 Exploration et Nettoyage des Données
    - [Description des bases de données utilisées](./donnees/md/description_bdd.md)
-   - [Exploration des bases de données](./donnees/md/intro_bdd.md)
+   - [Exploration et Nettoyage](./donnees/md/intro_bdd.md)
 
 #### 3. 📈 Étude de Marché, Analyse des KPIs, Orientation stratégique
    - [Etude de marché](/donnees/md/etude_de_marche.md) : Analyse détaillée et orientations stratégiques.
