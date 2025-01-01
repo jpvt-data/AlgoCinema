@@ -29,6 +29,9 @@ Les principales analyses du dashboard présenteront :
 2. **Construction des visualisations Power BI :**
    - Création de rapports dynamiques et interactifs.
    - Mise en place de filtres et slicers pour explorer les données en détail.
+<br>
+
+- 📊 **[Accès au dashboard PowerBI (format PDF)](../pdf/rapport_powerbi_kpi.pdf)**
 
 ---
 
