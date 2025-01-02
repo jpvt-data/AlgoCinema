@@ -18,21 +18,21 @@ Accès direct à l'application en ligne : **[Le 23ème Écran](https://movie-rec
 
 ## Objectifs
 
-- **Interface Utilisateur**
+- **Interface Utilisateur**  
 Créer une interface web simple et intuitive pour interagir avec le moteur de recommandation.
 <br>
 
-- **Vitrine et Évolutivité**
+- **Vitrine et Évolutivité**  
 Afficher les films populaires, les projections à venir et d'autres informations relatives au cinéma local. La plateforme est conçue pour être facilement mise à jour avec de nouvelles fonctionnalités et informations, comme des recommandations personnalisées, des actualités, etc.
 
 ---
 
 ## Sommaire
 
-#### - **[Méthodologie](./methodologie_streamlit.md)**  
+### - **[Méthodologie](./methodologie_streamlit.md)**  
 Une documentation expliquant le processus de création de l'interface, incluant la gestion de l'interface utilisateur, l'intégration avec le moteur de recommandation, et les bonnes pratiques pour une utilisation évolutive.
 
-#### - **[Code de l'application](../notebooks/streamlite.py)**  
+### - **[Code de l'application](../notebooks/streamlite.py)**  
 Le fichier `.py` contenant le code Streamlit permettant de générer l'interface et de faire le lien avec le moteur de recommandation.
 
 ---
