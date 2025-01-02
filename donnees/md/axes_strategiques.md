@@ -6,7 +6,7 @@
   <img src="../images/boussole.jpg" alt="boussole" width="300">
 <p>
 
-L'étude de marché réalisée a mis en lumière plusieurs insights sur lesquels nous pouvons nous baser pour définir une orientation stratégique au projet.
+L’étude de marché combinée à l’analyse approfondie des KPI tirés des bases de données a permis de dégager une vision stratégique claire pour le projet du moteur de recommandation de films et pour la programmation adaptée de notre client.
 
 Ces directions a suivre devront être prises en compte dans les réflexions et réalisations à venir.
 
@@ -60,6 +60,13 @@ La plateforme pourrait trier les films selon :
 2. **Genres diversifiés** afin de maintenir une programmation équilibrée (blockbusters, films d’auteur, documentaires).  
 3. **Origines culturelles et années de sortie**, pour mettre en avant le world cinéma et conserver une programmation variée.  
 Des options personnalisées (âge, préférences) enrichiraient l’expérience utilisateur.
+4. **Développement du Moteur de Recommandation**
+- ***Phase initiale : Cold Start***
+Utiliser les insights tirés des KPI pour créer des recommandations standards.
+Se baser sur les caractéristiques partagées par les films les mieux notés.
+- ***Phase évolutive***
+Collecter les préférences utilisateur via des enquêtes en ligne ou lors de l’achat de billets.
+Intégrer un système d’apprentissage pour ajuster les recommandations.
 
 ---
 

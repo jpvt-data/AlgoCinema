@@ -68,7 +68,6 @@ def load_css(file_name):
 load_css(style_css)
 
 
-
 #  ------- Fonction de similarité avec un modèle de ML -------
 
 def recommandation(tconst):
@@ -200,7 +199,6 @@ def search(query, choices, limit=10, threshold=50):
     results = process.extract(query, choices, limit = limit, scorer=fuzz.WRatio, score_cutoff=80)
     filtered_results = [result[0] for result in results if result[1] >= threshold]
     return filtered_results
-
 
 
 # Fonction pour afficher la page d'accueil : 
