@@ -32,6 +32,7 @@ df_infos_csv = "donnees/data/df_info.csv.gz"
 
 df_ml_csv = "machine learning/DF_ML.csv.gz"
 
+image_cinema = "donnees/images/Cinéma.JPG"
 
 
 # ------- CONFIG GLOBALE -------
@@ -316,51 +317,134 @@ def afficher_resultats_similarite(df_resultats_similarite):
 def afficher_a_propos():
     st.markdown("<header>", unsafe_allow_html=True)
     st.title("À propos")
-    st.markdown("<p>Le 23ème Écran, votre cinéma creusois et innovant.</p>", unsafe_allow_html=True)
-    st.markdown("</header>", unsafe_allow_html=True)
+    
+    # Contenu formaté
+    st.markdown(
+        """
+        ## Bienvenue au **23ème Écran**, votre cinéma local au cœur de la Creuse !
+        Nous sommes bien plus qu’une simple salle de projection. Ici, nous célébrons le **septième art** avec une approche chaleureuse et conviviale, adaptée aux attentes de notre public.
+        
+        ### Notre histoire
+        Situé à **Guéret**, le **23ème Écran** est né de l’envie de redynamiser l’offre culturelle de notre région.  
+        Nous proposons une programmation **diversifiée**, alliant grands classiques, films récents, et pépites indépendantes, afin de satisfaire toutes les générations et tous les goûts.
 
+        ### Une expérience unique
+        - **Confort moderne** : des salles équipées pour un son et une image de haute qualité.
+        - **Événements spéciaux** : avant-premières, soirées thématiques, et rencontres avec des réalisateurs ou acteurs.
+        - **Espace détente** : un lieu chaleureux pour partager un moment autour d’un café avant ou après votre séance.
+
+        ### Le moteur de recommandations, votre compagnon cinéphile
+        Pour aller encore plus loin, nous avons développé un **moteur de recommandations** personnalisé.  
+        Son objectif ? Vous aider à découvrir les films qui correspondent à vos goûts et à vos envies.  
+        Grâce à des suggestions pertinentes basées sur nos analyses et vos préférences, il vous accompagne dans votre voyage cinématographique.  
+        Vous pouvez utiliser cet outil directement depuis notre site Internet, dans une **interface intuitive** et facile à prendre en main.
+
+        ### Notre mission
+        Au **23ème Écran**, nous croyons que chaque film peut toucher une corde sensible et créer des souvenirs inoubliables.  
+        Nous sommes fiers de soutenir le cinéma local et international tout en innovant pour offrir une expérience digitale moderne, à la portée de tous.
+
+        **Merci de faire partie de notre aventure. À bientôt dans nos salles !**
+        """,
+        unsafe_allow_html=True
+    )
+    st.markdown("</header>", unsafe_allow_html=True)
 
 
 # Fonction pour afficher les actualités
 def afficher_actualites():
     st.title("Actualités")
-    st.write("Les actualités de votre cinéma à Guéret.")
+    st.markdown(
+        """
+        ## 🎥 Les Dernières Nouvelles du 23ème Écran !
+        Découvrez toutes les actualités de votre cinéma préféré à Guéret. Restez informé des événements, avant-premières et nouveautés qui font vivre notre salle !
+        """
+    )
+
+    # Section 1 : Événements spéciaux
+    st.subheader("✨ Événements à venir")
+    st.markdown(
+        """
+        - **Vendredi 12 janvier 2025 : Avant-première exclusive**  
+          Venez découvrir *"Les Lumières de la Creuse"*, un documentaire inédit sur notre région, suivi d'une discussion avec le réalisateur.
+        
+        - **Samedi 20 janvier 2025 : Soirée rétrospective**  
+          Thème : *Les chefs-d'œuvre des années 80*. Plongez dans l'univers de Spielberg, Lucas, et bien d'autres !
+        
+        - **Dimanche 28 janvier 2025 : Atelier cinéma pour enfants**  
+          Atelier créatif pour apprendre à réaliser un court-métrage, dès 10 ans (sur réservation).
+        """
+    )
+
+    # Section 2 : Nouveautés
+    st.subheader("🎞 Nouveautés à l'affiche")
+    st.markdown(
+        """
+        - **"La Montagne Sacrée"** : Une épopée fascinante sur les mystères des contes tibétains.  
+          (Salle 2, tous les jours à 17h30)  
+        - **"Cœurs à Contre-temps"** : Une comédie romantique à ne pas manquer !  
+          (Salle 1, séances à 15h et 20h)  
+        - **"Le Dernier Horizon"** : Le blockbuster de l'année, en 4K et Dolby Atmos.  
+          (Salle 1, séances à 14h, 18h et 21h30)
+        """
+    )
+
+    # Section 3 : Programmation spéciale
+    st.subheader("🌟 Focus sur le cinéma local")
+    st.markdown(
+        """
+        - **"Regards sur la Creuse"** : Une sélection de courts-métrages réalisés par des talents locaux.  
+          Projection gratuite, dimanche 14 janvier à 16h (Salle 3).  
+
+        - **Festival du film régional** : Soutenons le cinéma de chez nous avec une programmation unique du 22 au 28 février 2025.
+        """
+    )
+
+    # Section 4 : Informations pratiques
+    st.subheader("📅 Réservez vos places dès maintenant !")
+    st.markdown(
+        """
+        - **Réservations en ligne :** Rendez-vous sur notre site pour réserver vos billets en toute simplicité.  
+        - **Tarifs réduits :** Profitez de nos tarifs avantageux pour les étudiants, seniors et familles.
+        """
+    )
+    
+    # Section : Image d'illustration
+    st.image(image_cinema, width=400, caption="Votre cinéma au cœur des événements 🎬")
 
 
 
 # ------- Interface Utilisateur (UI) -------
 
-if __name__ == "__main__":
-    if "search_query" not in st.session_state:
-        st.session_state["search_query"] = ""
-    if "current_page" not in st.session_state:
-        st.session_state["current_page"] = "Accueil"
-    
-    # Fonction pour changer de page
-    def navigate_to(page):
-        st.session_state["current_page"] = page
-        st.session_state["search_query"] = ""
 
-    # Afficher le menu principal
-    page = afficher_menu()
-    
-    # Navigation basée sur le choix dans l'état
-    menu_choice = st.session_state.get("menu_choice", "Accueil") 
-    
-    # Si l'utilisateur est sur la page "Accueil", 
-    # la fonction afficher_accueil() est appelée pour afficher son contenu.
-    if menu_choice == "Accueil":
-        afficher_accueil()
-    # Selon la valeur de menu_choice, l'application appelle la fonction
-    # correspondante pour afficher le contenu des autres pages
-    elif menu_choice == "A_propos":
-        afficher_a_propos()
-    elif menu_choice == "Actualites":
-        afficher_actualites()
+if "search_query" not in st.session_state:
+    st.session_state["search_query"] = ""
+if "current_page" not in st.session_state:
+    st.session_state["current_page"] = "Accueil"
 
-    # Gestion de l'état de session
-    if page != st.session_state.get("current_page", ""):
-        st.session_state["current_page"] = page
+# Fonction pour changer de page
+def navigate_to(page):
+    st.session_state["current_page"] = page
+
+# Afficher le menu principal
+page = afficher_menu()
+
+# Navigation basée sur le choix dans l'état
+menu_choice = st.session_state.get("menu_choice", "Accueil") 
+
+# Si l'utilisateur est sur la page "Accueil", 
+# la fonction afficher_accueil() est appelée pour afficher son contenu.
+if menu_choice == "Accueil":
+    afficher_accueil()
+# Selon la valeur de menu_choice, l'application appelle la fonction
+# correspondante pour afficher le contenu des autres pages
+elif menu_choice == "À propos":
+    afficher_a_propos()
+elif menu_choice == "Actualités":
+    afficher_actualites()
+
+# Gestion de l'état de session
+if page != st.session_state.get("current_page", ""):
+    st.session_state["current_page"] = page
 
 
 
