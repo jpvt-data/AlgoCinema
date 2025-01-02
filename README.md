@@ -29,7 +29,7 @@ Le 23ème Ecran a pour ambition de :
 
 #### 3. 📈 Étude de Marché, Analyse des KPIs, Orientation stratégique
    - [Etude de marché](/donnees/md/etude_de_marche.md) : Analyse détaillée et orientations stratégiques.
-   - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md)
+   - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md) : Exploration des données cinématographiques via des visualisations interactives (PowerBI)
    - [Orientation Stratégique](/donnees/md/axes_strategiques.md) : Insights Clés et définition de la Stratégie pour la suite du projet.
    - [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md) : Création du cinéma fictif.
 
