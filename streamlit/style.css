@@ -1,27 +1,5 @@
-/* Style général pour le site */
-body {
-    background-color: #141414;
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* En-tête du site */
-header {
-    background-color: #181818;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #333;
-}
-
-header h1 {
-    color: #e50914;
-    font-size: 2.5em;
-    margin: 0;
-}
-
 /* Section de recherche */
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -54,81 +32,32 @@ header h1 {
     background-color: #f40612;
 }
 
-/* Liste des films */
-.movie-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.movie-item {
-    background-color: #181818;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s;
-}
-
-.movie-item:hover {
-    transform: scale(1.05);
-}
-
-.movie-item img {
-    width: 100%;
-    height: auto;
-}
-
-.movie-item .movie-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 10px;
-    color: #ffffff;
-}
-
-.movie-item .movie-description {
-    font-size: 0.9em;
-    padding: 0 10px 10px 10px;
-    color: #b3b3b3;
-}
 
 /* Boutons de navigation */
+
 nav {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+    display: flex; /* Utilise le modèle de boîte flexbox pour organiser les éléments enfants (les boutons) dans la barre de navigation. */
+    justify-content: center; /* Aligne les boutons horizontalement au centre de l'espace disponible dans le conteneur nav. */
+    margin: 20px 0; /* Ajoute un espace vertical de 20 pixels au-dessus et en dessous de la barre de navigation. */
 }
 
 nav button {
-    margin: 0 5px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #ffffff;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    margin: 0 5px; /* Ajoute un espace horizontal de 5 pixels entre les boutons. */
+    padding: 10px 20px; /* Ajoute un espace intérieur (entre le contenu du bouton et ses bords) de 10 pixels en haut/bas et 20 pixels à gauche/droite.*/
+    border: none; /* Supprime les bordures par défaut du bouton.*/
+    border-radius: 5px; /* Ajoute des coins arrondis au bouton avec un rayon de 5 pixels.*/ 
+    background-color: #333; /* Définit une couleur de fond pour le bouton.*/ 
+    color: #ffffff; /* Définit la couleur du texte en blanc.*/ 
+    font-size: 1em; /* Définit la taille du texte (1em = taille de base du texte).*/ 
+    cursor: pointer; /* Change le curseur en forme de main pour indiquer que le bouton est cliquable.*/ 
+    transition: background-color 0.3s; /* Ajoute une transition fluide pour les changements de couleur de fond, avec une durée de 0.3 seconde.*/ 
+    justify-content: center;
 }
 
 nav button:hover {
-    background-color: #444;
+    background-color: #444; /* Change la couleur de fond du bouton en gris légèrement plus clair lorsqu'on passe la souris dessus.*/ 
 }
 
 nav button.active {
-    background-color: #e50914;
-}
-
-/* Pied de page */
-footer {
-    background-color: #181818;
-    text-align: center;
-    padding: 15px;
-    border-top: 1px solid #333;
-}
-
-footer p {
-    color: #b3b3b3;
-    font-size: 0.9em;
-    margin: 0;
+    background-color: #e50914; /* */
 }

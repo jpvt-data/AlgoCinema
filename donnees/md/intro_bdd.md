@@ -23,7 +23,7 @@ Ces fichiers contiennent les analyses détaillées et les visualisations des don
 - [Jupyter Notebook](../notebooks/)
 - [PDF](../pdf/)
 
-##### 4. Title Episode - Épisodes de Séries
+#### 4. Title Episode - Épisodes de Séries
 
 - [Jupyter Notebook](../notebooks/exploration_episodes.ipynb)
 - [PDF](../pdf/exploration_episodes.pdf)

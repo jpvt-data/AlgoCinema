@@ -6,15 +6,14 @@
 
 Dans le cadre de notre projet et suite à l'étude de marché sur le cinéma dans la Creuse, nous avons choisi de concevoir un cinéma fictif, **Le 23ème Écran**, en tant que client. Ce choix nous permet d'explorer les besoins concrets d'un établissement culturel et de proposer une solution adaptée pour répondre à ses enjeux.
 
-<div style="text-align: center;">
-  <div style="display: inline-block; margin: 0 10px;">
-    <img src="../images/23_2.jpg" alt="Façade du Cinéma" width="300">
-  </div>
-  
-  <div style="display: inline-block; margin: 0 10px;">
-    <img src="../images/23_3.jpg" alt="Façade du Cinéma" width="300">
-  </div>
-</div>
+<br>
+
+  <p align="center">
+    <img src="../images/23_2.JPG" alt="Façade du Cinéma" width="300">
+    <img src="../images/23_3.JPG" alt="Façade du Cinéma" width="300">
+  </p>
+
+<br>
 
 À travers cette identité de marque, nous avons donc imaginé un cinéma ancré dans la région de la Creuse, combinant proximité, accessibilité et innovation technologique, tout en valorisant la culture locale.
 
@@ -23,11 +22,13 @@ Une fois cette identité solidement établie, elle guidera l’orientation et le
 ---
 
 ## **Nom**
-**Le 23ème Ecran**
 
 <p align="center">
-  <img src="../donnees/images/23.jpg" alt="23 - le département de la Creuse" width="300">
+  <img src="../images/23.JPG" alt="23 - le département de la Creuse" width="300">
 </p>
+<br>
+
+### **Le 23ème Ecran**
 
 Ce nom incarne l’ancrage local en Creuse, une région connue pour ses paysages vallonnés et son authenticité. Il symbolise une ouverture sur un univers cinématographique riche, tout en étant un lieu de partage et de rencontre.
 
@@ -54,7 +55,7 @@ Le cinéma se situe dans une ville centrale de la Creuse, à proximité des comm
 ## **Les Salles**
 
 <p align="center">
-  <img src="../donnees/images/Cinéma.jpg" alt="Logo Cinéma" width="300">
+  <img src="../images/Cinéma.JPG" alt="Logo Cinéma" width="300">
 </p>
 
 **Capacité :**
