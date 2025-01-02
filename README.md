@@ -9,14 +9,26 @@ Bienvenue sur le dépôt GitHub **Le 23ème Ecran**, un projet **Data Analyst** 
 
 - Accès direct au **moteur de recommandation** : **[Le 23ème Écran](https://movie-recommendation-project-wcs-bleu-sauvage.streamlit.app/)**
 
+---
+
 ## Objectifs du Projet
 
 Le 23ème Ecran a pour ambition de :
 
-1. Analyser les tendances de consommation de cinéma dans la région de la Creuse.
-2. Extraire des indicateurs clés et statistiques à partir des bases de données de films.
-3. Développer un système de recommandation basé sur le machine learning pour suggérer des films aux utilisateurs en ligne.
-4. Proposer un outil interactif combinant des visualisations et des recommandations pour enrichir l'expérience utilisateur.
+1. **Analyser les tendances de consommation** de cinéma dans la région de la Creuse.
+2. **Extraire des indicateurs clés** et statistiques à partir des bases de données de films.
+3. **Développer un système de recommandation** basé sur le machine learning pour suggérer des films aux utilisateurs en ligne.
+4. **Proposer un outil interactif** combinant des visualisations et des recommandations pour enrichir l'expérience utilisateur.
+
+---
+
+## Le dépôt GitHub
+
+Nous avons choisi de centraliser tous les livrables du projet dans un **dépôt Github** : notebooks documentés, visualisations, guides pour faciliter la prise en main et la lecture du projet.
+
+Pensé pour **répondre aux besoins du client**, il illustre aussi nos **compétences en gestion de projet collaboratif** et servira de **vitrine dans nos portfolios professionnels**.
+
+---
 
 ## Sommaire:
 
@@ -39,6 +51,8 @@ Le 23ème Ecran a pour ambition de :
 #### 5. 🖥️ Interface Streamlit
    - [Méthodologie et Code de l'application](./donnees/md/intro_streamlit.md)
 
+---
+
 ## Contributions et Contacts
 
 <p align="center">
@@ -53,6 +67,8 @@ Ce projet a été réalisé par une équipe d'étudiants en Data Analyse dans le
 - **[Jean Paul Van Tongeren](https://github.com/jpvt-data)**
 
 Toute contribution externe est la bienvenue pour améliorer les fonctionnalités.
+
+---
 
 ## Licence
 Ce projet est distribué sous une licence MIT. Veuillez consulter le fichier [LICENSE](LICENSE) pour plus de détails.
