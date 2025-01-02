@@ -28,22 +28,16 @@ Le 23ème Ecran a pour ambition de :
    - [Exploration et Nettoyage](./donnees/md/intro_bdd.md)
 
 #### 3. 📈 Étude de Marché, Analyse des KPIs, Orientation stratégique
-   - [Etude de marché](/donnees/md/etude_de_marche.md) : Analyse détaillée et orientations stratégiques.
-   - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md) : Exploration des données cinématographiques via des visualisations interactives (PowerBI)
-   - [Orientation Stratégique](/donnees/md/axes_strategiques.md) : Insights Clés et définition de la Stratégie pour la suite du projet.
-   - [Le 23ème Écran](./donnees/md/le_23eme_ecran_identite.md) : Création du cinéma fictif.
+   - [Etude de marché](/donnees/md/etude_de_marche.md)
+   - [Analyse et Dataviz des Kpis](./donnees/md/analyse_kpi.md)
+   - [Orientation Stratégique](/donnees/md/axes_strategiques.md)
+   - [Fiche d'Identité : "Le 23ème Écran"](./donnees/md/le_23eme_ecran_identite.md)
 
 #### 4. 🤖 Système de Recommandation
-   - Implémentation d'algorithmes de machine learning
-   - Démonstration de recommandations basées sur des films appréciés
+   - [Méthodologie et Algorithme de machine learning](./donnees/md/intro_systeme_recommandation.md)
 
 #### 5. 🖥️ Interface Streamlit
-   - Développement de l'application Streamlit
-   - Démonstration des fonctionnalités interactives
-
-#### 6. 📑 Présentation et Livrables
-   - Démarche suivie, outils utilisés et défis rencontrés
-   - Pistes d'amélioration et retours d'expérience
+   - [Méthodologie et Code de l'application](./donnees/md/intro_streamlit.md)
 
 ## Contributions et Contacts
 
