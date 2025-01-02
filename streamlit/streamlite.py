@@ -32,6 +32,7 @@ df_infos_csv = "donnees/data/df_info.csv.gz"
 
 df_ml_csv = "machine learning/DF_ML.csv.gz"
 
+image_cinema = "donnees/images/Cinéma.JPG"
 
 
 # ------- CONFIG GLOBALE -------
@@ -315,9 +316,6 @@ def afficher_a_propos():
     st.markdown("<header>", unsafe_allow_html=True)
     st.title("À propos")
     
-    # Ajout du logo
-    st.image(logo, use_column_width=True, caption="Le 23ème Écran")
-    
     # Contenu formaté
     st.markdown(
         """
@@ -409,42 +407,42 @@ def afficher_actualites():
     )
     
     # Section : Image d'illustration
-    st.image("../donnees/images/Cinéma.JPG", use_column_width=True, caption="Votre cinéma au cœur des événements 🎬")
+    st.image(image_cinema, width=400, caption="Votre cinéma au cœur des événements 🎬")
+
 
 
 # ------- Interface Utilisateur (UI) -------
 
-if __name__ == "__main__":
-    if "search_query" not in st.session_state:
-        st.session_state["search_query"] = ""
-    if "current_page" not in st.session_state:
-        st.session_state["current_page"] = "Accueil"
-    
-    # Fonction pour changer de page
-    def navigate_to(page):
-        st.session_state["current_page"] = page
-        st.session_state["search_query"] = ""
 
-    # Afficher le menu principal
-    page = afficher_menu()
-    
-    # Navigation basée sur le choix dans l'état
-    menu_choice = st.session_state.get("menu_choice", "Accueil") 
-    
-    # Si l'utilisateur est sur la page "Accueil", 
-    # la fonction afficher_accueil() est appelée pour afficher son contenu.
-    if menu_choice == "Accueil":
-        afficher_accueil()
-    # Selon la valeur de menu_choice, l'application appelle la fonction
-    # correspondante pour afficher le contenu des autres pages
-    elif menu_choice == "A_propos":
-        afficher_a_propos()
-    elif menu_choice == "Actualites":
-        afficher_actualites()
+if "search_query" not in st.session_state:
+    st.session_state["search_query"] = ""
+if "current_page" not in st.session_state:
+    st.session_state["current_page"] = "Accueil"
 
-    # Gestion de l'état de session
-    if page != st.session_state.get("current_page", ""):
-        st.session_state["current_page"] = page
+# Fonction pour changer de page
+def navigate_to(page):
+    st.session_state["current_page"] = page
+
+# Afficher le menu principal
+page = afficher_menu()
+
+# Navigation basée sur le choix dans l'état
+menu_choice = st.session_state.get("menu_choice", "Accueil") 
+
+# Si l'utilisateur est sur la page "Accueil", 
+# la fonction afficher_accueil() est appelée pour afficher son contenu.
+if menu_choice == "Accueil":
+    afficher_accueil()
+# Selon la valeur de menu_choice, l'application appelle la fonction
+# correspondante pour afficher le contenu des autres pages
+elif menu_choice == "À propos":
+    afficher_a_propos()
+elif menu_choice == "Actualités":
+    afficher_actualites()
+
+# Gestion de l'état de session
+if page != st.session_state.get("current_page", ""):
+    st.session_state["current_page"] = page
 
 
 

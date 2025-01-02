@@ -1,18 +1,5 @@
-/* En-tête du site */
-header {
-    background-color: #181818;
-    /*padding: 15px;*/
-    text-align: center;
-    border-bottom: 1px solid #333;
-}
-
-header h1 {
-    color: #e50914;
-    font-size: 2.5em;
-    margin: 0;
-}
-
 /* Section de recherche */
+
 .search-container {
     display: flex;
     justify-content: center;
@@ -73,18 +60,4 @@ nav button:hover {
 
 nav button.active {
     background-color: #e50914; /* */
-}
-
-/* Pied de page */
-footer {
-    background-color: #181818;
-    text-align: center;
-    padding: 15px;
-    border-top: 1px solid #333;
-}
-
-footer p {
-    color: #b3b3b3;
-    font-size: 0.9em;
-    margin: 0;
 }
