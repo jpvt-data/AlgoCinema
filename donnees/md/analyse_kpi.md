@@ -1,3 +1,5 @@
+⬅️[Retour à l'accueil](../../README.md)
+
 # Analyse des KPI et Visualisation
 
 ## 🎯 Objectifs de l'analyse
@@ -654,3 +656,5 @@ Pour conclure cette analyse des KPI, nous avons pu dégager des **insights préc
 L'analyse détaillée des données IMDb et TMDb nous permet d'affiner **notre compréhension des tendances cinématographiques et télévisuelles, de la durée des œuvres, ainsi que des acteurs les plus présents dans ces deux domaines**.
 
 Ces éléments sont essentiels pour **sélectionner les œuvres les plus pertinentes et améliorer la qualité de notre moteur de recommandation**. Il reste maintenant à poursuivre cette exploration en affinant encore les visualisations et en adaptant nos choix aux préférences des utilisateurs.
+
+⬅️[Retour à l'accueil](../../README.md)
