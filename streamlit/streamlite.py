@@ -34,6 +34,8 @@ df_ml_csv = "machine learning/DF_ML.csv.gz"
 
 image_cinema = "donnees/images/Cinéma.JPG"
 
+image_cinema2 = "donnees/images/23_2.JPG"
+
 
 # ------- CONFIG GLOBALE -------
 
@@ -203,7 +205,16 @@ def search(query, choices, limit=10, threshold=50):
 
 # Fonction pour afficher la page d'accueil : 
 def afficher_accueil():
-    
+    st.markdown(
+        """
+        ## Bienvenue au **23ème Écran**, votre cinéma local au cœur de la Creuse !
+        Nous sommes bien plus qu’une simple salle de projection. Ici, nous célébrons le **septième art** avec une approche chaleureuse et conviviale, adaptée aux attentes de notre public.
+
+        Pour améliorer votre expérience et préparer votre visite, nous mettons à votre disposition un **moteur de recommandation**.
+        
+        Saisissez le titre d’un film pour obtenir ses détails et découvrir des recommandations personnalisées basées sur vos goûts !
+        """
+    )
     st.markdown("<div class='search-container'>", unsafe_allow_html=True)
     # Prioriser la valeur stockée dans st.session_state["search_query"] si elle existe
     if st.session_state["search_query"]:
@@ -315,15 +326,15 @@ def afficher_resultats_similarite(df_resultats_similarite):
 def afficher_a_propos():
     st.markdown("<header>", unsafe_allow_html=True)
     st.title("À propos")
+
+    # Image du Cinéma
+    st.image(image_cinema2, width=400, caption="Le 23ème Ecran, en plein coeur de la ville !")
     
     # Contenu formaté
     st.markdown(
         """
-        ## Bienvenue au **23ème Écran**, votre cinéma local au cœur de la Creuse !
-        Nous sommes bien plus qu’une simple salle de projection. Ici, nous célébrons le **septième art** avec une approche chaleureuse et conviviale, adaptée aux attentes de notre public.
-        
         ### Notre histoire
-        Situé à **Guéret**, le **23ème Écran** est né de l’envie de redynamiser l’offre culturelle de notre région.  
+        Situé à **Guéret**, le cinéma **Le 23ème Écran** est né de l’envie de redynamiser l’offre culturelle de notre région.  
         Nous proposons une programmation **diversifiée**, alliant grands classiques, films récents, et pépites indépendantes, afin de satisfaire toutes les générations et tous les goûts.
 
         ### Une expérience unique
