@@ -100,7 +100,28 @@ def afficher_accueil(search_query=""):
         results = search(search_query, df_infos['Titre'].tolist())
         if results:
             selected_title = st.selectbox("Sélectionnez un film :", results)
-            st.write(f"Vous avez sélectionné : {selected_title}")
+            st.markdown(f"<h2>Votre sélection</h2>",
+                    unsafe_allow_html=True)
+            col3, col4, col5, col6 = st.columns([1, 1, 1, 1])
+            with col3:
+                # Vérifier si le chemin de l'affiche n'est pas manquant
+                st.markdown(f"<h3>{df_infos.loc[df_infos['Titre'] == selected_title, 'Titre'].values[0]} ({df_infos.loc[df_infos['Titre'] == selected_title, 'Année de Sortie'].values[0]})</h3>", unsafe_allow_html=True)
+                if not pd.isna(df_infos.loc[df_infos['Titre'] == selected_title, "Chemin Affiche"]).values[0]:
+                    st.image(f"https://image.tmdb.org/t/p/w500{df_infos.loc[df_infos['Titre'] == selected_title, 'Chemin Affiche'].values[0]}", width=150)
+                else:
+                    st.markdown(
+                        f"<div style='width: 150px; height: 225px; background-color: black; color: white; display: flex; justify-content: center; align-items: center; text-align: center;'>{selected_title}</div>",
+                        unsafe_allow_html=True
+                    )
+            with col4:
+                # Informations supplémentaires
+                
+                st.markdown(f"Durée : {df_infos.loc[df_infos['Titre'] == selected_title, 'Durée (min)'].values[0]} min")
+                st.markdown(f"{df_infos.loc[df_infos['Titre'] == selected_title, 'genres'].values[0]}")
+
+                etoiles_jaunes = "⭐" * int(round(df_infos.loc[df_infos['Titre'] == selected_title, 'Note'].values[0] / 2))
+                st.markdown(f"{round(df_infos.loc[df_infos['Titre'] == selected_title, 'Note'].values[0],1)}/10 {etoiles_jaunes}")
+                st.markdown(f"{round(df_infos.loc[df_infos['Titre'] == selected_title, 'Indice Bechdel'].values[0],0)}/3 🙍‍♀️ Test de Bechdel")
             recommandation(df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0])
         else:
             st.write("Aucun résultat trouvé.")
@@ -237,6 +258,8 @@ def recommandation(tconst):
 # ------- Fonction d'affichage des résultats de recherche de similarité (ML) -------
 
 def afficher_resultats_similarite(df_resultats_similarite):
+    st.markdown(f"<h2>Nos recommandations</h2>",
+                    unsafe_allow_html=True)
     # Recherche des informations dans df_infos pour les films identifiés 
     # dans df_resultats_similarite via leur identifiant unique (tconst).
     df_display = df_infos[df_infos['tconst'].isin(df_resultats_similarite['tconst'])]
@@ -256,13 +279,12 @@ def afficher_resultats_similarite(df_resultats_similarite):
     for row_df in rows:
         cols = st.columns(num_cols) 
 
-
         for col, (_, row) in zip(cols, row_df.iterrows()): # Pour chaque film dans une ligne
             with col:
                 # Affichage de l'affiche ou du titre en fallback
 
                 # Si une affiche est disponible
-                if pd.notna(row["Chemin Affiche"]) and row["Chemin Affiche"]:
+                if pd.notna(row["Chemin Affiche"]):
                     st.image(f"https://image.tmdb.org/t/p/w500{row['Chemin Affiche']}", width=150)
                     if st.button("Voir les détails de ce film", key=f"poster_{row['tconst']}"):
                         st.session_state["selected_movie_from_reco"] = row['Titre']
@@ -272,7 +294,7 @@ def afficher_resultats_similarite(df_resultats_similarite):
                         f"<div style='width: 150px; height: 225px; background-color: black; color: white; display: flex; justify-content: center; align-items: center; text-align: center;'>{row['Titre']}</div>",
                         unsafe_allow_html=True
                     )
-                    if st.button(row["Titre"], key=f"title_{row['tconst']}"):
+                    if st.button("Voir les détails de ce film", key=f"title_{row['tconst']}"):
                         st.session_state["selected_movie_from_reco"] = row['Titre']
                         afficher_details_film()
                     
@@ -284,6 +306,7 @@ def afficher_resultats_similarite(df_resultats_similarite):
 
                 etoiles_jaunes = "⭐" * round(row['Note'] / 2)
                 st.markdown(f"{round(row['Note'],1)}/10 {etoiles_jaunes}")
+                st.markdown(f"🙍‍♀️ Test de Bechdel : {row['Indice Bechdel']}/3")
 
         # Remplissage des colonnes vides si nécessaire
         for col in cols[len(row_df):]:
