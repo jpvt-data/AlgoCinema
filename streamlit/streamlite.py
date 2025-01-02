@@ -32,11 +32,14 @@ df_infos_csv = "donnees/data/df_info.csv.gz"
 
 df_ml_csv = "machine learning/DF_ML.csv.gz"
 
+
+
 # ------- CONFIG GLOBALE -------
 
 st.set_page_config(
     page_title="Cinéma le 23ème Écran",
     layout="wide")
+
 
 
 # ------- CHARGEMENT DES DONNEES -------
@@ -62,95 +65,6 @@ def load_css(file_name):
         st.error("Erreur : Le fichier CSS n'a pas été trouvé. Vérifiez le chemin.")
 
 load_css(style_css)
-
-
-
-# ------- Fonctions de navigation -------
-
-# Fonction pour afficher le menu
-def afficher_menu():
-    # Affichage du menu avec le logo à gauche et les boutons de navigation
-    col1, col2 = st.columns([1, 4])
-    with col1:
-    # Affichage du logo à gauche
-        st.image(logo, use_container_width=True)
-    with col2:
-    # Initialisation de l'état si nécessaire
-        if "menu_choice" not in st.session_state:
-            st.session_state["menu_choice"] = "Accueil" 
-        # Liste des options du menu
-        options = ["Accueil", "À propos", "Actualités"]
-        # Construction des boutons dans une disposition horizontale
-        cols = st.columns(len(options))
-        for i, option in enumerate(options):
-            # Bouton interactif dans chaque colonne
-            if cols[i].button(option, key=f"bouton_{option}"):
-                st.session_state["menu_choice"] = option
-    
-
-# Fonction pour afficher l'accueil
-def afficher_accueil(search_query=""):
-    st.markdown("<div class='search-container'>", unsafe_allow_html=True)
-    search_query = st.text_input("Pour recevoir des suggestions personnalisées :",
-                                placeholder="Renseignez le titre d'un film que vous appreciez...",
-                                key="search_query")
-    st.markdown("</div>", unsafe_allow_html=True)
-    
-    if search_query:
-        results = search(search_query, df_infos['Titre'].tolist())
-        if results:
-            selected_title = st.selectbox("Sélectionnez un film :", results)
-            st.markdown(f"<h2>Votre sélection</h2>",
-                    unsafe_allow_html=True)
-            col3, col4, col5, col6 = st.columns([1, 1, 1, 1])
-            with col3:
-                # Vérifier si le chemin de l'affiche n'est pas manquant
-                st.markdown(f"<h3>{df_infos.loc[df_infos['Titre'] == selected_title, 'Titre'].values[0]} ({df_infos.loc[df_infos['Titre'] == selected_title, 'Année de Sortie'].values[0]})</h3>", unsafe_allow_html=True)
-                if not pd.isna(df_infos.loc[df_infos['Titre'] == selected_title, "Chemin Affiche"]).values[0]:
-                    st.image(f"https://image.tmdb.org/t/p/w500{df_infos.loc[df_infos['Titre'] == selected_title, 'Chemin Affiche'].values[0]}", width=150)
-                else:
-                    st.markdown(
-                        f"<div style='width: 150px; height: 225px; background-color: black; color: white; display: flex; justify-content: center; align-items: center; text-align: center;'>{selected_title}</div>",
-                        unsafe_allow_html=True
-                    )
-            with col4:
-                # Informations supplémentaires
-                
-                st.markdown(f"Durée : {df_infos.loc[df_infos['Titre'] == selected_title, 'Durée (min)'].values[0]} min")
-                st.markdown(f"{df_infos.loc[df_infos['Titre'] == selected_title, 'genres'].values[0]}")
-
-                etoiles_jaunes = "⭐" * int(round(df_infos.loc[df_infos['Titre'] == selected_title, 'Note'].values[0] / 2))
-                st.markdown(f"{round(df_infos.loc[df_infos['Titre'] == selected_title, 'Note'].values[0],1)}/10 {etoiles_jaunes}")
-                st.markdown(f"{round(df_infos.loc[df_infos['Titre'] == selected_title, 'Indice Bechdel'].values[0],0)}/3 🙍‍♀️ Test de Bechdel")
-            recommandation(df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0])
-        else:
-            st.write("Aucun résultat trouvé.")
-    else:
-        st.write("Commencez à taper pour voir les suggestions.")
-
-
-
-# Fonction pour afficher "À propos"
-def afficher_a_propos():
-    st.markdown("<header>", unsafe_allow_html=True)
-    st.title("À propos")
-    st.markdown("<p>Le 23ème Écran, votre cinéma creusois et innovant.</p>", unsafe_allow_html=True)
-    st.markdown("</header>", unsafe_allow_html=True)
-
-
-
-# Fonction pour afficher les actualités
-def afficher_actualites():
-    st.title("Actualités")
-    st.write("Les actualités de votre cinéma à Guéret.")
-
-
-# ------- Fonction de correspondances de noms entré barre de recherches -------
-
-def search(query, choices, limit=10, threshold=50):
-    results = process.extract(query, choices, limit = limit, scorer=fuzz.WRatio, score_cutoff=80)
-    filtered_results = [result[0] for result in results if result[1] >= threshold]
-    return filtered_results
 
 
 
@@ -255,6 +169,91 @@ def recommandation(tconst):
 
 
 
+
+# ------- Fonctions de navigation -------
+
+# Fonction qui affiche le menu de l'app
+def afficher_menu():
+    # Affichage du menu avec le logo à gauche et les boutons de navigation
+    col1, col2 = st.columns([1, 3])
+    with col1:
+    # Affichage du logo à gauche
+        st.image(logo, use_container_width=True)
+    with col2:
+    # Initialisation de l'état si nécessaire
+        if "menu_choice" not in st.session_state:
+            st.session_state["menu_choice"] = "Accueil" 
+        # Liste des options du menu
+        options = ["Accueil", "À propos", "Actualités"]
+        # Construction des boutons dans une disposition horizontale
+        cols = st.columns(len(options))
+        for i, option in enumerate(options):
+            # Bouton interactif dans chaque colonne
+            if cols[i].button(option, key=f"bouton_{option}", on_click=lambda: navigate_to(option)):
+                st.session_state["menu_choice"] = option
+
+
+
+# Fonction qui identifie les noms de films les plus proches avec le texte entré dans la barre de recherches
+def search(query, choices, limit=10, threshold=50):
+    results = process.extract(query, choices, limit = limit, scorer=fuzz.WRatio, score_cutoff=80)
+    filtered_results = [result[0] for result in results if result[1] >= threshold]
+    return filtered_results
+
+
+
+# Fonction pour afficher la page d'accueil : 
+def afficher_accueil():
+    
+    st.markdown("<div class='search-container'>", unsafe_allow_html=True)
+    # Prioriser la valeur stockée dans st.session_state["search_query"] si elle existe
+    if st.session_state["search_query"]:
+        search_query = st.session_state["search_query"]
+        st.session_state["search_query"] = ""  # Réinitialiser après usage
+    else:
+        search_query = st.text_input(
+        "Pour recevoir des suggestions personnalisées :",
+        placeholder="Renseignez le titre d'un film que vous appréciez...",
+        key="search_query"
+        )
+    st.markdown("</div>", unsafe_allow_html=True)
+    
+    if search_query:
+        results = search(search_query, df_infos['Titre'].tolist())
+        if results:
+            selected_title = st.selectbox("Sélectionnez un film :", results)
+            st.markdown(f"<h2>Votre sélection</h2>",
+                    unsafe_allow_html=True)
+            col3, col4 = st.columns([1, 3])
+            col5, col6 = st.columns([1, 3])
+            with col3:
+                # Vérifier si le chemin de l'affiche n'est pas manquant
+                st.markdown(f"<h3>{df_infos.loc[df_infos['Titre'] == selected_title, 'Titre'].values[0]} ({df_infos.loc[df_infos['Titre'] == selected_title, 'Année de Sortie'].values[0]})</h3>", unsafe_allow_html=True)
+            with col5:
+                if not pd.isna(df_infos.loc[df_infos['Titre'] == selected_title, "Chemin Affiche"]).values[0]:
+                    st.image(f"https://image.tmdb.org/t/p/w500{df_infos.loc[df_infos['Titre'] == selected_title, 'Chemin Affiche'].values[0]}", width=150)
+                else:
+                    st.markdown(
+                        f"<div style='width: 150px; height: 225px; background-color: black; color: white; display: flex; justify-content: center; align-items: center; text-align: center;'>{selected_title}</div>",
+                        unsafe_allow_html=True
+                    )
+            with col6:
+                # Informations supplémentaires
+                st.markdown(f"Synopsis : {df_infos.loc[df_infos['Titre'] == selected_title, 'Synopsis'].values[0]}")
+                st.markdown(f"Durée : {df_infos.loc[df_infos['Titre'] == selected_title, 'Durée (min)'].values[0]} min")
+                st.markdown(f"{df_infos.loc[df_infos['Titre'] == selected_title, 'genres'].values[0]}")
+
+                etoiles_jaunes = "⭐" * int(round(df_infos.loc[df_infos['Titre'] == selected_title, 'Note'].values[0] / 2))
+                st.markdown(f"{round(df_infos.loc[df_infos['Titre'] == selected_title, 'Note'].values[0],1)}/10 {etoiles_jaunes}")
+                st.markdown(f"{int(df_infos.loc[df_infos['Titre'] == selected_title, 'Indice Bechdel'].values[0])}/3 🙍‍♀️ Test de Bechdel")
+            recommandation(df_infos[df_infos['Titre'] == selected_title]['tconst'].values[0])
+        else:
+            st.write("Aucun résultat trouvé.")
+    else:
+        st.write("Commencez à taper pour voir les suggestions.")
+
+        
+
 # ------- Fonction d'affichage des résultats de recherche de similarité (ML) -------
 
 def afficher_resultats_similarite(df_resultats_similarite):
@@ -286,19 +285,14 @@ def afficher_resultats_similarite(df_resultats_similarite):
                 # Si une affiche est disponible
                 if pd.notna(row["Chemin Affiche"]):
                     st.image(f"https://image.tmdb.org/t/p/w500{row['Chemin Affiche']}", width=150)
-                    if st.button("Voir les détails de ce film", key=f"poster_{row['tconst']}"):
-                        st.session_state["selected_movie_from_reco"] = row['Titre']
-                        afficher_details_film()
+                
+                # Si l'affiche n'est pas disponible
                 else:
                     st.markdown(
                         f"<div style='width: 150px; height: 225px; background-color: black; color: white; display: flex; justify-content: center; align-items: center; text-align: center;'>{row['Titre']}</div>",
                         unsafe_allow_html=True
                     )
-                    if st.button("Voir les détails de ce film", key=f"title_{row['tconst']}"):
-                        st.session_state["selected_movie_from_reco"] = row['Titre']
-                        afficher_details_film()
-                    
-
+                
                 # Informations supplémentaires
                 st.markdown(f"**{row['Titre']}**", unsafe_allow_html=True)
                 st.markdown(f"{row['Année de Sortie']} - {row['Durée (min)']} min")
@@ -307,37 +301,30 @@ def afficher_resultats_similarite(df_resultats_similarite):
                 etoiles_jaunes = "⭐" * round(row['Note'] / 2)
                 st.markdown(f"{round(row['Note'],1)}/10 {etoiles_jaunes}")
                 st.markdown(f"🙍‍♀️ Test de Bechdel : {row['Indice Bechdel']}/3")
-
+                if st.button("Voir les détails de ce film", key=f"bouton_{row['tconst']}", on_click=afficher_accueil):
+                    st.session_state["search_query"] = row['Titre']
+                    st.session_state["menu_choice"] = "Accueil"
+                st.markdown(f"<br>",unsafe_allow_html=True)
         # Remplissage des colonnes vides si nécessaire
         for col in cols[len(row_df):]:
             with col:
                 st.empty()
 
 
-    
-# Fonction pour afficher les détails du film sélectionné A FINIR ET RELIER AU RESTE NE FONCTIONNE PAS POUR LINSTANT
-def afficher_details_film():
-    movie_title = st.session_state['selected_movie_from_reco']
-    # Recherche du film dans la base de données
-    movie_data = df_infos[df_infos['Titre'] == movie_title]
 
-    # Affichage des informations détaillées du film
-    st.title(movie_data['Titre'])
-    image_url = f"https://image.tmdb.org/t/p/w500{movie_data['Chemin Affiche']}"
-    if movie_data['Chemin Affiche'].isna()== False:
-        st.image(image_url, width=300)
-    else:
-        st.write("Aucune affiche disponible.")
+# Fonction pour afficher "À propos"
+def afficher_a_propos():
+    st.markdown("<header>", unsafe_allow_html=True)
+    st.title("À propos")
+    st.markdown("<p>Le 23ème Écran, votre cinéma creusois et innovant.</p>", unsafe_allow_html=True)
+    st.markdown("</header>", unsafe_allow_html=True)
 
-    st.markdown(f"**Année de sortie :** {movie_data['Année de Sortie']}")
-    st.markdown(f"**Durée :** {movie_data['Durée (min)']} min")
-    st.markdown(f"**Genres :** {movie_data['genres']}")
-    st.markdown(f"**Note :** {round(movie_data['Note'], 2)}/10")
 
-    # Bouton pour revenir à la liste des films
-    if st.button("Retour à la liste des films"):
-        del st.session_state['selected_movie_from_reco']
-        st.rerun()
+
+# Fonction pour afficher les actualités
+def afficher_actualites():
+    st.title("Actualités")
+    st.write("Les actualités de votre cinéma à Guéret.")
 
 
 
@@ -346,17 +333,24 @@ def afficher_details_film():
 if __name__ == "__main__":
     if "search_query" not in st.session_state:
         st.session_state["search_query"] = ""
+    if "current_page" not in st.session_state:
+        st.session_state["current_page"] = "Accueil"
+    
+    # Fonction pour changer de page
+    def navigate_to(page):
+        st.session_state["current_page"] = page
+        st.session_state["search_query"] = ""
+
     # Afficher le menu principal
     page = afficher_menu()
     
     # Navigation basée sur le choix dans l'état
-    # .get("menu_choice", "Accueil") : récupère la valeur associée à "menu_choice". 
-    # Si cette clé n'existe pas encore, elle retourne "Accueil" par défaut.
     menu_choice = st.session_state.get("menu_choice", "Accueil") 
+    
     # Si l'utilisateur est sur la page "Accueil", 
     # la fonction afficher_accueil() est appelée pour afficher son contenu.
     if menu_choice == "Accueil":
-        afficher_accueil(st.session_state["search_query"])
+        afficher_accueil()
     # Selon la valeur de menu_choice, l'application appelle la fonction
     # correspondante pour afficher le contenu des autres pages
     elif menu_choice == "A_propos":
@@ -365,11 +359,10 @@ if __name__ == "__main__":
         afficher_actualites()
 
     # Gestion de l'état de session
-
     if page != st.session_state.get("current_page", ""):
         st.session_state["current_page"] = page
 
-        
+
 
 
 # elif page == "Connexion":   
