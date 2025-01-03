@@ -29,10 +29,13 @@ Afficher les films populaires, les projections à venir et d'autres informations
 
 ## Sommaire
 
-### - **[Méthodologie](./methodologie_streamlit.md)**  
+### **[Méthodologie](./methodologie_streamlit.md)**  
 Une documentation expliquant le processus de création de l'interface, incluant la gestion de l'interface utilisateur, l'intégration avec le moteur de recommandation, et les bonnes pratiques pour une utilisation évolutive.
 
-### - **[Code de l'application](../notebooks/streamlite.py)**  
+### **[Notebook DataFrame INFO](../pdf/creation_df_info.pdf)**  
+Création d'un DataFrame "Info" issu de celui utilisé par l'algorithme pour permettre l'affichage "propre" des informations sur l'interface Streamlit.
+
+### **[Code de l'application](../notebooks/streamlite.py)**  
 Le fichier `.py` contenant le code Streamlit permettant de générer l'interface et de faire le lien avec le moteur de recommandation.
 
 ---

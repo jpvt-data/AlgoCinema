@@ -120,7 +120,7 @@ Exemple : Un spectateur ayant apprécié un film dramatique pourrait être tent�
 #### **Analyse**
 
 1. **Répartition des Genres :**
-   - Les genres principaux sont le Drame, la Comédie et le Thriller, qui dominent largement la production cinématographique.  
+   - Les genres principaux sont le Drame, le Documentaire et la Comédie qui dominent largement la production cinématographique.  
    - Les films d’Action, Science-Fiction et Fantastique représentent une part significative, particulièrement depuis les années 2000, en lien avec l'essor des blockbusters et des avancées technologiques.  
    - Les films de Romance et les Comédies Romantiques gardent une place importante, souvent associés à un public spécifique et des périodes clés comme la Saint-Valentin.  
    - Les films d’Horreur, bien que moins dominants, conservent une base de fans fidèles, notamment lors de festivals ou d'événements comme Halloween.

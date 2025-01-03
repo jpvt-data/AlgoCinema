@@ -13,12 +13,13 @@ import streamlit as st
 import streamlit_authenticator as stauth
 import pandas as pd
 from streamlit_option_menu import option_menu
-# from fuzzywuzzy import process
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import time
 import os # lire la feuille de style (chemin absolu)
 from rapidfuzz import process, fuzz
+import pandas as pd
+from sklearn.neighbors import NearestNeighbors
+from sklearn.preprocessing import MinMaxScaler
 
 
 
@@ -71,104 +72,113 @@ load_css(style_css)
 
 
 #  ------- Fonction de similarité avec un modèle de ML -------
-
 def recommandation(tconst):
-    import pandas as pd
-    from sklearn.neighbors import NearestNeighbors
 
-    import warnings
-    warnings.filterwarnings("ignore", category=UserWarning)
-    warnings.filterwarnings("ignore", category=FutureWarning)
+    # 1ere reco : 5 films avec genre commun et pays commun
 
-    df_test = pd.read_csv("machine learning/DF_ML.csv.gz")
+    # Chargement des données
+    df_ml = pd.read_csv(df_ml_csv)
 
-    # Préparation des données
+    # Récupération des valeurs genre et pays qui correspondent au film sélectionné
+    df_selection = df_ml[df_ml['tconst'] == tconst]
+    colonnes_genre = [
+        'Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+        'Documentary', 'Drama', 'Family', 'Fantasy', 'Game-Show', 'History',
+        'Horror', 'Music', 'Musical', 'Mystery', 'News', 'Reality-TV',
+        'Romance', 'Sci-Fi', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western'
+    ]
+    colonnes_pays = [
+        'tmdb_US', 'tmdb_FR', 'tmdb_GB', 'tmdb_DE', 'tmdb_JP', 'tmdb_IN',
+        'tmdb_IT', 'tmdb_CA', 'tmdb_ES', 'tmdb_MX', 'tmdb_HK', 'tmdb_BR',
+        'tmdb_SE', 'tmdb_SU', 'tmdb_PH', 'tmdb_KR', 'tmdb_AU', 'tmdb_CN',
+        'tmdb_AR', 'tmdb_RU', 'tmdb_DK', 'tmdb_NL', 'tmdb_BE', 'tmdb_AT',
+        'tmdb_TR', 'tmdb_PL', 'tmdb_CH', 'tmdb_XC', 'tmdb_FI', 'tmdb_NO',
+        'tmdb_IR', 'tmdb_XG', 'tmdb_EG', 'tmdb_NG', 'tmdb_ZA'
+    ]
 
-    index = df_test.index
-    df_test_num = df_test.select_dtypes('number')
-    df_test_cat = df_test.select_dtypes(['object', 'category', 'string', 'bool'])
+    genre = [colonne for colonne in df_selection.columns if df_selection[colonne].iloc[0] == True and colonne in colonnes_genre]
+    pays = [colonne for colonne in df_selection.columns if df_selection[colonne].iloc[0] == True and colonne in colonnes_pays]
+
+    index = df_ml.index
+    df_ml_num = df_ml.select_dtypes('number')
+    df_ml_cat = df_ml.select_dtypes(['object', 'category', 'string', 'bool'])
 
     # Normalisation des colonnes numériques
-    from sklearn.preprocessing import MinMaxScaler
     SN = MinMaxScaler()
-    df_test_num_SN = pd.DataFrame(SN.fit_transform(df_test_num), columns=df_test_num.columns, index=index)
+    df_ml_num_SN = pd.DataFrame(SN.fit_transform(df_ml_num), columns=df_ml_num.columns, index=index)
 
-    # Encodage uniquement de la colonne 'nconst'
-    df_test_cat_encoded = df_test_cat.copy()
-    from sklearn.preprocessing import LabelEncoder
-    le = LabelEncoder()
-    df_test_cat_encoded['nconst'] = le.fit_transform(df_test_cat_encoded['nconst'].fillna('inconnu'))
+    df_ml_encoded = pd.concat([df_ml_num_SN, df_ml_cat], axis=1)
 
-    # On assemble le df numérique et le df texte
-    df_test_encoded = pd.concat([df_test_num_SN, df_test_cat_encoded], axis=1)
+    # Sélection des films en fonction de la note
+    bons_films = df_ml_encoded[df_ml_encoded['notes'] >= 0.7]
+    
+    # Création d'une liste de colonnes à utiliser pour le modèle
+    caracteristiques = df_ml_encoded.columns.drop(['tconst', 'nconst', 'title', 'title_ratings_numVotes', 'rating', 
+        'Action', 'Adventure', 'Animation', 'Biography', 'Comedy', 'Crime',
+        'Documentary', 'Drama', 'Family', 'Fantasy', 'Game-Show', 'History',
+        'Horror', 'Music', 'Musical', 'Mystery', 'News', 'Reality-TV',
+        'Romance', 'Sci-Fi', 'Sport', 'Talk-Show', 'Thriller', 'War', 'Western', 
+        'tmdb_US', 'tmdb_FR', 'tmdb_GB', 'tmdb_DE', 'tmdb_JP', 'tmdb_IN',
+        'tmdb_IT', 'tmdb_CA', 'tmdb_ES', 'tmdb_MX', 'tmdb_HK', 'tmdb_BR',
+        'tmdb_SE', 'tmdb_SU', 'tmdb_PH', 'tmdb_KR', 'tmdb_AU', 'tmdb_CN',
+        'tmdb_AR', 'tmdb_RU', 'tmdb_DK', 'tmdb_NL', 'tmdb_BE', 'tmdb_AT',
+        'tmdb_TR', 'tmdb_PL', 'tmdb_CH', 'tmdb_XC', 'tmdb_FI', 'tmdb_NO',
+        'tmdb_IR', 'tmdb_XG', 'tmdb_EG', 'tmdb_NG', 'tmdb_ZA'])
 
-    #On sépare notre df en deux groupes, en fonction de la note
-    bons_films = df_test_encoded[df_test_encoded['notes'] >= 0.7]
+    # On veut que nos recommandations aient automatiquement un genre en commun et un pays de prod en commun avec le film selectionné
+    bons_films = bons_films[bons_films[genre].any(axis=1)]
+    bons_films = bons_films[bons_films[pays].any(axis=1)]
 
-    # KNN sur les caractéristiques numériques
-
-    colonnes_a_exclure = ['tconst', 'title', 'tmdb_popularity', 'title_ratings_numVotes', 'imdb_id', 'genres', 'overview', 'overview_lem']
-    caracteristiques = df_test_encoded.columns.drop(colonnes_a_exclure, errors='ignore')
-
-    model = NearestNeighbors(n_neighbors=1000, metric='euclidean') # Il faudra tester d'autres combinaisons
+    # Création de notre modèle
+    model = NearestNeighbors(n_neighbors=10, metric='euclidean')
     model.fit(bons_films[caracteristiques])
 
-    caract_film = df_test_encoded[df_test_encoded['tconst'] == tconst][caracteristiques]
+    # On déclare les caractéristiques du film sélectionné par l'utilisateur
+    caract_film = df_ml_encoded[df_ml_encoded['tconst'] == tconst][caracteristiques]
+
+    # Calcul des distances et indices des voisins
     distances, indices = model.kneighbors(caract_film)
 
-    if not df_test_encoded[(df_test_encoded['tconst'] == tconst) & (df_test_encoded['notes'] >= 0.7)].empty:
-        selection = bons_films.iloc[indices[0]].copy()
-        selection['distance_knn'] = distances[0]
+    # Affichage de la sélection des films en fonction des indices trouvés par le modèle
+    if caract_film['notes'].values[0] > 0.7:
+        distances = distances[0][1:6]
+        indices = indices[0][1:6]
+        selection = bons_films.iloc[indices]['tconst']
     else:
-        selection = bons_films.iloc[indices[0]].copy()
-        selection = pd.concat([df_test_encoded[df_test_encoded['tconst'] == tconst], selection.iloc[:-1]], axis=0)
-        selection['distance_knn'] = distances[0]
+        distances = distances[0][0:5]
+        indices = indices[0][0:5]
+        selection = bons_films.iloc[indices]['tconst']
 
-    # TF-IDF avec lemmatisation
+    selection = pd.DataFrame(selection).reset_index(drop=True)
 
-    colonnes_poids = {
-        'genres': 1,
-        'overview_lem': 1,
-        'nconst': 1
-    }
+    # 2e reco : 5 films avec genre commun et pays différent
 
-    # On crée une colonne 'texte' qui combine les valeurs pondérées des colonnes spécifiées
-    selection['texte'] = selection.apply(lambda row: 
-        ' '.join([
-            (str(row[col]) + ' ') * colonnes_poids.get(col, 1)  # Répète la valeur de la colonne selon son poids
-            for col in colonnes_poids.keys()
-        ]),
-        axis=1
-    )
+    # Sélection des films en fonction de la note
+    bons_films2 = df_ml_encoded[df_ml_encoded['notes'] >= 0.7]
 
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    vectorizer = TfidfVectorizer(stop_words='english', max_df=0.8)
-    tfidf_matrix = vectorizer.fit_transform(selection['texte'])
+    # On veut que nos recommandations aient automatiquement un genre en commun et un pays de prod différent de celui du film selectionné
+    bons_films2 = bons_films2[bons_films2[genre].any(axis=1)]
+    bons_films2 = bons_films2[~bons_films2[pays].any(axis=1)]
 
-    model_tfidf = NearestNeighbors(n_neighbors=1000, metric='cosine')
-    model_tfidf.fit(tfidf_matrix)
+    # Création de notre modèle
+    model2 = NearestNeighbors(n_neighbors=10, metric='euclidean')
+    model2.fit(bons_films2[caracteristiques])
 
-    distances_tfidf, indices_tfidf = model_tfidf.kneighbors(tfidf_matrix[0])
-    selection['distance_tfidf'] = distances_tfidf[0]
-    
-    # Moyenne pondérée des distances
+    distances2, indices2 = model2.kneighbors(caract_film)
 
-    poids_knn = 1
-    poids_tfidf = 100
+    # Affichage de la sélection des films en fonction des indices trouvés par le modèle
+    if caract_film['notes'].values[0] > 0.7:
+        distances2 = distances2[0][1:6]
+        indices2 = indices2[0][1:6]
+        selection2 = bons_films2.iloc[indices2]['tconst']
+    else:
+        distances2 = distances2[0][0:5]
+        indices2 = indices2[0][0:5]
+        selection2 = bons_films2.iloc[indices2]['tconst']
 
-    selection['distance_ponderee'] = (
-        poids_knn * selection['distance_knn']) + (poids_tfidf * selection['distance_tfidf']
-    ) 
+    selection2 = pd.DataFrame(selection2).reset_index(drop=True)
 
-    # Tri final par la distance pondérée
-    selection = selection.sort_values(by='distance_ponderee')
-
-    # Résultat final
-
-    selection_finale = pd.DataFrame(selection['tconst'][1:11]).reset_index(drop=True)
-
-    return afficher_resultats_similarite(selection_finale)
-
+    return afficher_resultats_similarite(selection, selection2)
 
 
 
@@ -191,7 +201,7 @@ def afficher_menu():
         cols = st.columns(len(options))
         for i, option in enumerate(options):
             # Bouton interactif dans chaque colonne
-            if cols[i].button(option, key=f"bouton_{option}", on_click=lambda: navigate_to(option)):
+            if cols[i].button(option, key=f"bouton_{option}", on_click=navigate_to(option)):
                 st.session_state["menu_choice"] = option
 
 
@@ -311,8 +321,8 @@ def afficher_resultats_similarite(df_resultats_similarite):
                 etoiles_jaunes = "⭐" * round(row['Note'] / 2)
                 st.markdown(f"{round(row['Note'],1)}/10 {etoiles_jaunes}")
                 st.markdown(f"🙍‍♀️ Test de Bechdel : {row['Indice Bechdel']}/3")
-                if st.button("Voir les détails de ce film", key=f"bouton_{row['tconst']}", on_click=afficher_accueil):
-                    st.session_state["search_query"] = row['Titre']
+                if st.button("Voir les détails de ce film", key=f"bouton_{row['tconst']}", on_click=afficher_accueil()):
+                    st.session_state["search_query"] = row['Titre'].values[0]
                     st.session_state["menu_choice"] = "Accueil"
                 st.markdown(f"<br>",unsafe_allow_html=True)
         # Remplissage des colonnes vides si nécessaire
