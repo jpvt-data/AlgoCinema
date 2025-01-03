@@ -1,116 +1,95 @@
 # Documentation de la Méthodologie
 
-Cette documentation décrit, étape par étape, le processus de préparation, de nettoyage et de recommandation de films. Elle inclut :
+Cette documentation décrit, **étape par étape**, le processus de **préparation**, de **nettoyage** et de **recommandation** de films. Elle inclut :
 
 - Les **critères de filtrage** et de sélection des films,
 - La **logique de calcul** d’une note globale (moyenne pondérée IMDB/TMDB),
 - Les **deux approches de recommandation** par KNN (films au même pays vs pays différent),
-- Les **méthodes explorées** (TF-IDF, etc.) mais non conservées dans la version finale.
+
+---
 
 ## 1. Nettoyage Préliminaire et Suppression de Colonnes
 
-Le DataFrame fusionné contient de nombreuses colonnes spécialisées (ex. pays spécifiques, booleans de genres partiels, attributs d’épisodes, etc.). Certaines ne sont pas nécessaires, nous avons donc décidé de les supprimer. Pour les colonnes genres de la table TMDB, elles existaient dans les tables IMDB qui contenaient plus de films, c'est pourquoi nous n'en avons gardé qu'un exemplaire.
+Le DataFrame fusionné contient de nombreuses colonnes spécialisées (par exemple, des pays spécifiques, des booléens partiels pour les genres, ou encore des attributs relatifs aux épisodes).  
+Certaines n’étant pas nécessaires, nous avons décidé de les supprimer. Concernant les colonnes de genres issues de la table TMDB, elles existaient déjà dans les tables IMDB, lesquelles couvraient un plus grand nombre de films. Pour éviter la duplication et les conflits, nous n’en avons donc gardé qu’un seul exemplaire, celui provenant d’IMDB.
+
+---
 
 ## 3. Calcul de la Note Globale (moyenne pondérée IMDB/TMDB)
 
-Pourquoi deux systèmes de notation ?
-IMDB est très populaire, mais parfois biaisé sur certains genres ou périodes.
-TMDB a moins de votes en moyenne, mais il peut compléter IMDB pour des films récents, ou internationaux.
-Moyenne Pondérée
-Nous avons décidé de calculer une note globale (notes) en pondérant chaque note par son nombre de votes (IMDB vs TMDB). Ainsi, un film très voté sur IMDB aura un impact plus fort qu’un film ayant seulement quelques votes sur TMDB, et vice versa.
+**Pourquoi deux systèmes de notation ?**  
+IMDB est très populaire mais peut être biaisé envers certains genres ou certaines périodes.  
+TMDB a souvent moins de votes, mais il peut compléter IMDB pour des films plus récents ou internationaux.
 
-L’objectif : Réduire la variance due au fait qu’un film peut avoir 10.0 sur TMDB avec seulement 5 votants, ou 7.5 sur IMDB avec 10 000 votants. La combinaison permet de mieux refléter la “force” d’un score.
+**Moyenne Pondérée**  
+Nous avons décidé de calculer une note globale (`notes`) en pondérant la contribution de chaque plateforme (IMDB et TMDB) par le nombre de votes associé. Ainsi, un film très voté sur IMDB aura un impact plus fort qu’un film n’ayant que très peu de votants sur TMDB, et vice versa.
+
+L’objectif recherché est de **réduire la variance** : un film pourrait afficher 10.0 sur TMDB avec seulement 5 votants, alors qu’un autre obtiendrait 7.5 sur IMDB avec 10 000 votants. La combinaison de ces deux évaluations permet de mieux refléter la “force” d’un score global.
+
+---
 
 ## 4. Filtrages Avancés : Année, Nombre de Votes, Durée
 
 ### 4.1. Année ≥ 1920
-Pour éviter les films très anciens, souvent moins renseignés ou avec trop peu de spectateurs, on filtre `startYear` >= 1920.
+
+Pour éviter d’inclure des films très anciens, souvent moins renseignés (ou ayant peu de spectateurs), nous avons décidé de filtrer tous ceux dont `startYear` est **inférieur à 1920**.
 
 ### 4.2. Nombre de Votes IMDB ≥ 327
-On élimine les films ayant moins de 327 votes IMDB.  
-- **Pourquoi 327 ?**  
-  - C’est le 75ᵉ percentile (Q3). On exclut ainsi 75% des films ayant le moins de votes, afin de s'assurer d'une note suffisament fiable.
+
+Nous éliminons les films ayant moins de **327 votes** sur IMDB.  
+- **Pourquoi 327 ?**  
+  - C’est le **75ᵉ percentile (Q3)**. Nous excluons ainsi 75 % des films ayant le moins de votes, et nous assurons une représentativité plus fiable du public.
 
 ### 4.3. Durée (Complets / Incomplets)
-Pour la cohérence du modèle, nous avons préféré compléter `runtimeMinutes` via `tmdb_runtime` lorsque c'était possible, et supprimer les films qui restent avec des valeurs vides. Nous avons conservé les films dont la durée était égale à 0 car certains avaient de bonnes notes.
 
-## 7. Choix de k pour KNN (Évaluation)
-
-On propose une fonction `evaluate_k` afin de tester différentes valeurs de k, en utilisant :
-
-- La **distance moyenne** aux k voisins (plus la valeur est basse, plus les films sont proches en moyenne).  
-- Le **score de silhouette** (indicatif de la cohésion en clusters).
-
-En traçant `avg_distances` vs k et `silhouette_scores` vs k, on choisit **k=6** comme compromis optimal.
-
-## 8. Approches de Recommandation
-
-### 8.1. Justification du Seuil de Note (≥ 7)
-
-Avant d’appliquer le KNN, on **filtre** les films à recommander sur la note `notes` ≥ 7.  
-- Objectif : ne suggérer que des “bons” films dans l’ensemble candidat.
-
-### 8.3. Fonctions :
-
-#### 8.3.1. `recommandation(tconst)`
-
-- Charge `DF_ML.csv.gz`, récupère le film cible.  
-- Identifie ses **genres** (col. booléennes True) et **pays** (col. booléennes True).  
-- Filtre la base :  
-  - Films ayant `notes ≥ 7`,  
-  - Au moins un **genre** commun,  
-  - Au moins un **pays** commun.  
-- Applique un `NearestNeighbors(n_neighbors=6, metric='euclidean')`.  
-- Extrait les **5 plus proches** (en excluant éventuellement le film lui-même si déjà `notes ≥ 7`).  
-- Retourne la liste des tconst recommandés.
-
-#### 8.3.2. `recommandation2(tconst)`
-
-- Même logique, **sauf** qu’on exige un **genre** commun, **mais** un **pays** différent :  
-  - On filtre sur `~bons_films[pays].any(axis=1)` pour s’assurer qu’aucun pays ne coïncide.  
-- Même approche KNN, on retient à nouveau 5 films.
-
-#### 8.3.3. `recommandation_finale(tconst)`
-
-- Combine ces deux recommandations :  
-  1. 5 films similaires (genre + pays commun)  
-  2. 5 films similaires (genre + pays différent)  
-- Pratique pour l’intégration en **Streamlit** : la fonction renvoie deux sélections (`selection`, `selection2`).
+Pour conserver la cohérence du modèle, nous avons préféré compléter `runtimeMinutes` grâce à `tmdb_runtime` lorsque c’était possible, puis supprimer les films qui avaient toujours des valeurs vides.  
+Toutefois, nous avons conservé certains films dont la durée était égale à 0, surtout lorsqu’ils affichaient de bonnes notes.
 
 ---
 
-## Deux Scénarios de Recommandation : Même Pays vs Pays Différent
+## 7. Choix de k pour KNN (Évaluation)
 
-### Même Pays + Genre Commun
-- Pensé pour l’utilisateur qui veut “plus du même” :  
-  - Genre(s) commun(s) (Action, Comedy, etc.)  
-  - Même pays de production (ex. films américains si l’utilisateur aime le style US).  
-- On lance le KNN uniquement sur les films validés selon ces filtres, puis on retient les **5 plus proches** dans l’espace vectoriel.
+Nous proposons une fonction `evaluate_k` pour tester différentes valeurs de k, en se basant sur :
 
-### Pays Différent + Genre Commun
-- Pour ceux qui souhaitent découvrir un style **similaire**, mais d’une **autre culture** / **autre pays**.  
-- Les genres demeurent le point commun (ex. Sci-Fi, Romance…), mais on exclut le pays du film cible.  
-- Même approche KNN (5 voisins).
+- La **distance moyenne** aux k voisins (plus elle est basse, plus les films sont “proches”),
+- Le **score de silhouette**, qui reflète la cohésion des clusters.
 
-> **Note** : Dans les deux cas, on se limite aux films ayant `notes ≥ 7`, afin de ne pas recommander de titres mal notés.
+Après avoir tracé `avg_distances` en fonction de k et `silhouette_scores` en fonction de k, nous avons opté pour **k = 6** comme **compromis optimal**.
 
-## 9. Approches Testées mais Non Conservées
+---
 
-Au cours du développement, diverses techniques ont été étudiées, sans être intégrées définitivement :
+## 8. Approches de Recommandation
 
-1. **TF-IDF sur les résumés (`overview`)**  
-   - But : Comparer les textes des films (synopsis) en plus des aspects numériques.  
-   - On a testé la lemmatisation + TF-IDF pour calculer une similarité cosinus.  
-   - Finalement, en raison du surcroît de complexité et de calcul, ce module a été mis de côté dans la version courante.  
-   - Il reste néanmoins une piste solide pour améliorer la recommandation sur la base de la sémantique.
+Nous utilisons un **modèle KNN** (k=6) pour suggérer des films “proches” du film cible, après avoir filtré ceux qui ont une **note globale** (`notes`) **≥ 7** (pour ne recommander que des titres appréciés).
 
-2. **Pondération Générique des Genres**  
-   - Idée : Si un film est multi-genres, pondérer différemment chaque genre, par exemple Action = 2, Romance = 1, etc.  
-   - N’a pas été retenu, faute de temps et de données précises permettant de calibrer la pondération.
+### Deux Scénarios de Recommandation
 
-3. **Prise en Compte des Réalisateurs / Acteurs**  
-   - Possible de repérer si deux films partagent le même réalisateur ou acteur phare, et en tenir compte dans la distance.  
-   - Non encore implémenté, pourrait être ajouté ultérieurement.
+1. **Même Pays + Genre Commun**  
+   - L’utilisateur aura “plus du même” : au moins un **genre** identique et au moins un **pays** identique.  
+   - Nous appliquons KNN sur ce sous-ensemble et retenons 5 voisins (films similaires).
+
+2. **Pays Différent + Genre Commun**  
+   - L’utilisateur aura un style proche (même **genre**), mais d’une autre culture (pays **différent**).  
+   - Nous filtrons les films partageant un genre identique, tout en excluant le pays du film cible, puis appliquons KNN (5 voisins).
+
+### Fonctions
+
+#### `recommandation(tconst)`
+1. Charge `DF_ML.csv.gz` et identifie le film cible (via `tconst`).  
+2. Filtre la base : `notes ≥ 7`, même genre, même pays.  
+3. Lance KNN (n_neighbors=6, metric='euclidean').  
+4. Retourne les 5 films les plus proches.
+
+#### `recommandation2(tconst)`
+1. Similaire à `recommandation(tconst)`, sauf qu’on retient un genre commun **mais** un pays différent.  
+2. Retourne 5 films.
+
+#### `recommandation_finale(tconst)`
+Combine les deux :  
+1. 5 films du même genre + même pays,  
+2. 5 films du même genre + pays différent.  
+
+Utile pour intégrer facilement ces recommandations (ex. via Streamlit).  
 
 ## Conclusion
 
@@ -120,20 +99,19 @@ Au cours du développement, diverses techniques ont été étudiées, sans être
    - Films post-1920,  
    - Au moins 327 votes,  
    - Durée cohérente,  
-   - Indicateurs pays et genres en booléens,  
+   - Pays et genres en booléens,  
    - Note unique (moyenne pondérée IMDB/TMDB).
 
 2. **KNN** :  
-   - On retient k=6 (d’après l’évaluation distance & silhouette).  
-   - La recommandation se fait parmi les films “bons” (≥ 7), selon un espace vectoriel normalisé.
+   - k = 6, décidé grâce à la distance moyenne et au score de silhouette,  
+   - La recommandation se fait exclusivement dans le cercle des films “≥ 7”.
 
 3. **Recommandations** :  
-   - Soit pays en commun + genre en commun,  
-   - Soit pays différent + genre commun.  
+   - Pays en commun + genre en commun,  
+   - Pays différent + même genre.
 
 4. **Évolutions Possibles** :  
    - Réintroduire un module TF-IDF pour affiner la similarité textuelle,  
-   - Pondérer les genres,  
-   - Intégrer la dimension “réalisateur/acteurs” (collaborations fréquentes), etc.
+   - Intégrer la dimension “réalisateurs/acteurs” (collaborations fréquentes), etc.
 
-Cette méthodologie fournit un cadre robuste pour la recommandation de films, combinant critères objectifs (note, popularité, genres, pays) et flexible (filtres, KNN). Elle est aisément extensible à d’autres sources de données ou d’autres algorithmes (embeddings, deep learning, etc.).
+Cette méthodologie fournit un **cadre robuste** pour la recommandation de films, associant filtres objectifs (note, popularité, genres, pays) et distances KNN. Elle reste **flexible** et **extensible** : nous pourrions aisément y ajouter des informations supplémentaires ou recourir à d’autres algorithmes (embeddings, deep learning, etc.) pour gagner en précision et en richesse.
