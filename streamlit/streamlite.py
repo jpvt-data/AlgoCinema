@@ -202,6 +202,7 @@ def handle_movie_selection(titre, tconst):
     st.session_state["search_query"] = titre
     st.session_state["tconst"] = tconst
     st.session_state["menu_choice"] = "Accueil"
+    del st.session_state['nb_selection']
 
 
 def afficher_accueil():
