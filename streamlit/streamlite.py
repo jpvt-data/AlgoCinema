@@ -187,7 +187,7 @@ def afficher_menu():
                         del st.session_state['nb_selection']
                     if 'search_query' in st.session_state:
                         del st.session_state['search_query']
-                    st.experimental_rerun()
+                    st.rerun()
 
 # Fonction qui identifie les noms de films les plus proches avec le texte entré dans la barre de recherches
 def search(query, choices):
