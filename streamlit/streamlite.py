@@ -180,7 +180,9 @@ def afficher_menu():
         for i, option in enumerate(options):
             if cols[i].button(option, key=f"menu_bouton_{option}"):
                 st.session_state["menu_choice"] = option
-                st.session_state["search_query"] = ""
+                if 'search_query' in st.session_state:
+                    del st.session_state['search_query']
+
 
 # Fonction qui identifie les noms de films les plus proches avec le texte entré dans la barre de recherches
 def search(query, choices):
