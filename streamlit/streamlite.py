@@ -202,7 +202,6 @@ def search(query, choices):
 
 def handle_movie_selection(titre, tconst):
     st.session_state["search_query"] = titre
-    st.session_state["tconst"] = tconst
     st.session_state["menu_choice"] = "Accueil"
     if 'nb_selection' in st.session_state:
         del st.session_state['nb_selection']
