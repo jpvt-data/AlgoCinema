@@ -219,9 +219,13 @@ def afficher_accueil():
     )
     st.markdown("<div class='search-container'>", unsafe_allow_html=True)
     
+    # Initialiser la recherche si elle n'existe pas
+    if "search_query" not in st.session_state:
+        st.session_state["search_query"] = ""
+
     search_query = st.text_input(
         "Pour recevoir des suggestions personnalisées :",
-        value=st.session_state.get("search_query", ""),
+        value=st.session_state["search_query"],
         placeholder="Renseignez le titre d'un film que vous appréciez...",
         key="search_input"
     )
