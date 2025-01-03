@@ -184,6 +184,7 @@ def afficher_menu():
 
 # Fonction qui identifie les noms de films les plus proches avec le texte entré dans la barre de recherches
 def search(query, choices):
+    del st.session_state['nb_selection']
     # Convertir les chaînes en minuscules
     query_lower = query.lower()
     choices_lower = [choice.lower() for choice in choices]
