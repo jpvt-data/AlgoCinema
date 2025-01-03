@@ -180,6 +180,11 @@ def afficher_menu():
         for i, option in enumerate(options):
             if cols[i].button(option, key=f"menu_bouton_{option}"):
                 st.session_state["menu_choice"] = option
+                # Réinitialiser la recherche quand l'utilisateur clique sur "Accueil"
+                if option == "Accueil":
+                    st.session_state["search_query"] = ""
+                    if 'nb_selection' in st.session_state:
+                        del st.session_state['nb_selection']
                 if 'search_query' in st.session_state:
                     del st.session_state['search_query']
 
@@ -219,7 +224,7 @@ def afficher_accueil():
     )
     st.markdown("<div class='search-container'>", unsafe_allow_html=True)
     
-    # Initialiser la recherche si elle n'existe pas
+    # Réinitialiser la recherche si elle n'existe pas
     if "search_query" not in st.session_state:
         st.session_state["search_query"] = ""
 
@@ -232,7 +237,7 @@ def afficher_accueil():
     
     if st.session_state.get("search_query"):
         search_query = st.session_state["search_query"]
-        st.session_state["search_query"] = ""
+        st.session_state["search_query"] = "" # Réinitialiser la recherche après l'utilisation
         
     st.markdown("</div>", unsafe_allow_html=True)
     
