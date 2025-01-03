@@ -23,7 +23,7 @@ from sklearn.preprocessing import MinMaxScaler
 # ------- CHEMINS FICHIERS DONNEES -------
 logo = "streamlit/logo.png"
 style_css = "streamlit/style.css"
-df_infos_csv = "donnees/data/df_info.csv.gz"    
+df_infos_csv = "donnees/data/df_info.csv.gz"
 df_ml_csv = "machine learning/DF_ML.csv.gz"
 image_cinema = "donnees/images/Cinéma.JPG"
 image_cinema2 = "donnees/images/23_2.JPG"
