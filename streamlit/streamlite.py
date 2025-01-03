@@ -322,6 +322,7 @@ def afficher_resultats_similarite(selection, selection2):
         for col in cols[len(row_df):]:
             with col:
                 st.empty()
+        
     if st.session_state['nb_selection'] != 1:
         st.markdown(f"<h2>Sortir des sentiers battus</h2>", unsafe_allow_html=True)
         df_display = df_infos.set_index('tconst').loc[selection2['tconst']].reset_index()
