@@ -218,8 +218,13 @@ def afficher_accueil():
     st.markdown(
         """
         ## Bienvenue au **23ème Écran**, votre cinéma local au cœur de la Creuse !
-        Nous sommes bien plus qu'une simple salle de projection. Ici, nous célébrons le **septième art** avec une approche chaleureuse et conviviale, adaptée aux attentes de notre public.
-        En plus de notre programmationen salle, nous mettons à votre disposition un **moteur de recommandations** personnalisées basées sur vos goûts de films.
+        Nous sommes bien plus qu'une simple salle de projection. Ici, nous célébrons le septième art avec une approche chaleureuse et conviviale, adaptée aux attentes de notre public.
+
+        Nous mettons à votre disposition un moteur de recommandations personnalisées qui ne se contente pas de vous proposer des films aux caractéristiques proches de vos préférences, mais sélectionne également des œuvres de qualité : des films bien notés, des créations d'auteurs ou indépendantes, qui vous invitent à sortir des sentiers battus des blockbusters traditionnels.
+
+        C'est une porte ouverte sur le monde du cinéma, une invitation à découvrir des films méconnus, des documentaires et à explorer des perspectives nouvelles. De plus, une indication selon l'indice Bechdel sera fournie pour vous aider à discerner la représentation dans les films.
+
+        Enfin, chaque clic sur les détails d'un film génère automatiquement une nouvelle sélection en fonction de vos choix, enrichissant encore votre expérience de découverte.
         """
     )
     st.markdown("<div class='search-container'>", unsafe_allow_html=True)
