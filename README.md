@@ -51,6 +51,9 @@ Pensé pour **répondre aux besoins du client**, il illustre aussi nos **compét
 #### 5. 🖥️ Interface Streamlit
    - [Méthodologie et Code de l'application](./donnees/md/intro_streamlit.md)
 
+#### 6. 💡 Conclusion et Pistes d'amélioration
+   - [Synthèse et Evolutivité](./donnees/md/debrief_projet.md)
+
 ---
 
 ## Contributions et Contacts
