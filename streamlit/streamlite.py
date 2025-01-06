@@ -218,13 +218,12 @@ def afficher_accueil():
     st.markdown(
         """
         ## Bienvenue au **23ème Écran**, votre cinéma local au cœur de la Creuse !
-        Nous sommes bien plus qu'une simple salle de projection. Ici, nous célébrons le septième art avec une approche chaleureuse et conviviale, adaptée aux attentes de notre public.
+        Ici, nous ne nous contentons pas de projeter des films : nous célébrons le septième art avec passion et convivialité, dans une ambiance qui répond aux attentes de chaque spectateur.
 
-        Nous mettons à votre disposition un moteur de recommandations personnalisées qui ne se contente pas de vous proposer des films aux caractéristiques proches de vos préférences, mais sélectionne également des œuvres de qualité : des films bien notés, des créations d'auteurs ou indépendantes, qui vous invitent à sortir des sentiers battus des blockbusters traditionnels.
-
-        C'est une porte ouverte sur le monde du cinéma, une invitation à découvrir des films méconnus, des documentaires et à explorer des perspectives nouvelles. De plus, une indication selon l'indice Bechdel sera fournie pour vous aider à discerner la représentation dans les films.
-
-        Enfin, chaque clic sur les détails d'un film génère automatiquement une nouvelle sélection en fonction de vos choix, enrichissant encore votre expérience de découverte.
+        En plus de notre programmation en salle, découvrez notre moteur de recommandations personnalisées. 
+        Il s’appuie sur vos goûts pour vous proposer des films qui correspondent à vos préférences. 
+        Mais ce n’est pas tout : nous vous invitons également à élargir vos horizons avec notre sélection "Sortir des sentiers battus". 
+        Celle-ci regroupe des œuvres audacieuses : créations internationales, films d’auteur, productions indépendantes... toujours choisies pour leur qualité et leur originalité. Plus d'infos : visitez notre page "A propos"
         """
     )
     st.markdown("<div class='search-container'>", unsafe_allow_html=True)
@@ -392,26 +391,25 @@ def afficher_a_propos():
     
     st.markdown(
         """
-        ### Notre histoire
-        Situé à **Guéret**, le cinéma **Le 23ème Écran** est né de l'envie de redynamiser l'offre culturelle de notre région.  
-        Nous proposons une programmation **diversifiée**, alliant grands classiques, films récents, et pépites indépendantes, afin de satisfaire toutes les générations et tous les goûts.
+        ### Notre histoire  
+        Niché au cœur de **Guéret**, le cinéma **Le 23ème Écran** est né d’une ambition claire : revitaliser l’offre culturelle de notre région. Nous proposons une programmation riche et variée, mêlant **grands classiques**, **nouveautés incontournables**, et **pépites indépendantes**, pour satisfaire toutes les générations et répondre à toutes les envies.  
 
-        ### Une expérience unique
-        - **Confort moderne** : des salles équipées pour un son et une image de haute qualité.
-        - **Événements spéciaux** : avant-premières, soirées thématiques, et rencontres avec des réalisateurs ou acteurs.
-        - **Espace détente** : un lieu chaleureux pour partager un moment autour d'un café avant ou après votre séance.
+        ### Une expérience cinématographique unique  
+        - **Un confort moderne** : Profitez de salles équipées des dernières technologies pour une qualité d’image et de son exceptionnelle.  
+        - **Des événements exclusifs** : Avant-premières, soirées thématiques, rencontres avec des réalisateurs ou des acteurs… Chaque séance peut devenir un moment d’échange unique.  
+        - **Un espace détente** : Venez partager un instant convivial autour d’un café ou discuter cinéma avant ou après votre séance.  
 
-        ### Le moteur de recommandations, votre compagnon cinéphile
-        Pour aller encore plus loin, nous avons développé un **moteur de recommandations** personnalisé.  
-        Son objectif ? Vous aider à découvrir les films qui correspondent à vos goûts et à vos envies.  
-        Grâce à des suggestions pertinentes basées sur nos analyses et vos préférences, il vous accompagne dans votre voyage cinématographique.  
-        Vous pouvez utiliser cet outil directement depuis notre site Internet, dans une **interface intuitive** et facile à prendre en main.
+        ### Le moteur de recommandations : votre guide cinéphile  
+        Pour prolonger votre expérience, nous avons développé un **moteur de recommandations personnalisé**.  
+        Avec cet outil intuitif, disponible directement sur notre site, découvrez des films qui reflètent vos goûts et laissez-vous surprendre par des suggestions originales. Qu’il s’agisse d’un grand classique ou d’une œuvre indépendante, nous vous aidons à explorer le cinéma à votre manière, en toute simplicité.  
 
-        ### Notre mission
-        Au **23ème Écran**, nous croyons que chaque film peut toucher une corde sensible et créer des souvenirs inoubliables.  
-        Nous sommes fiers de soutenir le cinéma local et international tout en innovant pour offrir une expérience digitale moderne, à la portée de tous.
+        ### Une ouverture sur le monde du cinéma  
+        Au **23ème Écran**, nous croyons que le cinéma est une porte ouverte sur d’autres horizons. Nos choix de programmation incluent des documentaires captivants, des trésors méconnus et des films qui invitent à réfléchir, ressentir et découvrir. Soucieux de diversité et de représentation, nous intégrons également l’**indice Bechdel** à nos descriptions, pour vous aider à explorer les œuvres avec un regard éclairé.  
 
-        **Merci de faire partie de notre aventure. À bientôt dans nos salles !**
+        ### Notre mission  
+        Notre objectif est simple : faire du cinéma une expérience mémorable pour chacun. Nous avons à cœur de soutenir les talents locaux et internationaux, tout en innovant pour offrir une expérience accessible et connectée.  
+
+        **Merci d’être à nos côtés dans cette aventure. Nous avons hâte de vous accueillir dans nos salles pour partager ensemble la magie du cinéma.**
         """,
         unsafe_allow_html=True
     )
