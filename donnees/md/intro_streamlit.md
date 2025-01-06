@@ -10,20 +10,9 @@
 
 Ce chapitre présente **la création d'une interface utilisateur interactive à l'aide de Streamlit**.
 
-Cette interface sert à **visualiser et à interagir avec le moteur de recommandation de films** développé précédemment. Elle permet aux spectateurs de **découvrir des films recommandés en fonction de leurs préférences, tout en offrant une vitrine dynamique pour le cinéma local.
+Cette interface sert à **visualiser et à interagir avec le moteur de recommandation de films** développé précédemment. Elle permet aux spectateurs de **découvrir des films recommandés en fonction de leurs préférences, tout en offrant une vitrine dynamique pour le cinéma local**.
 
 Accès direct à l'application en ligne : **[Le 23ème Écran](https://movie-recommendation-project-wcs-bleu-sauvage.streamlit.app/)**
-
----
-
-## Objectifs
-
-- **Interface Utilisateur**  
-Créer une interface web simple et intuitive pour interagir avec le moteur de recommandation.
-<br>
-
-- **Vitrine et Évolutivité**  
-Afficher les films populaires, les projections à venir et d'autres informations relatives au cinéma local. La plateforme est conçue pour être facilement mise à jour avec de nouvelles fonctionnalités et informations, comme des recommandations personnalisées, des actualités, etc.
 
 ---
 
