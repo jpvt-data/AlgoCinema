@@ -35,7 +35,7 @@ Ces directions a suivre devront être prises en compte dans les réflexions et r
 ---
 ## **Insights clés et recommandations issus de l'analyse des KPIs**
 
-### **1. Critères casés sur les Genres de Films**
+### **1. Critères basés sur les Genres de Films**
 
 - **Genres principaux à privilégier** : Utiliser les genres les plus populaires dans la région comme critères primaires pour le moteur de recommandation. Par exemple, inclure des genres comme "drame", "comédie", "animation", et "familial" en priorité dans les filtres.
 - **Subgenres** : Inclure des sous-catégories spécifiques pour affiner les recommandations. Par exemple, pour les films dramatiques, intégrer des sous-genres comme "drame historique" ou "drame romantique".
