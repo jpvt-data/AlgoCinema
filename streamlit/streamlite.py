@@ -29,7 +29,7 @@ image_cinema = "donnees/images/Cinéma.JPG"
 image_cinema2 = "donnees/images/23_2.JPG"
 
 
-# ------- CONFIG GLOBALE -------
+# ------- CONFIGURATION GLOBALE -------
 st.set_page_config(
     page_title="Cinéma le 23ème Écran",
     layout="wide")
@@ -38,11 +38,11 @@ st.set_page_config(
 # ------- CHARGEMENT DES DONNEES -------
 @st.cache_data
 def load_movie_infos():
-    df = pd.read_csv(df_infos_csv)
-    return df
-
-df_infos = load_movie_infos() 
-
+    try:
+        return pd.read_csv(df_infos_csv)
+    except FileNotFoundError:
+        st.error("Erreur : Impossible de charger le fichier des informations des films.")
+        return pd.DataFrame()  # Retourner un DataFrame vide en cas d'erreur
 
 # ------ Fonction de récupération du style CSS ------
 def load_css(file_name):
@@ -52,6 +52,9 @@ def load_css(file_name):
             st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
     except FileNotFoundError:
         st.error("Erreur : Le fichier CSS n'a pas été trouvé. Vérifiez le chemin.")
+
+
+df_infos = load_movie_infos()
 
 load_css(style_css)
 
@@ -470,6 +473,7 @@ def afficher_actualites():
     )
     
     st.image(image_cinema, width=400, caption="Votre cinéma au cœur des événements 🎬")
+
 
 # ------- Interface Utilisateur (UI) -------
 if "search_query" not in st.session_state:
