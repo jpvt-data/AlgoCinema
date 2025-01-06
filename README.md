@@ -30,7 +30,7 @@ Pensé pour **répondre aux besoins du client**, il illustre aussi nos **compét
 
 ---
 
-## Sommaire:
+## Sommaire
 
 #### 1. 🎬 Introduction et Contexte
    - [Présentation du projet et des enjeux](./donnees/md/projet_enjeux.md)
