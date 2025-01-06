@@ -60,7 +60,7 @@ Ces directions a suivre devront être prises en compte dans les réflexions et r
 
 - **Adaptation aux préférences locales** : Tenir compte de l’étude de marché pour prioriser les films correspondant aux goûts locaux : les films français pour le public cible.
 
-### **4. Critères basés sur les Grandes Périodes du Cinéma
+### **4. Critères basés sur les Grandes Périodes du Cinéma**
 
 - **Focus sur les périodes clés** :
 
