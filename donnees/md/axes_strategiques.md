@@ -13,7 +13,7 @@ Ces directions a suivre devront être prises en compte dans les réflexions et r
 ## **Insights clés issus de l'Etude de Marché**
 
 <p align="center">
-  <img src="../images/IMG_0257.JPG.jpg" alt="257" width="300">
+  <img src="../images/IMG_0257.JPG" alt="257" width="300">
 <p>
 
 ### **1. Public cible et comportements**
