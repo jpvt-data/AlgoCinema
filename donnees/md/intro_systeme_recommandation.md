@@ -15,7 +15,7 @@ Une fois le modèle mis en place, il sera capable de générer des recommandatio
 ### **[Méthodologie](./methodologie_machine_learning_v1.md)**  
 Une documentation détaillant les étapes et les approches utilisées pour la préparation des données et la mise en place du modèle de recommandation.
 
-### **[Notebook]()**  
+### **[DataFrame de sélection pour le Machine Learning](../)**  
 Le code Python pour implémenter l'algorithme de machine learning, incluant le nettoyage des données, la création du modèle de recommandation, et l'évaluation des résultats.
 
 ---
