@@ -1,4 +1,4 @@
-# Documentation de la Méthodologie
+# Méthodologie Algorithme Machine Learning
 
 Cette documentation décrit, **étape par étape**, le processus de **préparation**, de **nettoyage**, et de **recommandation** de films. Elle inclut :
 
