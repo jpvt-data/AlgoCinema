@@ -24,7 +24,7 @@ Une fois cette identité solidement établie, elle guidera l’orientation et le
 ## **Nom**
 
 <p align="center">
-  <img src="../images/23.JPG" alt="23 - le département de la Creuse" width="300">
+  <img src="../images/logo_23_eme_ecran.PNG" alt="Logo" width="300">
 </p>
 <br>
 
