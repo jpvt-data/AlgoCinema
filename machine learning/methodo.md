@@ -251,8 +251,8 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-![alt text](image.png)
 ```
+![alt text](./image.png)
 
 ---
 
