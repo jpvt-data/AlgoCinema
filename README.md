@@ -22,14 +22,6 @@ Le 23ème Ecran a pour ambition de :
 
 ---
 
-## Le dépôt GitHub
-
-Nous avons choisi de centraliser tous les livrables du projet dans un **dépôt Github** : notebooks documentés, visualisations, guides pour faciliter la prise en main et la lecture du projet.
-
-Pensé pour **répondre aux besoins du client**, il illustre aussi nos **compétences en gestion de projet collaboratif** et servira de **vitrine dans nos portfolios professionnels**.
-
----
-
 ## Sommaire
 
 #### 1. 🎬 Introduction et Contexte
