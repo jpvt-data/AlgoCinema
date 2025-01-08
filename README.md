@@ -49,10 +49,10 @@ Pensé pour **répondre aux besoins du client**, il illustre aussi nos **compét
    - [Méthodologie et Algorithme de machine learning](./donnees/md/intro_systeme_recommandation.md)
 
 #### 5. 🖥️ Interface Streamlit
-   - [Méthodologie et Code de l'application](./donnees/md/intro_streamlit.md)
+   - [Captures, Méthodologie et Code de l'application](./donnees/md/intro_streamlit.md)
 
-#### 6. 💡 Conclusion et Pistes d'amélioration
-   - [Synthèse et Evolutivité](./donnees/md/debrief_projet.md)
+#### 6. 💡 Conclusion
+   - [Retour d'Expérience et Pistes d'Amélioration](./donnees/md/debrief_projet.md)
 
 ---
 
