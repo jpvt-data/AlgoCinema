@@ -18,7 +18,7 @@ Accès direct à l'application en ligne : **[Le 23ème Écran](https://movie-rec
 
 ## Sommaire
 
-### **1. Captures d'Ecran de l'Interface**
+### **1. ✨ Captures d'Ecran de l'Interface**
 
    - [Accueil, moteur de recommandation](../pdf/streamlit_capture_1.pdf)
    - [A propos](../pdf/streamlit_capture_2.pdf)
