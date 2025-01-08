@@ -18,6 +18,13 @@ Accès direct à l'application en ligne : **[Le 23ème Écran](https://movie-rec
 
 ## Sommaire
 
+### **1. Captures d'Ecran de l'Interface**
+
+   - [Accueil, moteur de recommandation](../pdf/streamlit_capture_1.pdf)
+   - [A propos](../pdf/streamlit_capture_2.pdf)
+   - [Actualités](../pdf/streamlit_capture_3.pdf)
+
+
 ### **1. 🧩 Méthodologie**  
 Une documentation expliquant le processus de création de l'interface, incluant la gestion de l'interface utilisateur, l'intégration avec le moteur de recommandation, et les bonnes pratiques pour une utilisation évolutive.  
    - [Documentation](./methodologie_streamlit.md)
