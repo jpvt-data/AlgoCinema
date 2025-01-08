@@ -25,16 +25,16 @@ Accès direct à l'application en ligne : **[Le 23ème Écran](https://movie-rec
    - [Actualités](../pdf/streamlit_capture_3.pdf)
 
 
-### **1. 🧩 Méthodologie**  
+### **2. 🧩 Méthodologie**  
 Une documentation expliquant le processus de création de l'interface, incluant la gestion de l'interface utilisateur, l'intégration avec le moteur de recommandation, et les bonnes pratiques pour une utilisation évolutive.  
    - [Documentation](./methodologie_streamlit.md)
 
-### **2. 📋 DataFrame Informations Films**  
+### **3. 📋 DataFrame Informations Films**  
 Création d'un DataFrame "Info" issu de celui utilisé par l'algorithme pour permettre l'affichage "propre" des informations sur l'interface Streamlit.  
    - [Notebook](../notebooks/df_info.ipynb)
    - [PDF](../pdf/creation_df_info.pdf)
 
-### **3. 💻 Code de l'Application**  
+### **4. 💻 Code de l'Application**  
 Le fichier `.py` contenant le code Streamlit permettant de générer l'interface et de faire le lien avec le moteur de recommandation.  
    - [Fichier `.py`](../notebooks/streamlite.py)
    - [PDF]()
